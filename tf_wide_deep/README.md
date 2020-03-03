@@ -9,6 +9,14 @@ python2
 
 tensorflow >= 1.4
 
+Setup environment with Anaconda:  
+```
+conda create -n wide_deep python=2.7  
+conda activate wide_deep  
+conda install -c anaconda tensorflow===1.14  
+conda install pyyaml  
+```
+
 ## Running the code
 
 ### Training
