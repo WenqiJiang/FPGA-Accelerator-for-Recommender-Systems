@@ -1,0 +1,418 @@
+Using TensorFlow Version 1.15.0
+
+Model Type: wide_deep
+
+Model Directory: ../model/wide_deep
+
+Using Train Config:
+image_train_data: None
+model_dir: ../model
+batch_size: 64
+model_type: wide_deep
+train_epochs: 5
+dynamic_train: True
+epochs_per_eval: 1
+checkpoint_path: None
+neg_sample_loss_weight: None
+image_test_data: None
+eval_data: ../data/eval
+test_data: ../data/test
+image_eval_data: None
+keep_train: 0
+multivalue: 1
+num_examples: 10000
+pos_sample_loss_weight: None
+num_parallel_calls: None
+train_data: ../data/train
+
+Using Model Config:
+dnn_batch_normalization: 1
+cnn_initial_learning_rate: 0.05
+dnn_initial_learning_rate: 0.05
+linear_optimizer: tf.train.FtrlOptimizer(learning_rate=0.1,l1_regularization_strength=0.5,l2_regularization_strength=1)
+cnn_optimizer: Adagrad
+linear_initial_learning_rate: 0.05
+dnn_decay_rate: 0.8
+dnn_optimizer: Adagrad
+cnn_use_flag: 0
+cnn_decay_rate: 0.8
+linear_decay_rate: 0.8
+dnn_activation_function: relu
+dnn_connected_mode: simple
+dnn_hidden_units: [1024, 512, 256]
+dnn_dropout: None
+dnn_l1: 0.1
+dnn_l2: 0.1
+Remove model directory: ../model/wide_deep
+Using dynamic train mode.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 1.0
+auc_precision_recall: 0.0
+average_loss: 0.00411459989846
+global_step: 237
+label/mean: 0.0
+loss: 0.260417729616
+precision: 0.0
+prediction/mean: 0.00409719021991
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 0.00284572062083
+global_step: 474
+label/mean: 0.0
+loss: 0.180108904839
+precision: 0.0
+prediction/mean: 0.00273515586741
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 0.998600006104
+accuracy_baseline: 1.0
+auc: 1.0
+auc_precision_recall: 0.0
+average_loss: 0.00371706462465
+global_step: 711
+label/mean: 0.0
+loss: 0.235257253051
+precision: 0.0
+prediction/mean: 0.00289765093476
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 0.000417715084041
+global_step: 948
+label/mean: 0.0
+loss: 0.0264376625419
+precision: 0.0
+prediction/mean: 0.00037444071495
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 0.000138489442179
+global_step: 1185
+label/mean: 0.0
+loss: 0.00876515544951
+precision: 0.0
+prediction/mean: 0.000134556481498
+recall: 0.0
+Using TensorFlow Version 1.14.0
+
+Model Type: wide_deep
+
+Model Directory: ../model/wide_deep
+
+Using Train Config:
+image_train_data: None
+model_dir: ../model
+batch_size: 64
+model_type: wide_deep
+train_epochs: 5
+dynamic_train: True
+epochs_per_eval: 1
+checkpoint_path: None
+neg_sample_loss_weight: None
+image_test_data: None
+eval_data: ../data/eval
+test_data: ../data/test
+image_eval_data: None
+keep_train: 1
+multivalue: 1
+num_examples: 10000
+pos_sample_loss_weight: None
+num_parallel_calls: None
+train_data: ../data/train
+
+Using Model Config:
+dnn_batch_normalization: 1
+cnn_initial_learning_rate: 0.05
+dnn_initial_learning_rate: 0.05
+linear_optimizer: tf.train.FtrlOptimizer(learning_rate=0.1,l1_regularization_strength=0.5,l2_regularization_strength=1)
+cnn_optimizer: Adagrad
+linear_initial_learning_rate: 0.05
+dnn_decay_rate: 0.8
+dnn_optimizer: Adagrad
+cnn_use_flag: 0
+cnn_decay_rate: 0.8
+linear_decay_rate: 0.8
+dnn_activation_function: relu
+dnn_connected_mode: simple
+dnn_hidden_units: [1024, 512, 256]
+dnn_dropout: None
+dnn_l1: 0.1
+dnn_l2: 0.1
+Using dynamic train mode.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 1.0
+auc_precision_recall: 0.0
+average_loss: 9.27734727156e-05
+global_step: 1422
+label/mean: 0.0
+loss: 0.00587173877284
+precision: 0.0
+prediction/mean: 9.06330678845e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999880791
+auc_precision_recall: 0.0
+average_loss: 7.04879785189e-05
+global_step: 1659
+label/mean: 0.0
+loss: 0.00446126470342
+precision: 0.0
+prediction/mean: 6.91097375238e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 5.44743779756e-05
+global_step: 1896
+label/mean: 0.0
+loss: 0.00344774546102
+precision: 0.0
+prediction/mean: 5.35853869224e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 4.939831706e-05
+global_step: 2133
+label/mean: 0.0
+loss: 0.00312647572719
+precision: 0.0
+prediction/mean: 4.86070348416e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999880791
+auc_precision_recall: 0.0
+average_loss: 4.22303091909e-05
+global_step: 2370
+label/mean: 0.0
+loss: 0.0026728042867
+precision: 0.0
+prediction/mean: 4.1623814468e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 3.85141211154e-05
+global_step: 2607
+label/mean: 0.0
+loss: 0.00243760249577
+precision: 0.0
+prediction/mean: 3.79852936021e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 3.46760753018e-05
+global_step: 2844
+label/mean: 0.0
+loss: 0.00219468818977
+precision: 0.0
+prediction/mean: 3.4235745261e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 1.0
+auc_precision_recall: 0.0
+average_loss: 3.24402499245e-05
+global_step: 3081
+label/mean: 0.0
+loss: 0.00205318024382
+precision: 0.0
+prediction/mean: 3.20434155583e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 1.0
+auc_precision_recall: 0.0
+average_loss: 3.00029223581e-05
+global_step: 3318
+label/mean: 0.0
+loss: 0.00189891911577
+precision: 0.0
+prediction/mean: 2.96573216474e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 1.0
+auc_precision_recall: 0.0
+average_loss: 2.79577961919e-05
+global_step: 3555
+label/mean: 0.0
+loss: 0.00176948087756
+precision: 0.0
+prediction/mean: 2.76510545518e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 2.64416357822e-05
+global_step: 3792
+label/mean: 0.0
+loss: 0.00167352135759
+precision: 0.0
+prediction/mean: 2.61632212641e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 1.0
+auc_precision_recall: 0.0
+average_loss: 2.48600808845e-05
+global_step: 4029
+label/mean: 0.0
+loss: 0.00157342280727
+precision: 0.0
+prediction/mean: 2.46111267188e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 1.0
+auc_precision_recall: 0.0
+average_loss: 2.37255972024e-05
+global_step: 4266
+label/mean: 0.0
+loss: 0.00150162004866
+precision: 0.0
+prediction/mean: 2.3496324502e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 2.26429310715e-05
+global_step: 4503
+label/mean: 0.0
+loss: 0.00143309694249
+precision: 0.0
+prediction/mean: 2.24314753723e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 2.15855197894e-05
+global_step: 4740
+label/mean: 0.0
+loss: 0.00136617210228
+precision: 0.0
+prediction/mean: 2.1392632334e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 2.07434641197e-05
+global_step: 4977
+label/mean: 0.0
+loss: 0.00131287751719
+precision: 0.0
+prediction/mean: 2.05640608328e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 1.99945461645e-05
+global_step: 5214
+label/mean: 0.0
+loss: 0.00126547762193
+precision: 0.0
+prediction/mean: 1.98265424842e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 1.92148545466e-05
+global_step: 5451
+label/mean: 0.0
+loss: 0.00121613009833
+precision: 0.0
+prediction/mean: 1.90583341464e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 1.8563672711e-05
+global_step: 5688
+label/mean: 0.0
+loss: 0.0011749160476
+precision: 0.0
+prediction/mean: 1.84169766726e-05
+recall: 0.0
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+accuracy: 1.0
+accuracy_baseline: 1.0
+auc: 0.999999940395
+auc_precision_recall: 0.0
+average_loss: 1.78774080268e-05
+global_step: 5925
+label/mean: 0.0
+loss: 0.00113148160744
+precision: 0.0
+prediction/mean: 1.77411438926e-05
+recall: 0.0

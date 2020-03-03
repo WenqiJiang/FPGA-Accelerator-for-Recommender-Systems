@@ -1,0 +1,6 @@
+tensorflow >=1.4
+tensorflow-serving-api
+numpy
+yaml
+PIL
+six
