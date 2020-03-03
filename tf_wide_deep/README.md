@@ -1,10 +1,12 @@
 # Wide and Deep Learning for Recommender Systems in Tensorflow
 
 Original GitHub Repository: https://github.com/Lapis-Hong/wide_deep
+
 Link to the paper: https://research.googleblog.com/2016/06/wide-deep-learning-better-together-with.html
 
 ## Environment
 python2
+
 tensorflow >= 1.4
 
 ## Running the code
