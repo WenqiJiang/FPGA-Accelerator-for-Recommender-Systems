@@ -7,14 +7,14 @@ Link to the paper: https://research.googleblog.com/2016/06/wide-deep-learning-be
 ## Environment
 python2
 
-tensorflow >= 1.4
+tensorflow >= 2.0
 
 Setup environment with Anaconda:  
 ```
-conda create -n wide_deep python=2.7  
-conda activate wide_deep  
-conda install -c anaconda tensorflow===1.14  
-conda install pyyaml  
+conda create -n tf2 python=2.7
+conda activate tf2  
+conda install -c anaconda tensorflow===2.0
+conda install -y pyyaml  
 ```
 
 ## Running the code
