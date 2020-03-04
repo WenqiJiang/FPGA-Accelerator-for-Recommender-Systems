@@ -88,6 +88,11 @@ def get_optimizer_instance(opt, learning_rate=None):
         'RMSProp': tf.compat.v1.train.RMSPropOptimizer,
         'SGD': tf.compat.v1.train.GradientDescentOptimizer
     }
+
+    # WENQI added this to eliminate bugs
+    if opt == 'tf.train.FtrlOptimizer(learning_rate=0.1,l1_regularization_strength=0.5,l2_regularization_strength=1)':
+        return tf.compat.v1.train.FtrlOptimizer(learning_rate=0.1,l1_regularization_strength=0.5,l2_regularization_strength=1)
+
     if isinstance(opt, six.string_types):
         if opt in six.iterkeys(_OPTIMIZER_CLS_NAMES):
             if learning_rate is None:

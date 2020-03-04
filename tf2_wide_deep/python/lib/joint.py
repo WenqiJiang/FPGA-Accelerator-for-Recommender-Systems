@@ -421,6 +421,7 @@ class WideAndDeepClassifier(tf.estimator.Estimator):
                 with_cnn=with_cnn,
                 cnn_optimizer=cnn_optimizer,
                 linear_feature_columns=linear_feature_columns,
+                # WENQI commented it to solve bugs
                 linear_optimizer=linear_optimizer,
                 dnn_feature_columns=dnn_feature_columns,
                 dnn_connected_mode=dnn_connected_mode,
