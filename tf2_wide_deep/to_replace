@@ -1,0 +1,6 @@
+lib/dnn.py:    regularizer_list.append(tf.contrib.layers.l1_regularizer(DNN_L1))
+lib/dnn.py:    regularizer_list.append(tf.contrib.layers.l2_regularizer(DNN_L2))
+lib/dnn.py:    REG = tf.contrib.layers.sum_regularizer(regularizer_list)
+lib/cnn/resnet_2.py:        return tf.contrib.layers.batch_norm(
+tensorflow_serving/client.py:            tf.contrib.util.make_tensor_proto(image[0], shape=[1, image[0].size]))
+tensorflow_serving/client.py:        tf.contrib.util.make_tensor_proto(serialized, shape=[1]))
