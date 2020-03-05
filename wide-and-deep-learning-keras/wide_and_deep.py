@@ -2,7 +2,9 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures, LabelEncoder
 
+from datetime import datetime
 import tensorflow as tf
+from tensorflow import keras
 # import tensorflow.compat.v1 as tf
 # tf.disable_v2_behavior()
 from keras.layers import Input, Embedding, Dense, Flatten, Dropout, SpatialDropout1D, Activation, concatenate
@@ -10,7 +12,7 @@ from keras.optimizers import Adam, SGD
 from keras.layers.advanced_activations import ReLU, PReLU, LeakyReLU, ELU
 from keras.layers.normalization import BatchNormalization
 from keras.callbacks import EarlyStopping, ModelCheckpoint
-from keras.models import Model
+from keras.models import Model, load_model
 from tensorflow.keras.utils import plot_model
 
 
@@ -124,6 +126,9 @@ class Wide_and_Deep:
         dim = self.x_train_categ_poly.shape[1]
         self.logistic_input = Input(shape=(dim,))
 
+    def load_model(self,filename='wide_and_deep.h5'):
+        self.model = load_model(filename)
+
     def create_model(self):
         self.deep_component()
         self.wide_component()
@@ -166,7 +171,7 @@ class Wide_and_Deep:
         from tensorflow.python.client import timeline
         tl = timeline.Timeline(run_metadata.step_stats)
         ctf = tl.generate_chrome_trace_format()
-        with open('output/timeline.json', 'w') as f:
+        with open('output/training_profiling.json', 'w') as f:
             f.write(ctf)
 
     def evaluate_model(self):
@@ -189,6 +194,9 @@ class Wide_and_Deep:
         print(f'test_loss: {loss} - test_acc: {acc}')
 
     def predict_model(self):
+
+        self.load_model()
+
         if not self.model:
             print('You have to create model first')
             return
@@ -204,11 +212,18 @@ class Wide_and_Deep:
             print('wrong mode')
             return
 
+        print("Input data shape: {}".format(len(input_data)))
+
+        # tensorboard --logdir=logs/scalars/
+        logdir = "logs/scalars/" + datetime.now().strftime("%Y%m%d-%H%M%S")
+        tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
+
         run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
         run_metadata = tf.RunMetadata()
         self.model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'],
                            options=run_options, run_metadata=run_metadata)
-        result = self.model.predict(input_data)
+        result = self.model.predict(input_data, batch_size=128, use_multiprocessing=True,
+                                    callbacks=[tensorboard_callback])
 
         from tensorflow.python.client import timeline
         tl = timeline.Timeline(run_metadata.step_stats)
@@ -217,6 +232,7 @@ class Wide_and_Deep:
             f.write(ctf)
 
         print("result: {}".format(result))
+        print("result shape：{}".format(result.shape))
 
     def save_model(self, filename='wide_and_deep.h5'):
         self.model.save(filename)
@@ -224,9 +240,13 @@ class Wide_and_Deep:
 
 if __name__ == '__main__':
     wide_deep_net = Wide_and_Deep()
-    wide_deep_net.create_model()
-    wide_deep_net.train_model()
-    wide_deep_net.evaluate_model()
+
+    train = False
+    if train:
+        wide_deep_net.create_model()
+        wide_deep_net.train_model()
+        wide_deep_net.evaluate_model()
+        wide_deep_net.save_model()
+        plot_model(wide_deep_net.model, to_file='model.png', show_shapes=True, show_layer_names=False)
+
     wide_deep_net.predict_model()
-    wide_deep_net.save_model()
-    plot_model(wide_deep_net.model, to_file='model.png', show_shapes=True, show_layer_names=False)
