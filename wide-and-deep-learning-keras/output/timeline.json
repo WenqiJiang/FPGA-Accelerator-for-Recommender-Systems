@@ -1,0 +1,6065 @@
+{
+    "traceEvents": [
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 0,
+            "args": {
+                "name": "Allocators"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 1,
+            "args": {
+                "name": "/host:CPU Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 2,
+            "args": {
+                "name": "/host:CPU Tensors"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 3,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Compute"
+            }
+        },
+        {
+            "name": "process_name",
+            "ph": "M",
+            "pid": 4,
+            "args": {
+                "name": "/job:localhost/replica:0/task:0/device:CPU:0 Tensors"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364203,
+            "dur": 74,
+            "args": {
+                "name": "batch_normalization_1/moments/mean:Mean",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364288,
+            "dur": 4,
+            "args": {
+                "name": "MklInputConversion/_45:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364301,
+            "dur": 20,
+            "args": {
+                "name": "batch_normalization_1/moments/SquaredDifference:_MklSquaredDifference",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364328,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_34:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364333,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_1/moments/variance:Mean",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364348,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/add:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364354,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/Rsqrt:Rsqrt",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364358,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/mul:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364363,
+            "dur": 2,
+            "args": {
+                "name": "MklInputConversion/_46:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364374,
+            "dur": 19,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/mul_1:_MklMul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364404,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/mul_2:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364410,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/sub:Sub",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364415,
+            "dur": 2,
+            "args": {
+                "name": "MklInputConversion/_47:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364425,
+            "dur": 18,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/add_1:_MklAdd",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364451,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_35:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364792,
+            "dur": 7,
+            "args": {
+                "name": "batch_normalization_2/moments/mean:Mean",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364815,
+            "dur": 2,
+            "args": {
+                "name": "MklInputConversion/_48:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364825,
+            "dur": 33,
+            "args": {
+                "name": "batch_normalization_2/moments/SquaredDifference:_MklSquaredDifference",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364865,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_38:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364870,
+            "dur": 6,
+            "args": {
+                "name": "batch_normalization_2/moments/variance:Mean",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364887,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/add:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364892,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/Rsqrt:Rsqrt",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364896,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/mul:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364905,
+            "dur": 2,
+            "args": {
+                "name": "MklInputConversion/_49:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364916,
+            "dur": 20,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/mul_1:_MklMul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364948,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/mul_2:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364953,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/sub:Sub",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364958,
+            "dur": 2,
+            "args": {
+                "name": "MklInputConversion/_50:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364968,
+            "dur": 19,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/add_1:_MklAdd",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631364995,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_39:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365264,
+            "dur": 5,
+            "args": {
+                "name": "batch_normalization_3/moments/mean:Mean",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365285,
+            "dur": 3,
+            "args": {
+                "name": "MklInputConversion/_51:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365295,
+            "dur": 17,
+            "args": {
+                "name": "batch_normalization_3/moments/SquaredDifference:_MklSquaredDifference",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365318,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_42:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365323,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/moments/variance:Mean",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365337,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/add:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365342,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/Rsqrt:Rsqrt",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365346,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/mul:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365354,
+            "dur": 2,
+            "args": {
+                "name": "MklInputConversion/_52:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365364,
+            "dur": 15,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/mul_1:_MklMul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365390,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/mul_2:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365395,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/sub:Sub",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365400,
+            "dur": 2,
+            "args": {
+                "name": "MklInputConversion/_53:_MklInputConversion",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365410,
+            "dur": 16,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/add_1:_MklAdd",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365433,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_43:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363288,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363293,
+            "dur": 5,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/add:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363304,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/Rsqrt:Rsqrt",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363309,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363313,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp_2:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363317,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363321,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363326,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp_1:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363330,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp_1:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363334,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363337,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/add:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363343,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/Rsqrt:Rsqrt",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363347,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363352,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul_2:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363357,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp_2:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363361,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/sub:Sub",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363366,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363370,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/add:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363376,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/Rsqrt:Rsqrt",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363380,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp_2:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363384,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363388,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363392,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul_2:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363397,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/sub:Sub",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363402,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp_1:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363405,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul_2:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363411,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/sub:Sub",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363415,
+            "dur": 4,
+            "args": {
+                "name": "embedding_2/embedding_lookup:ResourceGather",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363437,
+            "dur": 3,
+            "args": {
+                "name": "flatten_2/strided_slice:StridedSlice",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363446,
+            "dur": 7,
+            "args": {
+                "name": "flatten_2/Prod:Prod",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363460,
+            "dur": 2,
+            "args": {
+                "name": "flatten_2/stack_8825:Pack",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363467,
+            "dur": 2,
+            "args": {
+                "name": "flatten_2/Reshape:_MklReshape",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363475,
+            "dur": 0,
+            "args": {
+                "name": "dense_2/MatMul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363480,
+            "dur": 2,
+            "args": {
+                "name": "embedding_4/embedding_lookup:ResourceGather",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363499,
+            "dur": 2,
+            "args": {
+                "name": "flatten_4/strided_slice:StridedSlice",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363505,
+            "dur": 1,
+            "args": {
+                "name": "flatten_4/Prod:Prod",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363511,
+            "dur": 1,
+            "args": {
+                "name": "flatten_4/stack_7424:Pack",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363517,
+            "dur": 1,
+            "args": {
+                "name": "flatten_4/Reshape:_MklReshape",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363524,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/mul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363529,
+            "dur": 2,
+            "args": {
+                "name": "embedding_8/embedding_lookup:ResourceGather",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363546,
+            "dur": 1,
+            "args": {
+                "name": "flatten_8/strided_slice:StridedSlice",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363553,
+            "dur": 1,
+            "args": {
+                "name": "flatten_8/Prod:Prod",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363558,
+            "dur": 1,
+            "args": {
+                "name": "flatten_8/stack_6440:Pack",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363564,
+            "dur": 1,
+            "args": {
+                "name": "flatten_8/Reshape:_MklReshape",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363572,
+            "dur": 2,
+            "args": {
+                "name": "embedding_1/embedding_lookup:ResourceGather",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363590,
+            "dur": 1,
+            "args": {
+                "name": "flatten_1/strided_slice:StridedSlice",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363596,
+            "dur": 1,
+            "args": {
+                "name": "flatten_1/Prod:Prod",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363602,
+            "dur": 1,
+            "args": {
+                "name": "flatten_1/stack_5088:Pack",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363608,
+            "dur": 1,
+            "args": {
+                "name": "flatten_1/Reshape:_MklReshape",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363615,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363619,
+            "dur": 2,
+            "args": {
+                "name": "embedding_7/embedding_lookup:ResourceGather",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363636,
+            "dur": 1,
+            "args": {
+                "name": "flatten_7/strided_slice:StridedSlice",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363643,
+            "dur": 1,
+            "args": {
+                "name": "flatten_7/Prod:Prod",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363649,
+            "dur": 1,
+            "args": {
+                "name": "flatten_7/stack_8256:Pack",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363654,
+            "dur": 1,
+            "args": {
+                "name": "flatten_7/Reshape:_MklReshape",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363662,
+            "dur": 0,
+            "args": {
+                "name": "dense_5/BiasAdd/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363667,
+            "dur": 0,
+            "args": {
+                "name": "dense_5/MatMul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363671,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/mul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363675,
+            "dur": 2,
+            "args": {
+                "name": "embedding_3/embedding_lookup:ResourceGather",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363692,
+            "dur": 1,
+            "args": {
+                "name": "flatten_3/strided_slice:StridedSlice",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363698,
+            "dur": 1,
+            "args": {
+                "name": "flatten_3/Prod:Prod",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363704,
+            "dur": 1,
+            "args": {
+                "name": "flatten_3/stack_8120:Pack",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363709,
+            "dur": 1,
+            "args": {
+                "name": "flatten_3/Reshape:_MklReshape",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363716,
+            "dur": 2,
+            "args": {
+                "name": "embedding_6/embedding_lookup:ResourceGather",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363733,
+            "dur": 1,
+            "args": {
+                "name": "flatten_6/strided_slice:StridedSlice",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363739,
+            "dur": 1,
+            "args": {
+                "name": "flatten_6/Prod:Prod",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363745,
+            "dur": 1,
+            "args": {
+                "name": "flatten_6/stack_358:Pack",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363751,
+            "dur": 1,
+            "args": {
+                "name": "flatten_6/Reshape:_MklReshape",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363758,
+            "dur": 2,
+            "args": {
+                "name": "embedding_5/embedding_lookup:ResourceGather",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363775,
+            "dur": 1,
+            "args": {
+                "name": "flatten_5/strided_slice:StridedSlice",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363781,
+            "dur": 1,
+            "args": {
+                "name": "flatten_5/Prod:Prod",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363787,
+            "dur": 1,
+            "args": {
+                "name": "flatten_5/stack_6790:Pack",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363792,
+            "dur": 1,
+            "args": {
+                "name": "flatten_5/Reshape:_MklReshape",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363799,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363803,
+            "dur": 0,
+            "args": {
+                "name": "dense_3/MatMul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363807,
+            "dur": 0,
+            "args": {
+                "name": "dense_4/MatMul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363811,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363815,
+            "dur": 0,
+            "args": {
+                "name": "dense_4/BiasAdd/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363819,
+            "dur": 0,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/mul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363823,
+            "dur": 0,
+            "args": {
+                "name": "dense_1/MatMul/ReadVariableOp:ReadVariableOp",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363827,
+            "dur": 8,
+            "args": {
+                "name": "dense_1/MatMul:MatMul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631363844,
+            "dur": 196,
+            "args": {
+                "name": "concatenate_1/concat:_MklConcatV2",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364055,
+            "dur": 16,
+            "args": {
+                "name": "activation_1/Relu:_MklRelu",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364089,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_32:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364098,
+            "dur": 19,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul_1:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364122,
+            "dur": 18,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/add_1:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364151,
+            "dur": 401,
+            "args": {
+                "name": "dense_2/MatMul:MatMul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364562,
+            "dur": 105,
+            "args": {
+                "name": "re_lu_1/Relu:_MklRelu",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364675,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_37:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364687,
+            "dur": 23,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul_1:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364717,
+            "dur": 18,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/add_1:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631364746,
+            "dur": 350,
+            "args": {
+                "name": "dense_3/MatMul:MatMul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631365106,
+            "dur": 69,
+            "args": {
+                "name": "re_lu_2/Relu:_MklRelu",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631365183,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_41:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631365195,
+            "dur": 16,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul_1:Mul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631365218,
+            "dur": 15,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/add_1:Add",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 1,
+            "ts": 1583418631365244,
+            "dur": 290,
+            "args": {
+                "name": "dense_4/MatMul:MatMul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365540,
+            "dur": 6,
+            "args": {
+                "name": "dense_4/BiasAdd:BiasAdd",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365553,
+            "dur": 64,
+            "args": {
+                "name": "re_lu_3/Relu:_MklRelu",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365633,
+            "dur": 47,
+            "args": {
+                "name": "concatenate_2/concat:_MklConcatV2",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365690,
+            "dur": 0,
+            "args": {
+                "name": "Mkl2Tf/_44:_MklToTf",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365695,
+            "dur": 4,
+            "args": {
+                "name": "dense_5/MatMul:MatMul",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365704,
+            "dur": 1,
+            "args": {
+                "name": "dense_5/BiasAdd:BiasAdd",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "unknown",
+            "pid": 1,
+            "tid": 0,
+            "ts": 1583418631365710,
+            "dur": 1,
+            "args": {
+                "name": "dense_5/Sigmoid:Sigmoid",
+                "op": "unknown"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "NoOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363065,
+            "dur": 34,
+            "args": {
+                "name": "_SOURCE",
+                "op": "NoOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363105,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/moving_mean",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363110,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_3_0_3",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363113,
+            "dur": 3,
+            "args": {
+                "name": "_arg_keras_learning_phase_0_10",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363117,
+            "dur": 2,
+            "args": {
+                "name": "concatenate_2/concat/axis",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363120,
+            "dur": 2,
+            "args": {
+                "name": "embedding_6/embeddings",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363123,
+            "dur": 1,
+            "args": {
+                "name": "dense_1/kernel",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363128,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/gamma",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363131,
+            "dur": 2,
+            "args": {
+                "name": "embedding_8/embeddings",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363134,
+            "dur": 1,
+            "args": {
+                "name": "embedding_2/embeddings",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363136,
+            "dur": 2,
+            "args": {
+                "name": "dense_4/bias",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363139,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/moments/variance/reduction_indices",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363143,
+            "dur": 1,
+            "args": {
+                "name": "embedding_5/embeddings",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363145,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/beta",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363148,
+            "dur": 2,
+            "args": {
+                "name": "dense_4/kernel",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363151,
+            "dur": 1,
+            "args": {
+                "name": "dense_3/kernel",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363154,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/add/y",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363157,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/moving_variance",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363160,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_3/beta",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363163,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_5_0_5",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363167,
+            "dur": 2,
+            "args": {
+                "name": "flatten_8/stack_6440/0",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363170,
+            "dur": 2,
+            "args": {
+                "name": "embedding_4/embeddings",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363173,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/moving_variance",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363175,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_6_0_6",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363179,
+            "dur": 3,
+            "args": {
+                "name": "flatten_8/strided_slice/stack_2",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631363182,
+            "dur": 2,
+            "args": {
+                "name": "embedding_1/embeddings",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363185,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/moving_mean",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363188,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/moving_mean",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363190,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_7_0_7",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363193,
+            "dur": 2,
+            "args": {
+                "name": "embedding_3/embeddings",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363196,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_2/gamma",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363199,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_9_0_0",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363202,
+            "dur": 2,
+            "args": {
+                "name": "dense_5/kernel",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363206,
+            "dur": 1,
+            "args": {
+                "name": "dense_5/bias",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363209,
+            "dur": 1,
+            "args": {
+                "name": "embedding_7/embeddings",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363212,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/beta",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363214,
+            "dur": 3,
+            "args": {
+                "name": "_arg_input_1_0_1",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363218,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_8_0_8",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363221,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_3/gamma",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363224,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_4_0_4",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363227,
+            "dur": 2,
+            "args": {
+                "name": "dense_2/kernel",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "VarHandleOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363230,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_2/moving_variance",
+                "op": "VarHandleOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363233,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_2_0_2",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Arg",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363236,
+            "dur": 2,
+            "args": {
+                "name": "_arg_input_10_0_9",
+                "op": "_Arg"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363239,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp_1/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_2/moving_mean",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363243,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/cond/Switch",
+                "op": "Switch",
+                "input0": "_arg_keras_learning_phase_0_10",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363246,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul/ReadVariableOp/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_1/gamma",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363249,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp_2/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_1/beta",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363252,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_1/moving_variance",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363256,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp_2/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_3/beta",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363259,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_3/moving_variance",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363262,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp_1/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_1/moving_mean",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363265,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp_1/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_3/moving_mean",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363268,
+            "dur": 1,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul/ReadVariableOp/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_2/gamma",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363270,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp_2/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_2/beta",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363273,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul/ReadVariableOp/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_3/gamma",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363276,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp/Switch",
+                "op": "Switch",
+                "input0": "batch_normalization_2/moving_variance",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Identity",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363279,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/cond/switch_f",
+                "op": "Identity",
+                "input0": "batch_normalization_1/cond/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363283,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/add/y",
+                "op": "Const",
+                "input0": "^batch_normalization_1/cond/switch_f"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363287,
+            "dur": 5,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_2/cond/batchnorm/ReadVariableOp/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363293,
+            "dur": 9,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/add",
+                "op": "Add",
+                "input0": "batch_normalization_1/cond/batchnorm/add/y",
+                "input1": "batch_normalization_2/cond/batchnorm/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Rsqrt",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363303,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/Rsqrt",
+                "op": "Rsqrt",
+                "input0": "batch_normalization_2/cond/batchnorm/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363308,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_3/cond/batchnorm/mul/ReadVariableOp/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363312,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp_2",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_2/cond/batchnorm/ReadVariableOp_2/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363316,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_2/cond/batchnorm/mul/ReadVariableOp/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363320,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul",
+                "op": "Mul",
+                "input0": "batch_normalization_2/cond/batchnorm/Rsqrt",
+                "input1": "batch_normalization_2/cond/batchnorm/mul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363325,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp_1",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_3/cond/batchnorm/ReadVariableOp_1/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363329,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp_1",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_1/cond/batchnorm/ReadVariableOp_1/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363333,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_3/cond/batchnorm/ReadVariableOp/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363337,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/add",
+                "op": "Add",
+                "input0": "batch_normalization_1/cond/batchnorm/add/y",
+                "input1": "batch_normalization_3/cond/batchnorm/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Rsqrt",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363343,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/Rsqrt",
+                "op": "Rsqrt",
+                "input0": "batch_normalization_3/cond/batchnorm/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363347,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul",
+                "op": "Mul",
+                "input0": "batch_normalization_3/cond/batchnorm/Rsqrt",
+                "input1": "batch_normalization_3/cond/batchnorm/mul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363351,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul_2",
+                "op": "Mul",
+                "input0": "batch_normalization_3/cond/batchnorm/ReadVariableOp_1",
+                "input1": "batch_normalization_3/cond/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363357,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/ReadVariableOp_2",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_3/cond/batchnorm/ReadVariableOp_2/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Sub",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363361,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/sub",
+                "op": "Sub",
+                "input0": "batch_normalization_3/cond/batchnorm/ReadVariableOp_2",
+                "input1": "batch_normalization_3/cond/batchnorm/mul_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363365,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_1/cond/batchnorm/ReadVariableOp/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363369,
+            "dur": 5,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/add",
+                "op": "Add",
+                "input0": "batch_normalization_1/cond/batchnorm/ReadVariableOp",
+                "input1": "batch_normalization_1/cond/batchnorm/add/y"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Rsqrt",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363375,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/Rsqrt",
+                "op": "Rsqrt",
+                "input0": "batch_normalization_1/cond/batchnorm/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363379,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/ReadVariableOp_2",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_1/cond/batchnorm/ReadVariableOp_2/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363383,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_1/cond/batchnorm/mul/ReadVariableOp/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363387,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul",
+                "op": "Mul",
+                "input0": "batch_normalization_1/cond/batchnorm/Rsqrt",
+                "input1": "batch_normalization_1/cond/batchnorm/mul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363391,
+            "dur": 5,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul_2",
+                "op": "Mul",
+                "input0": "batch_normalization_1/cond/batchnorm/ReadVariableOp_1",
+                "input1": "batch_normalization_1/cond/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Sub",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363397,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/sub",
+                "op": "Sub",
+                "input0": "batch_normalization_1/cond/batchnorm/ReadVariableOp_2",
+                "input1": "batch_normalization_1/cond/batchnorm/mul_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363401,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/ReadVariableOp_1",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_2/cond/batchnorm/ReadVariableOp_1/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363405,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul_2",
+                "op": "Mul",
+                "input0": "batch_normalization_2/cond/batchnorm/ReadVariableOp_1",
+                "input1": "batch_normalization_2/cond/batchnorm/mul"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Sub",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363410,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/sub",
+                "op": "Sub",
+                "input0": "batch_normalization_2/cond/batchnorm/ReadVariableOp_2",
+                "input1": "batch_normalization_2/cond/batchnorm/mul_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ResourceGather",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363415,
+            "dur": 7,
+            "args": {
+                "name": "embedding_2/embedding_lookup",
+                "op": "ResourceGather",
+                "input0": "embedding_2/embeddings",
+                "input1": "_arg_input_2_0_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363424,
+            "dur": 3,
+            "args": {
+                "name": "flatten_2/Shape",
+                "op": "Shape",
+                "input0": "embedding_2/embedding_lookup"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363429,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_6",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363433,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_7",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363436,
+            "dur": 8,
+            "args": {
+                "name": "flatten_2/strided_slice",
+                "op": "StridedSlice",
+                "input0": "flatten_2/Shape",
+                "input1": "flatten_8/strided_slice/stack_2",
+                "input2": "batch_normalization_3/moments/variance/reduction_indices",
+                "input3": "flatten_8/strided_slice/stack_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363446,
+            "dur": 11,
+            "args": {
+                "name": "flatten_2/Prod",
+                "op": "Prod",
+                "input0": "flatten_2/strided_slice",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363459,
+            "dur": 6,
+            "args": {
+                "name": "flatten_2/stack_8825",
+                "op": "Pack",
+                "input0": "flatten_8/stack_6440/0",
+                "input1": "flatten_2/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklReshape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363466,
+            "dur": 7,
+            "args": {
+                "name": "flatten_2/Reshape",
+                "op": "_MklReshape",
+                "input0": "embedding_2/embedding_lookup",
+                "input1": "flatten_2/stack_8825",
+                "input2": "DMT/_6",
+                "input3": "DMT/_7"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363474,
+            "dur": 4,
+            "args": {
+                "name": "dense_2/MatMul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "dense_2/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ResourceGather",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363479,
+            "dur": 6,
+            "args": {
+                "name": "embedding_4/embedding_lookup",
+                "op": "ResourceGather",
+                "input0": "embedding_4/embeddings",
+                "input1": "_arg_input_4_0_4"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363486,
+            "dur": 3,
+            "args": {
+                "name": "flatten_4/Shape",
+                "op": "Shape",
+                "input0": "embedding_4/embedding_lookup"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363491,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_12",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363494,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_13",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363498,
+            "dur": 5,
+            "args": {
+                "name": "flatten_4/strided_slice",
+                "op": "StridedSlice",
+                "input0": "flatten_4/Shape",
+                "input1": "flatten_8/strided_slice/stack_2",
+                "input2": "batch_normalization_3/moments/variance/reduction_indices",
+                "input3": "flatten_8/strided_slice/stack_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363504,
+            "dur": 5,
+            "args": {
+                "name": "flatten_4/Prod",
+                "op": "Prod",
+                "input0": "flatten_4/strided_slice",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363510,
+            "dur": 5,
+            "args": {
+                "name": "flatten_4/stack_7424",
+                "op": "Pack",
+                "input0": "flatten_8/stack_6440/0",
+                "input1": "flatten_4/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklReshape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363517,
+            "dur": 5,
+            "args": {
+                "name": "flatten_4/Reshape",
+                "op": "_MklReshape",
+                "input0": "embedding_4/embedding_lookup",
+                "input1": "flatten_4/stack_7424",
+                "input2": "DMT/_12",
+                "input3": "DMT/_13"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363524,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/mul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_3/gamma"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ResourceGather",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363528,
+            "dur": 6,
+            "args": {
+                "name": "embedding_8/embedding_lookup",
+                "op": "ResourceGather",
+                "input0": "embedding_8/embeddings",
+                "input1": "_arg_input_8_0_8"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363535,
+            "dur": 3,
+            "args": {
+                "name": "flatten_8/Shape",
+                "op": "Shape",
+                "input0": "embedding_8/embedding_lookup"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363539,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_2",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631363542,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_3",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363546,
+            "dur": 5,
+            "args": {
+                "name": "flatten_8/strided_slice",
+                "op": "StridedSlice",
+                "input0": "flatten_8/Shape",
+                "input1": "flatten_8/strided_slice/stack_2",
+                "input2": "batch_normalization_3/moments/variance/reduction_indices",
+                "input3": "flatten_8/strided_slice/stack_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363552,
+            "dur": 5,
+            "args": {
+                "name": "flatten_8/Prod",
+                "op": "Prod",
+                "input0": "flatten_8/strided_slice",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363558,
+            "dur": 4,
+            "args": {
+                "name": "flatten_8/stack_6440",
+                "op": "Pack",
+                "input0": "flatten_8/stack_6440/0",
+                "input1": "flatten_8/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklReshape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363564,
+            "dur": 5,
+            "args": {
+                "name": "flatten_8/Reshape",
+                "op": "_MklReshape",
+                "input0": "embedding_8/embedding_lookup",
+                "input1": "flatten_8/stack_6440",
+                "input2": "DMT/_2",
+                "input3": "DMT/_3"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "DMT/_3",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631363545,
+            "id": 0
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "DMT/_3",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363564,
+            "id": 0
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ResourceGather",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363571,
+            "dur": 5,
+            "args": {
+                "name": "embedding_1/embedding_lookup",
+                "op": "ResourceGather",
+                "input0": "embedding_1/embeddings",
+                "input1": "_arg_input_1_0_1"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "embedding_1/embeddings",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631363184,
+            "id": 1
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "embedding_1/embeddings",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363571,
+            "id": 1
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363578,
+            "dur": 3,
+            "args": {
+                "name": "flatten_1/Shape",
+                "op": "Shape",
+                "input0": "embedding_1/embedding_lookup"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363582,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_0",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363586,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_1",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363589,
+            "dur": 5,
+            "args": {
+                "name": "flatten_1/strided_slice",
+                "op": "StridedSlice",
+                "input0": "flatten_1/Shape",
+                "input1": "flatten_8/strided_slice/stack_2",
+                "input2": "batch_normalization_3/moments/variance/reduction_indices",
+                "input3": "flatten_8/strided_slice/stack_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363595,
+            "dur": 5,
+            "args": {
+                "name": "flatten_1/Prod",
+                "op": "Prod",
+                "input0": "flatten_1/strided_slice",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363601,
+            "dur": 5,
+            "args": {
+                "name": "flatten_1/stack_5088",
+                "op": "Pack",
+                "input0": "flatten_8/stack_6440/0",
+                "input1": "flatten_1/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklReshape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363607,
+            "dur": 6,
+            "args": {
+                "name": "flatten_1/Reshape",
+                "op": "_MklReshape",
+                "input0": "embedding_1/embedding_lookup",
+                "input1": "flatten_1/stack_5088",
+                "input2": "DMT/_0",
+                "input3": "DMT/_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363614,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_2/beta"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ResourceGather",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363618,
+            "dur": 5,
+            "args": {
+                "name": "embedding_7/embedding_lookup",
+                "op": "ResourceGather",
+                "input0": "embedding_7/embeddings",
+                "input1": "_arg_input_7_0_7"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363625,
+            "dur": 3,
+            "args": {
+                "name": "flatten_7/Shape",
+                "op": "Shape",
+                "input0": "embedding_7/embedding_lookup"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363629,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_4",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631363632,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_5",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363636,
+            "dur": 5,
+            "args": {
+                "name": "flatten_7/strided_slice",
+                "op": "StridedSlice",
+                "input0": "flatten_7/Shape",
+                "input1": "flatten_8/strided_slice/stack_2",
+                "input2": "batch_normalization_3/moments/variance/reduction_indices",
+                "input3": "flatten_8/strided_slice/stack_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363642,
+            "dur": 5,
+            "args": {
+                "name": "flatten_7/Prod",
+                "op": "Prod",
+                "input0": "flatten_7/strided_slice",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363648,
+            "dur": 4,
+            "args": {
+                "name": "flatten_7/stack_8256",
+                "op": "Pack",
+                "input0": "flatten_8/stack_6440/0",
+                "input1": "flatten_7/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklReshape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363654,
+            "dur": 5,
+            "args": {
+                "name": "flatten_7/Reshape",
+                "op": "_MklReshape",
+                "input0": "embedding_7/embedding_lookup",
+                "input1": "flatten_7/stack_8256",
+                "input2": "DMT/_4",
+                "input3": "DMT/_5"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "DMT/_5",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631363635,
+            "id": 2
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "DMT/_5",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363654,
+            "id": 2
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363661,
+            "dur": 3,
+            "args": {
+                "name": "dense_5/BiasAdd/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "dense_5/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363666,
+            "dur": 3,
+            "args": {
+                "name": "dense_5/MatMul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "dense_5/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363670,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/mul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_2/gamma"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ResourceGather",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363674,
+            "dur": 5,
+            "args": {
+                "name": "embedding_3/embedding_lookup",
+                "op": "ResourceGather",
+                "input0": "embedding_3/embeddings",
+                "input1": "_arg_input_3_0_3"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363681,
+            "dur": 2,
+            "args": {
+                "name": "flatten_3/Shape",
+                "op": "Shape",
+                "input0": "embedding_3/embedding_lookup"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363685,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_8",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363688,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_9",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363692,
+            "dur": 4,
+            "args": {
+                "name": "flatten_3/strided_slice",
+                "op": "StridedSlice",
+                "input0": "flatten_3/Shape",
+                "input1": "flatten_8/strided_slice/stack_2",
+                "input2": "batch_normalization_3/moments/variance/reduction_indices",
+                "input3": "flatten_8/strided_slice/stack_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363697,
+            "dur": 5,
+            "args": {
+                "name": "flatten_3/Prod",
+                "op": "Prod",
+                "input0": "flatten_3/strided_slice",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363703,
+            "dur": 5,
+            "args": {
+                "name": "flatten_3/stack_8120",
+                "op": "Pack",
+                "input0": "flatten_8/stack_6440/0",
+                "input1": "flatten_3/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklReshape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363709,
+            "dur": 5,
+            "args": {
+                "name": "flatten_3/Reshape",
+                "op": "_MklReshape",
+                "input0": "embedding_3/embedding_lookup",
+                "input1": "flatten_3/stack_8120",
+                "input2": "DMT/_8",
+                "input3": "DMT/_9"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ResourceGather",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363715,
+            "dur": 5,
+            "args": {
+                "name": "embedding_6/embedding_lookup",
+                "op": "ResourceGather",
+                "input0": "embedding_6/embeddings",
+                "input1": "_arg_input_6_0_6"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363722,
+            "dur": 2,
+            "args": {
+                "name": "flatten_6/Shape",
+                "op": "Shape",
+                "input0": "embedding_6/embedding_lookup"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363726,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_10",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363729,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_11",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363733,
+            "dur": 4,
+            "args": {
+                "name": "flatten_6/strided_slice",
+                "op": "StridedSlice",
+                "input0": "flatten_6/Shape",
+                "input1": "flatten_8/strided_slice/stack_2",
+                "input2": "batch_normalization_3/moments/variance/reduction_indices",
+                "input3": "flatten_8/strided_slice/stack_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363739,
+            "dur": 4,
+            "args": {
+                "name": "flatten_6/Prod",
+                "op": "Prod",
+                "input0": "flatten_6/strided_slice",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363744,
+            "dur": 5,
+            "args": {
+                "name": "flatten_6/stack_358",
+                "op": "Pack",
+                "input0": "flatten_8/stack_6440/0",
+                "input1": "flatten_6/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklReshape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363750,
+            "dur": 5,
+            "args": {
+                "name": "flatten_6/Reshape",
+                "op": "_MklReshape",
+                "input0": "embedding_6/embedding_lookup",
+                "input1": "flatten_6/stack_358",
+                "input2": "DMT/_10",
+                "input3": "DMT/_11"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ResourceGather",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363757,
+            "dur": 5,
+            "args": {
+                "name": "embedding_5/embedding_lookup",
+                "op": "ResourceGather",
+                "input0": "embedding_5/embeddings",
+                "input1": "_arg_input_5_0_5"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Shape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363763,
+            "dur": 3,
+            "args": {
+                "name": "flatten_5/Shape",
+                "op": "Shape",
+                "input0": "embedding_5/embedding_lookup"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363767,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_14",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363771,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_15",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "StridedSlice",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363774,
+            "dur": 5,
+            "args": {
+                "name": "flatten_5/strided_slice",
+                "op": "StridedSlice",
+                "input0": "flatten_5/Shape",
+                "input1": "flatten_8/strided_slice/stack_2",
+                "input2": "batch_normalization_3/moments/variance/reduction_indices",
+                "input3": "flatten_8/strided_slice/stack_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Prod",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363781,
+            "dur": 4,
+            "args": {
+                "name": "flatten_5/Prod",
+                "op": "Prod",
+                "input0": "flatten_5/strided_slice",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Pack",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363786,
+            "dur": 5,
+            "args": {
+                "name": "flatten_5/stack_6790",
+                "op": "Pack",
+                "input0": "flatten_8/stack_6440/0",
+                "input1": "flatten_5/Prod"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklReshape",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363792,
+            "dur": 5,
+            "args": {
+                "name": "flatten_5/Reshape",
+                "op": "_MklReshape",
+                "input0": "embedding_5/embedding_lookup",
+                "input1": "flatten_5/stack_6790",
+                "input2": "DMT/_14",
+                "input3": "DMT/_15"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363798,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_3/beta"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363802,
+            "dur": 3,
+            "args": {
+                "name": "dense_3/MatMul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "dense_3/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363806,
+            "dur": 3,
+            "args": {
+                "name": "dense_4/MatMul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "dense_4/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363810,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_1/beta"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363814,
+            "dur": 3,
+            "args": {
+                "name": "dense_4/BiasAdd/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "dense_4/bias"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363818,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/mul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "batch_normalization_1/gamma"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363822,
+            "dur": 3,
+            "args": {
+                "name": "dense_1/MatMul/ReadVariableOp",
+                "op": "ReadVariableOp",
+                "input0": "dense_1/kernel"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363826,
+            "dur": 12,
+            "args": {
+                "name": "dense_1/MatMul",
+                "op": "MatMul",
+                "input0": "_arg_input_9_0_0",
+                "input1": "dense_1/MatMul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363839,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_16",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklConcatV2",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363843,
+            "dur": 208,
+            "args": {
+                "name": "concatenate_1/concat",
+                "op": "_MklConcatV2",
+                "input0": "dense_1/MatMul",
+                "input1": "flatten_1/Reshape",
+                "input2": "flatten_2/Reshape",
+                "input3": "flatten_3/Reshape",
+                "input4": "flatten_4/Reshape",
+                "input5": "flatten_5/Reshape",
+                "input6": "flatten_6/Reshape",
+                "input7": "flatten_7/Reshape",
+                "input8": "flatten_8/Reshape",
+                "input9": "concatenate_2/concat/axis",
+                "input10": "DMT/_16",
+                "input11": "flatten_1/Reshape:1",
+                "input12": "flatten_2/Reshape:1",
+                "input13": "flatten_3/Reshape:1",
+                "input14": "flatten_4/Reshape:1",
+                "input15": "flatten_5/Reshape:1",
+                "input16": "flatten_6/Reshape:1",
+                "input17": "flatten_7/Reshape:1",
+                "input18": "flatten_8/Reshape:1",
+                "input19": "DMT/_17"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklRelu",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364054,
+            "dur": 20,
+            "args": {
+                "name": "activation_1/Relu",
+                "op": "_MklRelu",
+                "input0": "concatenate_1/concat",
+                "input1": "concatenate_1/concat:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364080,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_18",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364084,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_19",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364088,
+            "dur": 4,
+            "args": {
+                "name": "Mkl2Tf/_32",
+                "op": "_MklToTf",
+                "input0": "activation_1/Relu",
+                "input1": "activation_1/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364094,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul_1/Switch",
+                "op": "Switch",
+                "input0": "activation_1/Relu",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364097,
+            "dur": 23,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "batch_normalization_1/cond/batchnorm/mul",
+                "input1": "batch_normalization_1/cond/batchnorm/mul_1/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364122,
+            "dur": 21,
+            "args": {
+                "name": "batch_normalization_1/cond/batchnorm/add_1",
+                "op": "Add",
+                "input0": "batch_normalization_1/cond/batchnorm/mul_1",
+                "input1": "batch_normalization_1/cond/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Merge",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364144,
+            "dur": 5,
+            "args": {
+                "name": "batch_normalization_1/cond/Merge",
+                "op": "Merge",
+                "input0": "batch_normalization_1/cond/batchnorm/add_1",
+                "input1": "batch_normalization_1/cond/Switch_1:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mean",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364202,
+            "dur": 78,
+            "args": {
+                "name": "batch_normalization_1/moments/mean",
+                "op": "Mean",
+                "input0": "activation_1/Relu",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Squeeze",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364282,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_1/moments/Squeeze",
+                "op": "Squeeze",
+                "input0": "batch_normalization_1/moments/mean"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364288,
+            "dur": 10,
+            "args": {
+                "name": "MklInputConversion/_45",
+                "op": "_MklInputConversion",
+                "input0": "activation_1/Relu",
+                "input1": "batch_normalization_1/moments/mean",
+                "input2": "activation_1/Relu:1",
+                "input3": "DMT/_18"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklSquaredDifference",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364300,
+            "dur": 26,
+            "args": {
+                "name": "batch_normalization_1/moments/SquaredDifference",
+                "op": "_MklSquaredDifference",
+                "input0": "activation_1/Relu",
+                "input1": "batch_normalization_1/moments/mean",
+                "input2": "activation_1/Relu:1",
+                "input3": "DMT/_18"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364327,
+            "dur": 4,
+            "args": {
+                "name": "Mkl2Tf/_34",
+                "op": "_MklToTf",
+                "input0": "batch_normalization_1/moments/SquaredDifference",
+                "input1": "batch_normalization_1/moments/SquaredDifference:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mean",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364332,
+            "dur": 9,
+            "args": {
+                "name": "batch_normalization_1/moments/variance",
+                "op": "Mean",
+                "input0": "batch_normalization_1/moments/SquaredDifference",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Squeeze",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364343,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/moments/Squeeze_1",
+                "op": "Squeeze",
+                "input0": "batch_normalization_1/moments/variance"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364348,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/add",
+                "op": "Add",
+                "input0": "batch_normalization_1/moments/Squeeze_1",
+                "input1": "batch_normalization_3/batchnorm/add/y"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Rsqrt",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364353,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/Rsqrt",
+                "op": "Rsqrt",
+                "input0": "batch_normalization_1/batchnorm/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364357,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/mul",
+                "op": "Mul",
+                "input0": "batch_normalization_1/batchnorm/Rsqrt",
+                "input1": "batch_normalization_1/batchnorm/mul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364362,
+            "dur": 9,
+            "args": {
+                "name": "MklInputConversion/_46",
+                "op": "_MklInputConversion",
+                "input0": "activation_1/Relu",
+                "input1": "batch_normalization_1/batchnorm/mul",
+                "input2": "activation_1/Relu:1",
+                "input3": "DMT/_19"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklMul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364373,
+            "dur": 25,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/mul_1",
+                "op": "_MklMul",
+                "input0": "activation_1/Relu",
+                "input1": "batch_normalization_1/batchnorm/mul",
+                "input2": "activation_1/Relu:1",
+                "input3": "DMT/_19"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364399,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_20",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364404,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/mul_2",
+                "op": "Mul",
+                "input0": "batch_normalization_1/batchnorm/mul",
+                "input1": "batch_normalization_1/moments/Squeeze"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Sub",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364409,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/sub",
+                "op": "Sub",
+                "input0": "batch_normalization_1/batchnorm/ReadVariableOp",
+                "input1": "batch_normalization_1/batchnorm/mul_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364414,
+            "dur": 9,
+            "args": {
+                "name": "MklInputConversion/_47",
+                "op": "_MklInputConversion",
+                "input0": "batch_normalization_1/batchnorm/mul_1",
+                "input1": "batch_normalization_1/batchnorm/sub",
+                "input2": "batch_normalization_1/batchnorm/mul_1:1",
+                "input3": "DMT/_20"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklAdd",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364424,
+            "dur": 25,
+            "args": {
+                "name": "batch_normalization_1/batchnorm/add_1",
+                "op": "_MklAdd",
+                "input0": "batch_normalization_1/batchnorm/mul_1",
+                "input1": "batch_normalization_1/batchnorm/sub",
+                "input2": "batch_normalization_1/batchnorm/mul_1:1",
+                "input3": "DMT/_20"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364450,
+            "dur": 4,
+            "args": {
+                "name": "Mkl2Tf/_35",
+                "op": "_MklToTf",
+                "input0": "batch_normalization_1/batchnorm/add_1",
+                "input1": "batch_normalization_1/batchnorm/add_1:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364455,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_1/cond/Switch_1",
+                "op": "Switch",
+                "input0": "batch_normalization_1/batchnorm/add_1",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631364150,
+            "dur": 406,
+            "args": {
+                "name": "dense_2/MatMul",
+                "op": "MatMul",
+                "input0": "batch_normalization_1/cond/Merge",
+                "input1": "dense_2/MatMul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "batch_normalization_1/cond/Merge",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364149,
+            "id": 3
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "batch_normalization_1/cond/Merge",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631364150,
+            "id": 3
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "dense_2/MatMul/ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363478,
+            "id": 4
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "dense_2/MatMul/ReadVariableOp",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631364150,
+            "id": 4
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364557,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_21",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklRelu",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364561,
+            "dur": 111,
+            "args": {
+                "name": "re_lu_1/Relu",
+                "op": "_MklRelu",
+                "input0": "dense_2/MatMul",
+                "input1": "DMT/_21"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "dense_2/MatMul",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631364556,
+            "id": 5
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "dense_2/MatMul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364561,
+            "id": 5
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364675,
+            "dur": 3,
+            "args": {
+                "name": "Mkl2Tf/_37",
+                "op": "_MklToTf",
+                "input0": "re_lu_1/Relu",
+                "input1": "re_lu_1/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364683,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul_1/Switch",
+                "op": "Switch",
+                "input0": "re_lu_1/Relu",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364687,
+            "dur": 28,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "batch_normalization_2/cond/batchnorm/mul",
+                "input1": "batch_normalization_2/cond/batchnorm/mul_1/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364716,
+            "dur": 22,
+            "args": {
+                "name": "batch_normalization_2/cond/batchnorm/add_1",
+                "op": "Add",
+                "input0": "batch_normalization_2/cond/batchnorm/mul_1",
+                "input1": "batch_normalization_2/cond/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Merge",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364739,
+            "dur": 5,
+            "args": {
+                "name": "batch_normalization_2/cond/Merge",
+                "op": "Merge",
+                "input0": "batch_normalization_2/cond/batchnorm/add_1",
+                "input1": "batch_normalization_2/cond/Switch_1:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mean",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364791,
+            "dur": 12,
+            "args": {
+                "name": "batch_normalization_2/moments/mean",
+                "op": "Mean",
+                "input0": "re_lu_1/Relu",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Squeeze",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364805,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_2/moments/Squeeze",
+                "op": "Squeeze",
+                "input0": "batch_normalization_2/moments/mean"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364810,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_22",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364814,
+            "dur": 9,
+            "args": {
+                "name": "MklInputConversion/_48",
+                "op": "_MklInputConversion",
+                "input0": "batch_normalization_2/moments/mean",
+                "input1": "re_lu_1/Relu",
+                "input2": "DMT/_22",
+                "input3": "re_lu_1/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklSquaredDifference",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364824,
+            "dur": 39,
+            "args": {
+                "name": "batch_normalization_2/moments/SquaredDifference",
+                "op": "_MklSquaredDifference",
+                "input0": "batch_normalization_2/moments/mean",
+                "input1": "re_lu_1/Relu",
+                "input2": "DMT/_22",
+                "input3": "re_lu_1/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364864,
+            "dur": 4,
+            "args": {
+                "name": "Mkl2Tf/_38",
+                "op": "_MklToTf",
+                "input0": "batch_normalization_2/moments/SquaredDifference",
+                "input1": "batch_normalization_2/moments/SquaredDifference:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mean",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364869,
+            "dur": 11,
+            "args": {
+                "name": "batch_normalization_2/moments/variance",
+                "op": "Mean",
+                "input0": "batch_normalization_2/moments/SquaredDifference",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Squeeze",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364881,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_2/moments/Squeeze_1",
+                "op": "Squeeze",
+                "input0": "batch_normalization_2/moments/variance"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364886,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/add",
+                "op": "Add",
+                "input0": "batch_normalization_2/moments/Squeeze_1",
+                "input1": "batch_normalization_3/batchnorm/add/y"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Rsqrt",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364891,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/Rsqrt",
+                "op": "Rsqrt",
+                "input0": "batch_normalization_2/batchnorm/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364896,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/mul",
+                "op": "Mul",
+                "input0": "batch_normalization_2/batchnorm/Rsqrt",
+                "input1": "batch_normalization_2/batchnorm/mul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364901,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_23",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364905,
+            "dur": 9,
+            "args": {
+                "name": "MklInputConversion/_49",
+                "op": "_MklInputConversion",
+                "input0": "batch_normalization_2/batchnorm/mul",
+                "input1": "re_lu_1/Relu",
+                "input2": "DMT/_23",
+                "input3": "re_lu_1/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklMul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364915,
+            "dur": 26,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/mul_1",
+                "op": "_MklMul",
+                "input0": "batch_normalization_2/batchnorm/mul",
+                "input1": "re_lu_1/Relu",
+                "input2": "DMT/_23",
+                "input3": "re_lu_1/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364943,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_24",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364947,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/mul_2",
+                "op": "Mul",
+                "input0": "batch_normalization_2/batchnorm/mul",
+                "input1": "batch_normalization_2/moments/Squeeze"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Sub",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364953,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/sub",
+                "op": "Sub",
+                "input0": "batch_normalization_2/batchnorm/ReadVariableOp",
+                "input1": "batch_normalization_2/batchnorm/mul_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364957,
+            "dur": 9,
+            "args": {
+                "name": "MklInputConversion/_50",
+                "op": "_MklInputConversion",
+                "input0": "batch_normalization_2/batchnorm/mul_1",
+                "input1": "batch_normalization_2/batchnorm/sub",
+                "input2": "batch_normalization_2/batchnorm/mul_1:1",
+                "input3": "DMT/_24"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklAdd",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364968,
+            "dur": 25,
+            "args": {
+                "name": "batch_normalization_2/batchnorm/add_1",
+                "op": "_MklAdd",
+                "input0": "batch_normalization_2/batchnorm/mul_1",
+                "input1": "batch_normalization_2/batchnorm/sub",
+                "input2": "batch_normalization_2/batchnorm/mul_1:1",
+                "input3": "DMT/_24"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364995,
+            "dur": 3,
+            "args": {
+                "name": "Mkl2Tf/_39",
+                "op": "_MklToTf",
+                "input0": "batch_normalization_2/batchnorm/add_1",
+                "input1": "batch_normalization_2/batchnorm/add_1:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365000,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_2/cond/Switch_1",
+                "op": "Switch",
+                "input0": "batch_normalization_2/batchnorm/add_1",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631364745,
+            "dur": 356,
+            "args": {
+                "name": "dense_3/MatMul",
+                "op": "MatMul",
+                "input0": "batch_normalization_2/cond/Merge",
+                "input1": "dense_3/MatMul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "batch_normalization_2/cond/Merge",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631364744,
+            "id": 6
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "batch_normalization_2/cond/Merge",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631364745,
+            "id": 6
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "dense_3/MatMul/ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363805,
+            "id": 7
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "dense_3/MatMul/ReadVariableOp",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631364745,
+            "id": 7
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365102,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_25",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklRelu",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365106,
+            "dur": 74,
+            "args": {
+                "name": "re_lu_2/Relu",
+                "op": "_MklRelu",
+                "input0": "dense_3/MatMul",
+                "input1": "DMT/_25"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "dense_3/MatMul",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631365101,
+            "id": 8
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "dense_3/MatMul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365106,
+            "id": 8
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365182,
+            "dur": 4,
+            "args": {
+                "name": "Mkl2Tf/_41",
+                "op": "_MklToTf",
+                "input0": "re_lu_2/Relu",
+                "input1": "re_lu_2/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365191,
+            "dur": 2,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul_1/Switch",
+                "op": "Switch",
+                "input0": "re_lu_2/Relu",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365195,
+            "dur": 21,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/mul_1",
+                "op": "Mul",
+                "input0": "batch_normalization_3/cond/batchnorm/mul",
+                "input1": "batch_normalization_3/cond/batchnorm/mul_1/Switch"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365217,
+            "dur": 19,
+            "args": {
+                "name": "batch_normalization_3/cond/batchnorm/add_1",
+                "op": "Add",
+                "input0": "batch_normalization_3/cond/batchnorm/mul_1",
+                "input1": "batch_normalization_3/cond/batchnorm/sub"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Merge",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365237,
+            "dur": 5,
+            "args": {
+                "name": "batch_normalization_3/cond/Merge",
+                "op": "Merge",
+                "input0": "batch_normalization_3/cond/batchnorm/add_1",
+                "input1": "batch_normalization_3/cond/Switch_1:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mean",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365264,
+            "dur": 9,
+            "args": {
+                "name": "batch_normalization_3/moments/mean",
+                "op": "Mean",
+                "input0": "re_lu_2/Relu",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Squeeze",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365275,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_3/moments/Squeeze",
+                "op": "Squeeze",
+                "input0": "batch_normalization_3/moments/mean"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365280,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_26",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365284,
+            "dur": 9,
+            "args": {
+                "name": "MklInputConversion/_51",
+                "op": "_MklInputConversion",
+                "input0": "batch_normalization_3/moments/mean",
+                "input1": "re_lu_2/Relu",
+                "input2": "DMT/_26",
+                "input3": "re_lu_2/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklSquaredDifference",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365294,
+            "dur": 22,
+            "args": {
+                "name": "batch_normalization_3/moments/SquaredDifference",
+                "op": "_MklSquaredDifference",
+                "input0": "batch_normalization_3/moments/mean",
+                "input1": "re_lu_2/Relu",
+                "input2": "DMT/_26",
+                "input3": "re_lu_2/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365318,
+            "dur": 3,
+            "args": {
+                "name": "Mkl2Tf/_42",
+                "op": "_MklToTf",
+                "input0": "batch_normalization_3/moments/SquaredDifference",
+                "input1": "batch_normalization_3/moments/SquaredDifference:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mean",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365322,
+            "dur": 9,
+            "args": {
+                "name": "batch_normalization_3/moments/variance",
+                "op": "Mean",
+                "input0": "batch_normalization_3/moments/SquaredDifference",
+                "input1": "batch_normalization_3/moments/variance/reduction_indices"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Squeeze",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365332,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/moments/Squeeze_1",
+                "op": "Squeeze",
+                "input0": "batch_normalization_3/moments/variance"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Add",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365336,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/add",
+                "op": "Add",
+                "input0": "batch_normalization_3/batchnorm/add/y",
+                "input1": "batch_normalization_3/moments/Squeeze_1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Rsqrt",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365341,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/Rsqrt",
+                "op": "Rsqrt",
+                "input0": "batch_normalization_3/batchnorm/add"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365345,
+            "dur": 4,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/mul",
+                "op": "Mul",
+                "input0": "batch_normalization_3/batchnorm/Rsqrt",
+                "input1": "batch_normalization_3/batchnorm/mul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365350,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_27",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365354,
+            "dur": 8,
+            "args": {
+                "name": "MklInputConversion/_52",
+                "op": "_MklInputConversion",
+                "input0": "batch_normalization_3/batchnorm/mul",
+                "input1": "re_lu_2/Relu",
+                "input2": "DMT/_27",
+                "input3": "re_lu_2/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklMul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365364,
+            "dur": 20,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/mul_1",
+                "op": "_MklMul",
+                "input0": "batch_normalization_3/batchnorm/mul",
+                "input1": "re_lu_2/Relu",
+                "input2": "DMT/_27",
+                "input3": "re_lu_2/Relu:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365386,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_28",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Mul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365390,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/mul_2",
+                "op": "Mul",
+                "input0": "batch_normalization_3/batchnorm/mul",
+                "input1": "batch_normalization_3/moments/Squeeze"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Sub",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365395,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/sub",
+                "op": "Sub",
+                "input0": "batch_normalization_3/batchnorm/ReadVariableOp",
+                "input1": "batch_normalization_3/batchnorm/mul_2"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklInputConversion",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365399,
+            "dur": 9,
+            "args": {
+                "name": "MklInputConversion/_53",
+                "op": "_MklInputConversion",
+                "input0": "batch_normalization_3/batchnorm/mul_1",
+                "input1": "batch_normalization_3/batchnorm/sub",
+                "input2": "batch_normalization_3/batchnorm/mul_1:1",
+                "input3": "DMT/_28"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklAdd",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365409,
+            "dur": 22,
+            "args": {
+                "name": "batch_normalization_3/batchnorm/add_1",
+                "op": "_MklAdd",
+                "input0": "batch_normalization_3/batchnorm/mul_1",
+                "input1": "batch_normalization_3/batchnorm/sub",
+                "input2": "batch_normalization_3/batchnorm/mul_1:1",
+                "input3": "DMT/_28"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365433,
+            "dur": 3,
+            "args": {
+                "name": "Mkl2Tf/_43",
+                "op": "_MklToTf",
+                "input0": "batch_normalization_3/batchnorm/add_1",
+                "input1": "batch_normalization_3/batchnorm/add_1:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Switch",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365437,
+            "dur": 3,
+            "args": {
+                "name": "batch_normalization_3/cond/Switch_1",
+                "op": "Switch",
+                "input0": "batch_normalization_3/batchnorm/add_1",
+                "input1": "_arg_keras_learning_phase_0_10"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631365243,
+            "dur": 294,
+            "args": {
+                "name": "dense_4/MatMul",
+                "op": "MatMul",
+                "input0": "batch_normalization_3/cond/Merge",
+                "input1": "dense_4/MatMul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "batch_normalization_3/cond/Merge",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365242,
+            "id": 9
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "batch_normalization_3/cond/Merge",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631365243,
+            "id": 9
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "dense_4/MatMul/ReadVariableOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631363809,
+            "id": 10
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "dense_4/MatMul/ReadVariableOp",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631365243,
+            "id": 10
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365539,
+            "dur": 8,
+            "args": {
+                "name": "dense_4/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "dense_4/MatMul",
+                "input1": "dense_4/BiasAdd/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "dense_4/MatMul",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631365537,
+            "id": 11
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "dense_4/MatMul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365539,
+            "id": 11
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365549,
+            "dur": 2,
+            "args": {
+                "name": "DMT/_29",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklRelu",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365552,
+            "dur": 69,
+            "args": {
+                "name": "re_lu_3/Relu",
+                "op": "_MklRelu",
+                "input0": "dense_4/BiasAdd",
+                "input1": "DMT/_29"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365623,
+            "dur": 4,
+            "args": {
+                "name": "DMT/_30",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Const",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631365627,
+            "dur": 3,
+            "args": {
+                "name": "DMT/_31",
+                "op": "Const"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklConcatV2",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365632,
+            "dur": 55,
+            "args": {
+                "name": "concatenate_2/concat",
+                "op": "_MklConcatV2",
+                "input0": "re_lu_3/Relu",
+                "input1": "_arg_input_10_0_9",
+                "input2": "concatenate_2/concat/axis",
+                "input3": "re_lu_3/Relu:1",
+                "input4": "DMT/_30",
+                "input5": "DMT/_31"
+            }
+        },
+        {
+            "ph": "s",
+            "cat": "DataFlow",
+            "name": "DMT/_31",
+            "pid": 3,
+            "tid": 1,
+            "ts": 1583418631365630,
+            "id": 12
+        },
+        {
+            "ph": "t",
+            "cat": "DataFlow",
+            "name": "DMT/_31",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365632,
+            "id": 12
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_MklToTf",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365689,
+            "dur": 4,
+            "args": {
+                "name": "Mkl2Tf/_44",
+                "op": "_MklToTf",
+                "input0": "concatenate_2/concat",
+                "input1": "concatenate_2/concat:1"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "MatMul",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365694,
+            "dur": 8,
+            "args": {
+                "name": "dense_5/MatMul",
+                "op": "MatMul",
+                "input0": "concatenate_2/concat",
+                "input1": "dense_5/MatMul/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "BiasAdd",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365704,
+            "dur": 4,
+            "args": {
+                "name": "dense_5/BiasAdd",
+                "op": "BiasAdd",
+                "input0": "dense_5/MatMul",
+                "input1": "dense_5/BiasAdd/ReadVariableOp"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "Sigmoid",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365710,
+            "dur": 3,
+            "args": {
+                "name": "dense_5/Sigmoid",
+                "op": "Sigmoid",
+                "input0": "dense_5/BiasAdd"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "NoOp",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365715,
+            "dur": 0,
+            "args": {
+                "name": "group_deps_1",
+                "op": "NoOp",
+                "input0": "^dense_5/Sigmoid"
+            }
+        },
+        {
+            "ph": "X",
+            "cat": "Op",
+            "name": "_Retval",
+            "pid": 3,
+            "tid": 0,
+            "ts": 1583418631365717,
+            "dur": 3,
+            "args": {
+                "name": "_retval_dense_5/Sigmoid_0_0",
+                "op": "_Retval",
+                "input0": "dense_5/Sigmoid"
+            }
+        }
+    ]
+}

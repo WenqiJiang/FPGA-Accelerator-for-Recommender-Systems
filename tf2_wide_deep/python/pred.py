@@ -89,6 +89,10 @@ def main(unused_argv):
     # predictions
     tf.compat.v1.logging.info('='*30+'START PREDICTION'+'='*30)
     t0 = time.time()
+    tf.estimator.ProfilerHook(
+        save_steps=None, save_secs=0.001, output_dir='../model/prof', show_dataflow=True,
+        show_memory=False
+    )
     predictions = model.predict(input_fn=lambda: input_fn(FLAGS.data_dir, FLAGS.image_data_dir, 'pred', FLAGS.batch_size),
                                 predict_keys=None,
                                 hooks=None,

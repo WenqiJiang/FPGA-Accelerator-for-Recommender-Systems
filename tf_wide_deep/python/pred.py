@@ -89,6 +89,7 @@ def main(unused_argv):
     # predictions
     tf.logging.info('='*30+'START PREDICTION'+'='*30)
     t0 = time.time()
+
     predictions = model.predict(input_fn=lambda: input_fn(FLAGS.data_dir, FLAGS.image_data_dir, 'pred', FLAGS.batch_size),
                                 predict_keys=None,
                                 hooks=None,

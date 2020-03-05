@@ -158,6 +158,7 @@ def train(model):
         for f in train_data_list:
             t0 = time.time()
             tf.logging.info('<EPOCH {}>: Start training {}'.format(n + 1, f))
+            # run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
             model.train(
                 input_fn=lambda: input_fn(f, FLAGS.image_train_data, 'train', FLAGS.batch_size),
                 hooks=None,

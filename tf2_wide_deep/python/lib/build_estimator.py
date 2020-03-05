@@ -133,7 +133,7 @@ def _build_model_columns():
                  normalizer_fn=normalizer_fn)
             if boundaries:  # whether include continuous features in wide part
                 wide_columns.append(bucketized_column(col, boundaries=boundaries))
-                wide_dim += (len(boundaries)+1)
+                wide_dim += int(len(boundaries)+1)
             deep_columns.append(col)
             deep_dim += 1
 
@@ -157,6 +157,7 @@ def _build_model_columns():
         col = crossed_column(cf_list, hash_bucket_size)
         wide_columns.append(col)
         wide_dim += hash_bucket_size
+        wide_dim = int(wide_dim)
         if is_deep:
             deep_columns.append(embedding_column(col, dimension=embedding_dim(hash_bucket_size)))
             deep_dim += embedding_dim(hash_bucket_size)
