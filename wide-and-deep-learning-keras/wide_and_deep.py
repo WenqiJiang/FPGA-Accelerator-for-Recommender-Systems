@@ -15,15 +15,15 @@ from tensorflow.keras.utils import plot_model
 
 
 COLUMNS = [
-    "age", "workclass", "fnlwgt", "education", "education_num", "marital_status", 
-    "occupation", "relationship", "race", "gender", "capital_gain", "capital_loss", 
+    "age", "workclass", "fnlwgt", "education", "education_num", "marital_status",
+    "occupation", "relationship", "race", "gender", "capital_gain", "capital_loss",
     "hours_per_week", "native_country", "income_bracket"
 ]
 
 LABEL_COLUMN = "label"
 
 CATEGORICAL_COLUMNS = [
-    "workclass", "education", "marital_status", "occupation", "relationship", 
+    "workclass", "education", "marital_status", "occupation", "relationship",
     "race", "gender", "native_country"
 ]
 
@@ -213,7 +213,7 @@ class Wide_and_Deep:
         from tensorflow.python.client import timeline
         tl = timeline.Timeline(run_metadata.step_stats)
         ctf = tl.generate_chrome_trace_format()
-        with open('output/timeline.json', 'w') as f:
+        with open('output/inference_profiling.json', 'w') as f:
             f.write(ctf)
 
         print("result: {}".format(result))
