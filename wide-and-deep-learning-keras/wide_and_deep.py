@@ -101,39 +101,44 @@ class Wide_and_Deep:
             categ_embeds.append(flatten_i)
         # 連続的データは全結合層で一括入力
         conti_input = Input(shape=(len(CONTINUOUS_COLUMNS),))
-        conti_dense = Dense(256, use_bias=False)(conti_input)
+        # conti_dense = Dense(256, use_bias=False)(conti_input)
         # 全結合層と各Embeddingの出力をくっつける
-        concat_embeds = concatenate([conti_dense]+categ_embeds)
+        concat_embeds = concatenate([conti_input]+categ_embeds)
         concat_embeds = Activation('relu')(concat_embeds)
         bn_concat = BatchNormalization()(concat_embeds)
         # 更に全結合層を3層重ねる
-        fc1 = Dense(512, use_bias=False)(bn_concat)
+        fc1 = Dense(1024, use_bias=False)(bn_concat)
         ac1 = ReLU()(fc1)
         bn1 = BatchNormalization()(ac1)
-        fc2 = Dense(256, use_bias=False)(bn1)
+        fc2 = Dense(512, use_bias=False)(bn1)
         ac2 = ReLU()(fc2)
         bn2 = BatchNormalization()(ac2)
-        fc3 = Dense(128)(bn2)
+        fc3 = Dense(256)(bn2)
         ac3 = ReLU()(fc3)
+        # WENQI
+        deep_out = Dense(1)(ac3)
 
-        # 入力の層と最後の層をメンバー変数化（モデル作成用）
         self.categ_inputs = categ_inputs
         self.conti_input = conti_input
-        self.deep_component_outlayer = ac3
+        # WENQI
+        # self.deep_component_outlayer = ac3
+        self.deep_component_outlayer = deep_out
 
     def wide_component(self):
         # カテゴリーデータだけ線形モデルに入れる
         dim = self.x_train_categ_poly.shape[1]
         self.logistic_input = Input(shape=(dim,))
+        self.wide_component_outlayer = Dense(1)(self.logistic_input)
 
-    def load_model(self,filename='wide_and_deep.h5'):
+    def load_model(self, filename='wide_and_deep.h5'):
         self.model = load_model(filename)
 
     def create_model(self):
         self.deep_component()
         self.wide_component()
         if self.mode == 'wide and deep':
-            out_layer = concatenate([self.deep_component_outlayer, self.logistic_input])
+            out_layer = concatenate([self.deep_component_outlayer,
+                                     self.wide_component_outlayer])
             inputs = [self.conti_input] + self.categ_inputs + [self.logistic_input]
         elif self.mode =='deep':
             out_layer = self.deep_component_outlayer
