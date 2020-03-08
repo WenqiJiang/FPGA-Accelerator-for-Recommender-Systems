@@ -30,14 +30,14 @@ BATCH_NORM = CONF['dnn_batch_normalization']
 DNN_L1 = CONF['dnn_l1']
 DNN_L2 = CONF['dnn_l2']
 regularizer_list = []
-if DNN_L1 and DNN_L2:
-    REG = tf.keras.regularizers.L1L2(l1=DNN_L1, l2=DNN_L2)
-elif DNN_L1:
-    REG = tf.keras.regularizers.l1(DNN_L1)
-elif DNN_L2:
-    REG = tf.keras.regularizers.l2(0.5 * (DNN_L2))
-else:
+if DNN_L1:
+    regularizer_list.append(tf.contrib.layers.l1_regularizer(DNN_L1))
+if DNN_L2:
+    regularizer_list.append(tf.contrib.layers.l2_regularizer(DNN_L2))
+if len(regularizer_list) == 0:
     REG = None
+else:
+    REG = tf.contrib.layers.sum_regularizer(regularizer_list)
 
 
 def _dnn_logit_fn(features, mode, model_id, units,
@@ -80,26 +80,26 @@ def _dnn_logit_fn(features, mode, model_id, units,
         assert connected_mode in {'simple', 'first_dense', 'lase_dense', 'dense', 'resnet'}, (
             'Invalid connected_mode: {}'.format(connected_mode)
         )
-    with tf.compat.v1.variable_scope(
+    with tf.variable_scope(
             'input_from_feature_columns',
             values=tuple(six.itervalues(features)),
             partitioner=input_layer_partitioner,
-            reuse=tf.compat.v1.AUTO_REUSE):
-        net = tf.compat.v1.feature_column.input_layer(
+            reuse=tf.AUTO_REUSE):
+        net = tf.feature_column.input_layer(
             features=features,
             feature_columns=feature_columns)
     input_layer = net
     if connected_mode == 'simple':
         for layer_id, num_hidden_units in enumerate(hidden_units):
-            with tf.compat.v1.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
+            with tf.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
                     values=(net,)) as hidden_layer_scope:
-                net = tf.compat.v1.layers.dense(
+                net = tf.layers.dense(
                     net,
                     units=num_hidden_units,
                     activation=ACTIVATION_FN,
                     use_bias=True,
-                    kernel_initializer=tf.compat.v1.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
-                    bias_initializer=tf.compat.v1.zeros_initializer(),
+                    kernel_initializer=tf.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
+                    bias_initializer=tf.zeros_initializer(),
                     kernel_regularizer=REG,
                     bias_regularizer=None,
                     activity_regularizer=None,
@@ -109,45 +109,45 @@ def _dnn_logit_fn(features, mode, model_id, units,
                     reuse=None,
                     name=hidden_layer_scope)
                 if DROPOUT is not None and mode == tf.estimator.ModeKeys.TRAIN:
-                    net = tf.compat.v1.layers.dropout(net, rate=DROPOUT, training=True)  # rate=0.1 would drop out 10% of input units.
+                    net = tf.layers.dropout(net, rate=DROPOUT, training=True)  # rate=0.1 would drop out 10% of input units.
                 if BATCH_NORM:
-                    net = tf.compat.v1.layers.batch_normalization(net)
+                    net = tf.layers.batch_normalization(net)
             add_layer_summary(net, hidden_layer_scope.name)
 
     elif connected_mode == 'first_dense':
         for layer_id, num_hidden_units in enumerate(hidden_units):
-            with tf.compat.v1.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
+            with tf.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
                     values=(net,)) as hidden_layer_scope:
-                net = tf.compat.v1.layers.dense(
+                net = tf.layers.dense(
                     net,
                     units=num_hidden_units,
                     activation=ACTIVATION_FN,
-                    kernel_initializer=tf.compat.v1.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
+                    kernel_initializer=tf.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
                     kernel_regularizer=REG,
                     name=hidden_layer_scope)
                 if DROPOUT is not None and mode == tf.estimator.ModeKeys.TRAIN:
-                    net = tf.compat.v1.layers.dropout(net, rate=DROPOUT, training=True)
+                    net = tf.layers.dropout(net, rate=DROPOUT, training=True)
                 if BATCH_NORM:
-                    net = tf.compat.v1.layers.batch_normalization(net)
+                    net = tf.layers.batch_normalization(net)
                 net = tf.concat([net, input_layer], axis=1)
             add_layer_summary(net, hidden_layer_scope.name)
 
     elif connected_mode == 'last_dense':
         net_collections = [input_layer]
         for layer_id, num_hidden_units in enumerate(hidden_units):
-            with tf.compat.v1.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
+            with tf.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
                     values=(net,)) as hidden_layer_scope:
-                net = tf.compat.v1.layers.dense(
+                net = tf.layers.dense(
                     net,
                     units=num_hidden_units,
                     activation=ACTIVATION_FN,
-                    kernel_initializer=tf.compat.v1.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
+                    kernel_initializer=tf.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
                     kernel_regularizer=REG,
                     name=hidden_layer_scope)
                 if DROPOUT is not None and mode == tf.estimator.ModeKeys.TRAIN:
-                    net = tf.compat.v1.layers.dropout(net, rate=DROPOUT, training=True)
+                    net = tf.layers.dropout(net, rate=DROPOUT, training=True)
                 if BATCH_NORM:
-                    net = tf.compat.v1.layers.batch_normalization(net)
+                    net = tf.layers.batch_normalization(net)
                 net_collections.append(net)
             add_layer_summary(net, hidden_layer_scope.name)
         net = tf.concat(net_collections, axis=1)  # Concatenates the list of tensors `values` along dimension `axis`
@@ -155,19 +155,19 @@ def _dnn_logit_fn(features, mode, model_id, units,
     elif connected_mode == 'dense':
         net_collections = [input_layer]
         for layer_id, num_hidden_units in enumerate(hidden_units):
-            with tf.compat.v1.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
+            with tf.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
                     values=(net,)) as hidden_layer_scope:
-                net = tf.compat.v1.layers.dense(
+                net = tf.layers.dense(
                     net,
                     units=num_hidden_units,
                     activation=ACTIVATION_FN,
-                    kernel_initializer=tf.compat.v1.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
+                    kernel_initializer=tf.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
                     kernel_regularizer=REG,
                     name=hidden_layer_scope)
                 if DROPOUT is not None and mode == tf.estimator.ModeKeys.TRAIN:
-                    net = tf.compat.v1.layers.dropout(net, rate=DROPOUT, training=True)  # rate=0.1 would drop out 10% of input units.
+                    net = tf.layers.dropout(net, rate=DROPOUT, training=True)  # rate=0.1 would drop out 10% of input units.
                 if BATCH_NORM:
-                    net = tf.compat.v1.layers.batch_normalization(net)
+                    net = tf.layers.batch_normalization(net)
                 net_collections.append(net)
                 net = tf.concat(net_collections, axis=1)
             add_layer_summary(net, hidden_layer_scope.name)
@@ -175,19 +175,19 @@ def _dnn_logit_fn(features, mode, model_id, units,
     elif connected_mode == 'resnet':  # connect layers in turn 0-1; 1-2; 2-3;
         net_collections = [input_layer]
         for layer_id, num_hidden_units in enumerate(hidden_units):
-            with tf.compat.v1.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
+            with tf.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
                     values=(net,)) as hidden_layer_scope:
-                net = tf.compat.v1.layers.dense(
+                net = tf.layers.dense(
                     net,
                     units=num_hidden_units,
                     activation=ACTIVATION_FN,
-                    kernel_initializer=tf.compat.v1.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
+                    kernel_initializer=tf.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
                     kernel_regularizer=REG,
                     name=hidden_layer_scope)
                 if DROPOUT is not None and mode == tf.estimator.ModeKeys.TRAIN:
-                    net = tf.compat.v1.layers.dropout(net, rate=DROPOUT, training=True)
+                    net = tf.layers.dropout(net, rate=DROPOUT, training=True)
                 if BATCH_NORM:
-                    net = tf.compat.v1.layers.batch_normalization(net)
+                    net = tf.layers.batch_normalization(net)
                 net = tf.concat([net, net_collections[layer_id + 1 - 1]], axis=1)
                 net_collections.append(net)
             add_layer_summary(net, hidden_layer_scope.name)
@@ -204,30 +204,30 @@ def _dnn_logit_fn(features, mode, model_id, units,
 
         net_collections = [input_layer]
         for layer_id, num_hidden_units in enumerate(hidden_units):
-            with tf.compat.v1.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
+            with tf.variable_scope('dnn_{}/hiddenlayer_{}'.format(model_id, layer_id),
                     values=(net,)) as hidden_layer_scope:
-                net = tf.compat.v1.layers.dense(
+                net = tf.layers.dense(
                     net,
                     units=num_hidden_units,
                     activation=ACTIVATION_FN,
-                    kernel_initializer=tf.compat.v1.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
+                    kernel_initializer=tf.glorot_uniform_initializer(),  # also called Xavier uniform initializer.
                     kernel_regularizer=REG,
                     name=hidden_layer_scope)
                 if DROPOUT is not None and mode == tf.estimator.ModeKeys.TRAIN:
-                    net = tf.compat.v1.layers.dropout(net, rate=DROPOUT, training=True)
+                    net = tf.layers.dropout(net, rate=DROPOUT, training=True)
                 if BATCH_NORM:
-                    net = tf.compat.v1.layers.batch_normalization(net)
+                    net = tf.layers.batch_normalization(net)
                 connect_net_collections = [net for idx, net in enumerate(net_collections) if idx in connected_mapping[layer_id + 1]]
                 connect_net_collections.append(net)
                 net = tf.concat(connect_net_collections, axis=1)
                 net_collections.append(net)
             add_layer_summary(net, hidden_layer_scope.name)
 
-    with tf.compat.v1.variable_scope('dnn_{}/logits'.format(model_id), values=(net,)) as logits_scope:
-        logits = tf.compat.v1.layers.dense(
+    with tf.variable_scope('dnn_{}/logits'.format(model_id), values=(net,)) as logits_scope:
+        logits = tf.layers.dense(
                 net,
                 units=units,
-                kernel_initializer=tf.compat.v1.glorot_uniform_initializer(),
+                kernel_initializer=tf.glorot_uniform_initializer(),
                 kernel_regularizer=REG,
                 name=logits_scope)
     add_layer_summary(logits, logits_scope.name)
@@ -394,14 +394,14 @@ class MultiDNNClassifier(tf.estimator.Estimator):
                 optimizer, learning_rate=0.05)
             num_ps_replicas = config.num_ps_replicas if config else 0
 
-            partitioner = tf.compat.v1.min_max_variable_partitioner(
+            partitioner = tf.min_max_variable_partitioner(
                 max_partitions=num_ps_replicas)
-            with tf.compat.v1.variable_scope(
+            with tf.variable_scope(
                 'dnn',
                 values=tuple(six.itervalues(features)),
                 partitioner=partitioner):
                 input_layer_partitioner = input_layer_partitioner or (
-                    tf.compat.v1.min_max_variable_partitioner(
+                    tf.min_max_variable_partitioner(
                         max_partitions=num_ps_replicas,
                         min_slice_size=64 << 20))
                 # unit is num_classes, shape(batch_size, num_classes)
@@ -422,7 +422,7 @@ class MultiDNNClassifier(tf.estimator.Estimator):
                 def _train_op_fn(loss):
                     """Returns the op to optimize the loss."""
                     return optimizer.minimize(
-                        loss, global_step=tf.compat.v1.train.get_global_step())
+                        loss, global_step=tf.train.get_global_step())
             return head.create_estimator_spec(
                 features=features,
                 mode=mode,

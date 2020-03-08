@@ -1,0 +1,146 @@
+## Cross Feature Configuration
+
+# Using tf.feature_column.crossed_column API,
+# see https://www.tensorflow.org/api_docs/python/tf/feature_column/crossed_column
+# Transform: Hash(cartesian product of features) % hash_bucket_size
+
+# Q: How to chose `hash_bucket_size` ?
+# A: 1. if we know the total number of distinct value `N` of a cross feature,
+#       to avoid collision, set `hash_bucket_size` about 2*N.
+#    2. if we do not know,
+#       1) for small size category cross features, recommended `hash_bucket_size` to be production of each cross feature distinct value count.
+#          For example, cross feature {age, location}, age has n values, gender has m values,
+#       then hash_bucket_size can be set about n*m.
+#       2) for large size category cross features, consider high sparsity,
+#          recommended `hash_bucket_size` to be above rule divide 10~1000.
+
+# Conf Format Example
+# features:               # cross feature names, at least 2, separated by `&`
+#   hash_bucket_size:     # optional, if set empty, defaults 10(k), (unit is a thousand).
+#   is_deep:              # `0` or `1`, set `0` for only wide input, set `1` for embedding the cross feature for deep input
+                          # if set empty, defaults to `1`
+
+# Set unused features by using symbol `#` ahead of the lines.
+
+adplan_id&category:
+  hash_bucket_size: 100
+  is_deep: 1
+
+category&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+scheduling_id&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+category&location&site:
+  hash_bucket_size: 100
+  is_deep: 1
+
+age&ugender:
+  hash_bucket_size: 0.1
+  is_deep: 1
+
+scheduling_id&age:
+  hash_bucket_size: 10
+  is_deep: 1
+
+site&age&ugender:
+  hash_bucket_size: 1
+  is_deep: 1
+
+industry_level2_id&age&ugender:
+  hash_bucket_size: 3
+  is_deep: 1
+
+scheduling_id&age&ugender:
+  hash_bucket_size: 100
+  is_deep: 1
+
+industry_level2_id&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+adplan_id&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+adplan_id&category&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+category&scheduling_id:
+  hash_bucket_size: 100
+  is_deep: 1
+
+category&industry_level2_id:
+  hash_bucket_size: 10
+  is_deep: 1
+
+category&network&os:
+  hash_bucket_size: 10
+  is_deep: 1
+
+hour&weekdays:
+  hash_bucket_size: 1
+  is_deep: 1
+
+hour&scheduling_id:
+  hash_bucket_size: 10
+  is_deep: 1
+
+hour&industry_level2_id:
+  hash_bucket_size: 10
+  is_deep: 1
+
+network&os&site:
+  hash_bucket_size: 1
+  is_deep: 1
+
+industry_level2_id&site:
+  hash_bucket_size: 1
+  is_deep: 1
+
+adplan_id&os&site:
+  hash_bucket_size: 100
+  is_deep: 1
+
+industry_level2_id&network&os:
+  hash_bucket_size: 10
+  is_deep: 1
+
+network&os&scheduling_id:
+  hash_bucket_size: 100
+  is_deep: 1
+
+industry_level2_id&user_industrys:
+  hash_bucket_size: 30
+  is_deep: 1
+
+industry_level2_id&ip_original:
+  hash_bucket_size: 100
+  is_deep: 1
+
+city_id&industry_level2_id:
+  hash_bucket_size: 10
+  is_deep: 1
+
+idea_type&os&network:
+  hash_bucket_size: 1
+  is_deep: 1
+
+idea_id&site&category:
+  hash_bucket_size: 100
+  is_deep: 1
+
+idea_type&city_id:
+  hash_bucket_size: 10
+  is_deep: 1
+
+idea_id&province_id:
+  hash_bucket_size: 10
+  is_deep: 1
+
+idea_id&device_type&os:
+  hash_bucket_size: 10
+  is_deep: 1

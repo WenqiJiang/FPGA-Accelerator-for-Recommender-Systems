@@ -30,6 +30,8 @@ BATCH_NORM = CONF['dnn_batch_normalization']
 DNN_L1 = CONF['dnn_l1']
 DNN_L2 = CONF['dnn_l2']
 regularizer_list = []
+
+# WENQI
 if DNN_L1 and DNN_L2:
     REG = tf.keras.regularizers.L1L2(l1=DNN_L1, l2=DNN_L2)
 elif DNN_L1:
