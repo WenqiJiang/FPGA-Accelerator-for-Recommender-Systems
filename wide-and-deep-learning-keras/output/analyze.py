@@ -14,7 +14,8 @@ if filename:
         time_consumption = dict()
         # (name, op / or layer) -> using different ways to extract duration
         time_consumption_type = [("MatMul", "op"), ("embedding", "layer"), ("flatten", "layer"),
-                                 ("dense", "layer"), ("concatenate", "layer")]
+                                 ("dense", "layer"), ("concatenate", "layer"), ("batch_normalization", "layer"),
+                                 ("activation", "layer"), ("Mkl", "layer"), ("re_lu", "layer")]
         for t in time_consumption_type:
             time_consumption[t] = dict()
             # add up the total operation time of each layer
@@ -53,8 +54,9 @@ if filename:
 
         # print result
         for t in time_consumption:
-            print("Type: {}\tName: {}\tTime: {}\tDuration: {}".format(
-                t[1], t[0], time_consumption[t]["time_consumption"], time_consumption[t]["time_duration"]))
+            print("Type: {}\tName: {}\tTime: {}\tDuration: {} (start: {}, end:{})".format(
+                t[1], t[0], time_consumption[t]["time_consumption"], time_consumption[t]["time_duration"],
+                time_consumption[t]["time_start"], time_consumption[t]["time_end"]))
 
 
 #Use the new datastore datastructure

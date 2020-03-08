@@ -15,24 +15,7 @@ from keras.callbacks import EarlyStopping, ModelCheckpoint
 from keras.models import Model, load_model
 from tensorflow.keras.utils import plot_model
 
-
-COLUMNS = [
-    "age", "workclass", "fnlwgt", "education", "education_num", "marital_status",
-    "occupation", "relationship", "race", "gender", "capital_gain", "capital_loss",
-    "hours_per_week", "native_country", "income_bracket"
-]
-
-LABEL_COLUMN = "label"
-
-CATEGORICAL_COLUMNS = [
-    "workclass", "education", "marital_status", "occupation", "relationship",
-    "race", "gender", "native_country"
-]
-
-CONTINUOUS_COLUMNS = [
-    "age", "education_num", "capital_gain", "capital_loss", "hours_per_week"
-]
-
+from lib.read_conf import Config
 
 def preprocessing():
     train_data = pd.read_csv('./adult.data', names=COLUMNS)
@@ -64,8 +47,12 @@ def preprocessing():
 
 
 class Wide_and_Deep:
-    def __init__(self, mode='wide and deep'):
-        self.mode = mode
+    def __init__(self):
+
+        self._conf = Config()
+        self._train_conf = self._conf.train
+        self._cnn_conf = self._conf.model
+
         x_train, y_train, x_test, y_test, x_train_categ, x_test_categ, x_train_conti, x_test_conti, all_data \
             = preprocessing()
         self.x_train = x_train

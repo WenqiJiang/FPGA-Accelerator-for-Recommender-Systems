@@ -170,7 +170,7 @@ def _build_model_columns():
     for col in wide_columns:
         tf.compat.v1.logging.debug('Wide columns: {}'.format(col))
     tf.compat.v1.logging.info('Build total {} deep columns'.format(len(deep_columns)))
-    for col in deep_columns:
+    for col in deep_columns :
         tf.compat.v1.logging.debug('Deep columns: {}'.format(col))
     tf.compat.v1.logging.info('Wide input dimension is: {}'.format(wide_dim))
     tf.compat.v1.logging.info('Deep input dimension is: {}'.format(deep_dim))
