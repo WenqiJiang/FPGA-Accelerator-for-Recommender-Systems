@@ -171,7 +171,7 @@ class _CsvDataset(_CTRDataset):
     def input_fn(self, mode, batch_size):
         assert mode in {'train', 'eval', 'pred'}, (
             'mode must in `train`, `eval`, or `pred`, found {}'.format(mode))
-        tf.logging.info('Parsing input csv files: {}'.format(self._data_file))
+        tf.compat.v1.logging.info('Parsing input csv files: {}'.format(self._data_file))
         # Extract lines from input files using the Dataset API.
         dataset = tf.data.TextLineDataset(self._data_file)
         if self._is_distribution:  # allows each worker to read a unique subset.
@@ -197,8 +197,7 @@ class _CsvDataset(_CTRDataset):
             # batch(): each element tensor must have exactly same shape, change rank 0 to rank 1
             dataset = dataset.batch(batch_size)
         # return dataset.make_one_shot_iterator().get_next()
-        # return dataset.make_one_shot_iterator()
-        return dataset
+        return tf.compat.v1.data.make_one_shot_iterator(dataset)
 
     # def load_as_np(self):
 def input_fn(csv_data_file, img_data_file, mode, batch_size):
@@ -224,7 +223,7 @@ def input_fn(csv_data_file, img_data_file, mode, batch_size):
 
 if __name__ == '__main__':
     csv_path = '../../data/train/train1'
-    sess = tf.InteractiveSession()
+    sess = tf.compat.v1.InteractiveSession()
     data = input_fn(csv_path, None, 'train', 5)
     sample_data = sess.run(data.get_next())
     print(sample_data)

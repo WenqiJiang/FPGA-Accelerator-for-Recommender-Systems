@@ -93,7 +93,7 @@ def _build_model_columns():
         elif scaler == 'standard':
             return lambda x: (x-normalization_params[0]) / normalization_params[1]
         else:
-            return lambda x: tf.log(x)
+            return lambda x: tf.math.log(x)
 
     feature_conf_dic = CONF.read_feature_conf()
     cross_feature_list = CONF.read_cross_feature_conf()
@@ -193,17 +193,14 @@ def _build_model_columns():
         feature_num, cross_feature_num, feature_num + cross_feature_num))
 
     # add columns logging info
-    tf.logging.info('Build total {} wide columns'.format(len(wide_columns)))
+    tf.compat.v1.logging.info('Build total {} wide columns'.format(len(wide_columns)))
     for col in wide_columns:
-        tf.logging.debug('Wide columns: {}'.format(col))
-    tf.logging.info('Build total {} deep columns'.format(len(deep_columns)))
+        tf.compat.v1.logging.debug('Wide columns: {}'.format(col))
+    tf.compat.v1.logging.info('Build total {} deep columns'.format(len(deep_columns)))
     for col in deep_columns:
-        tf.logging.debug('Deep columns: {}'.format(col))
-    tf.logging.info('Wide input dimension is: {}'.format(wide_dim))
-    tf.logging.info('Deep input dimension is: {}'.format(deep_dim))
-
-    # with tf.Session() as sess:
-    #     sess.run(tf.tables_initializer())
+        tf.compat.v1.logging.debug('Deep columns: {}'.format(col))
+    tf.compat.v1.logging.info('Wide input dimension is: {}'.format(wide_dim))
+    tf.compat.v1.logging.info('Deep input dimension is: {}'.format(deep_dim))
 
     return (wide_columns, wide_dim), (deep_columns, deep_dim)
 
@@ -211,9 +208,9 @@ class Wide_and_Deep:
     def __init__(self, mode='wide and deep'):
         self.mode = mode
         self.x_train_y_train = input_fn(
-            csv_data_file="data/train", img_data_file=None, mode="train", batch_size=1)
+            csv_data_file="../data/train", img_data_file=None, mode="train", batch_size=1)
         self.x_test_y_test = input_fn(
-            csv_data_file="data/eval", img_data_file=None, mode="eval", batch_size=1)
+            csv_data_file="../data/eval", img_data_file=None, mode="eval", batch_size=1)
         self.categ_inputs = None
         self.conti_input = None
         self.deep_component_outlayer = None
@@ -270,25 +267,12 @@ class Wide_and_Deep:
         elif self.mode =='deep':
             # sequential model for categorical columns
             # https://www.tensorflow.org/tutorials/structured_data/feature_columns
-            # class MyModel(tf.keras.Model):
-            #
-            #     def __init__(self):
-            #         super(MyModel, self).__init__()
-            #         self.dense1 = tf.keras.layers.Dense(4, activation=tf.nn.relu)
-            #         self.dense2 = tf.keras.layers.Dense(5, activation=tf.nn.softmax)
-            #
-            #     def call(self, inputs):
-            #         x = self.dense1(inputs)
-            #         return self.dense2(x)
-            #
-            # model = MyModel()
-
             feature_layer = tf.keras.layers.DenseFeatures(
                 feature_columns=self.deep_columns)
             self.model = tf.keras.Sequential([
                 feature_layer,
-                Dense(8, activation='relu'),
-                Dense(4, activation='relu'),
+                Dense(128, activation='relu'),
+                Dense(128, activation='relu'),
                 Dense(1)
             ])
 
@@ -333,29 +317,23 @@ class Wide_and_Deep:
                 tensor_type.append(tf.string)
         feature_type['label'] = 'int32'
         tensor_type.append(tf.int32)
-        table = pd.read_table("data/train/train1", names=['label']+feature_all, dtype=feature_type)
+        table = pd.read_table("../data/train/train1", names=['label']+feature_all, dtype=feature_type)
         x, y = table[feature_all].copy(), table['label'].copy()
-        # drop unused
-        for col in x.columns:
-            if col not in feature_conf:
-                x.pop(col)
-        x_1, y_1 = x.iloc[0:5], y.iloc[0:5]
-        dataset = tf.data.Dataset.from_tensor_slices((dict(x_1), y_1))
+        dataset = tf.data.Dataset.from_tensor_slices((dict(x), y))
+        # dataset = tf.data.Dataset.from_generator(table.iterrows(), output_types=feature_type)
         # model.fit: https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit
+        # self.model.fit(self.x_train_y_train, epochs=epochs, batch_size=batch_size,
+        #                steps_per_epoch=1000)
         # self.model.fit(x.values, y.values, epochs=epochs, batch_size=batch_size,
         #                steps_per_epoch=1000)
 
         # WENQI
         # tutorial: https://www.tensorflow.org/tutorials/structured_data/feature_columns
-        run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-        run_metadata = tf.RunMetadata()
+        run_options = tf.compat.v1.RunOptions(trace_level=tf.compat.v1.RunOptions.FULL_TRACE)
+        run_metadata = tf.compat.v1.RunMetadata()
         self.model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'],
                            options=run_options, run_metadata=run_metadata)
-        tf.keras.utils.plot_model(self.model, to_file='model.png', show_shapes=True,
-            show_layer_names=True, rankdir='TB', expand_nested=True, dpi=96)
-        self.model.fit(dataset, epochs=epochs, steps_per_epoch=1)
-
-        # self.model.fit(self.x_train_y_train, epochs=epochs, steps_per_epoch=1000)
+        self.model.fit(dataset, epochs=epochs, steps_per_epoch=1000)
 
         from tensorflow.python.client import timeline
         tl = timeline.Timeline(run_metadata.step_stats)
@@ -396,8 +374,8 @@ class Wide_and_Deep:
         logdir = "logs/scalars/" + datetime.now().strftime("%Y%m%d-%H%M%S")
         tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
 
-        run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
-        run_metadata = tf.RunMetadata()
+        run_options = tf.compat.v1.RunOptions(trace_level=tf.compat.v1.RunOptions.FULL_TRACE)
+        run_metadata = tf.compat.v1.RunMetadata()
         self.model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'],
                            options=run_options, run_metadata=run_metadata)
         result = self.model.predict(input_data, batch_size=1, use_multiprocessing=True,
