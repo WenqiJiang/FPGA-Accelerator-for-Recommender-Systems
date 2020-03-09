@@ -1,3 +1,5 @@
 tf_wide_deep/model/
 *.h5
 *ckpt*
+*.data-000*
+WenqideMacBook-Pro.local
