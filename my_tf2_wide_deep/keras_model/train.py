@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 import tensorflow as tf
-from tensorflow import keras
+# from tensorflow import keras
 from tensorflow.keras.layers import Input, Embedding, Dense, Flatten, Activation, concatenate
 # from tensorflow.keras.layers.advanced_activations import ReLU
 # from tensorflow.keras.layers.normalization import BatchNormalization
@@ -129,11 +129,16 @@ def _build_model_columns():
                 deep_dim += embed_dim
 
             elif f_tran == 'vocab':
+                vocabulary_list = list(map(str, f_param))
+                # col = categorical_column_with_vocabulary_list(feature,
+                #     vocabulary_list=vocabulary_list,
+                #     dtype=None,
+                #     default_value=-1,
+                #     num_oov_buckets=0)  # len(vocab)+num_oov_buckets
                 col = categorical_column_with_vocabulary_list(feature,
-                    vocabulary_list=list(map(str, f_param)),
+                    vocabulary_list=vocabulary_list,
                     dtype=None,
-                    default_value=-1,
-                    num_oov_buckets=0)  # len(vocab)+num_oov_buckets
+                    num_oov_buckets=1)  # len(vocab)+num_oov_buckets
                 wide_columns.append(col)
                 deep_columns.append(indicator_column(col))
                 wide_dim += len(f_param)
@@ -222,6 +227,55 @@ class Wide_and_Deep:
 
         (self.wide_columns, self.wide_dim), (self.deep_columns, self.deep_dim) = _build_model_columns()
 
+    def get_dataset(self, mode="train", batch_size=32):
+        """
+        model = 'train' or 'eval' or 'pred'
+
+        return: tf.data object
+        """
+        feature_all = CONF.get_feature_name()  # all features
+        feature_conf = CONF.read_feature_conf()  # feature conf dict
+        feature_type = {}
+        for f in feature_all:
+            if f in feature_conf:  # used features
+                conf = feature_conf[f]
+                if conf['type'] == 'category':
+                    if conf['transform'] == 'identity':  # identity category column need int type
+                        feature_type[f] = 'int32'
+                    else:
+                        feature_type[f] = 'str'
+                else:
+                    feature_type[f] = 'float32'  # 0.0 for float32
+            else:  # unused features
+                feature_type[f] = 'str'
+
+        if mode == 'train' or mode == 'eval':
+            feature_type['label'] = 'int32'
+            if mode == 'train':
+                table = pd.read_table("data/train/train1", names=['label']+feature_all, dtype=feature_type)
+            if mode == 'eval':
+                table = pd.read_table("data/eval/eval1", names=['label']+feature_all, dtype=feature_type)
+            x, y = table[feature_all].copy(), table['label'].copy()
+            # drop unused
+            for col in x.columns:
+                if col not in feature_conf:
+                    x.pop(col)
+            # x_1, y_1 = x.iloc[0:5], y.iloc[0:5]
+            dataset = tf.data.Dataset.from_tensor_slices((dict(x), y))
+        elif mode == 'pred':
+            table = pd.read_table("data/pred/pred1", names=feature_all, dtype=feature_type)
+            for col in table.columns:
+                if col not in feature_conf:
+                    table.pop(col)
+            dataset = tf.data.Dataset.from_tensor_slices(dict(table))
+        else:
+            raise("unrecognized mode!")
+
+        dataset = dataset.batch(batch_size)
+
+        return dataset
+
+
     def deep_component(self):
         # feature_columns, e.g. hash columns (self.wide_columns / self.deep_columns)
         # https://www.tensorflow.org/tutorials/structured_data/feature_columns
@@ -274,87 +328,70 @@ class Wide_and_Deep:
             #
             #     def __init__(self):
             #         super(MyModel, self).__init__()
-            #         self.dense1 = tf.keras.layers.Dense(4, activation=tf.nn.relu)
-            #         self.dense2 = tf.keras.layers.Dense(5, activation=tf.nn.softmax)
+            #         self.dense1 = tf.keras.layers.Dense(units=16, input_shape=(700,), activation='relu')
+            #         self.dense2 = tf.keras.layers.Dense(8, activation=tf.nn.relu)
+            #         self.dense3 = tf.keras.layers.Dense(1, activation=tf.nn.softmax)
             #
             #     def call(self, inputs):
-            #         x = self.dense1(inputs)
-            #         return self.dense2(x)
+            #         r1 = self.dense1(inputs)
+            #         # r1 = self.dense1(tf.keras.layers.DenseFeatures(feature_columns=inputs))
+            #         r2 = self.dense2(r1)
+            #         r3 = self.dense3(r2)
+            #         return r3
             #
-            # model = MyModel()
+            # self.model = MyModel()
 
+            # deep_col = self.deep_columns
+            deep_col = self.deep_columns[:16] + self.deep_columns[33:]
             feature_layer = tf.keras.layers.DenseFeatures(
-                feature_columns=self.deep_columns)
+                feature_columns=deep_col)
             self.model = tf.keras.Sequential([
                 feature_layer,
-                Dense(8, activation='relu'),
-                Dense(4, activation='relu'),
-                Dense(1)
+                Dense(1024, activation='relu'),
+                Dense(512, activation='relu'),
+                Dense(256, activation='relu'),
+                Dense(1, activation='softmax')
             ])
+            # self.model = tf.keras.models.Sequential()
+            # # feature = tf.keras.layers.DenseFeatures(feature_columns=self.deep_columns)
+            # # self.model.add(tf.keras.layers.InputLayer(input_tensor=feature))
+            # self.model.add(tf.keras.layers.DenseFeatures(feature_columns=self.deep_columns))
+            # self.model.add(keras.layers.Dense(units=20, input_shape=(10,), activation='relu'))
+            # self.model.add(keras.layers.Dense(units=1, activation='sigmoid'))
 
 
-            # self.deep_component()
-            # output = self.deep_component_outlayer
-            # inputs = self.input_layer
-            #
-            # # Keras.models.model: https://keras.io/models/model/
-            # self.model = Model(inputs=inputs, outputs=output)
             return
         else:
             print('wrong mode')
             return
 
     def train_model(self, epochs=1, optimizer='adam', batch_size=128):
-        if not self.model:
-            print('You have to create model first')
-            return
+        # if not self.model:
+        #     print('You have to create model first')
+        #     return
 
-        feature_all = CONF.get_feature_name()  # all features
-        feature_used = CONF.get_feature_name('used')  # used features
-        feature_unused = CONF.get_feature_name('unused')  # unused features
-        feature_conf = CONF.read_feature_conf()  # feature conf dict
-        feature_type = {}
-        tensor_type = []
-        for f in feature_all:
-            if f in feature_conf:  # used features
-                conf = feature_conf[f]
-                if conf['type'] == 'category':
-                    if conf['transform'] == 'identity':  # identity category column need int type
-                        feature_type[f] = 'int32'
-                        tensor_type.append(tf.int32)
-                    else:
-                        feature_type[f] = 'str'
-                        tensor_type.append(tf.string)
-                else:
-                    feature_type[f] = 'float32'  # 0.0 for float32
-                    tensor_type.append(tf.float32)
-            else:  # unused features
-                feature_type[f] = 'str'
-                tensor_type.append(tf.string)
-        feature_type['label'] = 'int32'
-        tensor_type.append(tf.int32)
-        table = pd.read_table("data/train/train1", names=['label']+feature_all, dtype=feature_type)
-        x, y = table[feature_all].copy(), table['label'].copy()
-        # drop unused
-        for col in x.columns:
-            if col not in feature_conf:
-                x.pop(col)
-        x_1, y_1 = x.iloc[0:5], y.iloc[0:5]
-        dataset = tf.data.Dataset.from_tensor_slices((dict(x_1), y_1))
+        dataset = self.get_dataset(mode="train", batch_size=32)
         # model.fit: https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit
-        # self.model.fit(x.values, y.values, epochs=epochs, batch_size=batch_size,
-        #                steps_per_epoch=1000)
-
         # WENQI
         # tutorial: https://www.tensorflow.org/tutorials/structured_data/feature_columns
         run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
         run_metadata = tf.RunMetadata()
         self.model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'],
                            options=run_options, run_metadata=run_metadata)
-        tf.keras.utils.plot_model(self.model, to_file='model.png', show_shapes=True,
+        plot_model(self.model, to_file='model.png', show_shapes=True,
             show_layer_names=True, rankdir='TB', expand_nested=True, dpi=96)
-        self.model.fit(dataset, epochs=epochs, steps_per_epoch=1)
 
+        dataset_iter = self.x_train_y_train.make_initializable_iterator()
+        next_element = dataset_iter.get_next()
+
+        sess = tf.Session()
+        sess.run([tf.local_variables_initializer(), tf.tables_initializer()])
+        sess.run(dataset_iter.initializer)
+        data = sess.run(next_element)
+        tf.keras.backend.set_session(sess)
+        tf.keras.backend.get_session().run(tf.tables_initializer(name='init_all_tables'))
+
+        self.model.fit(dataset, epochs=epochs, steps_per_epoch=1)
         # self.model.fit(self.x_train_y_train, epochs=epochs, steps_per_epoch=1000)
 
         from tensorflow.python.client import timeline
@@ -368,29 +405,26 @@ class Wide_and_Deep:
             print('You have to create model first')
             return
 
-        loss, acc = self.model.evaluate(self.x_test, self.y_test)
+        dataset = self.get_dataset(mode="eval", batch_size=32)
+        loss, acc = self.model.evaluate(dataset)
         print(f'test_loss: {loss} - test_acc: {acc}')
 
     def predict_model(self):
 
-        self.load_model()
-
         if not self.model:
-            print('You have to create model first')
-            return
+            self.load_model()
 
         if self.mode == 'wide and deep':
             input_data = [self.x_test_conti] + \
                          [self.x_test_categ[:, i] for i in range(self.x_test_categ.shape[1])] + \
                          [self.x_test_categ_poly]
         elif self.mode == 'deep':
-            input_data = [self.x_test_conti] + \
-                         [self.x_test_categ[:, i] for i in range(self.x_test_categ.shape[1])]
+            input_data = self.get_dataset(mode="pred", batch_size=32)
         else:
             print('wrong mode')
             return
 
-        print("Input data shape: {}".format(len(input_data)))
+        # print("Input data shape: {}".format(len(input_data)))
 
         # tensorboard --logdir=logs/scalars/
         logdir = "logs/scalars/" + datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -400,7 +434,7 @@ class Wide_and_Deep:
         run_metadata = tf.RunMetadata()
         self.model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'],
                            options=run_options, run_metadata=run_metadata)
-        result = self.model.predict(input_data, batch_size=1, use_multiprocessing=True,
+        result = self.model.predict(input_data, use_multiprocessing=True,
                                     callbacks=[tensorboard_callback])
 
         from tensorflow.python.client import timeline
@@ -425,8 +459,8 @@ if __name__ == '__main__':
     if train:
         wide_deep_net.create_model()
         wide_deep_net.train_model()
-        # wide_deep_net.evaluate_model()
         wide_deep_net.save_model()
+        wide_deep_net.evaluate_model()
         plot_model(wide_deep_net.model, to_file='model.png', show_shapes=True, show_layer_names=False)
 
-    # wide_deep_net.predict_model()
+    wide_deep_net.predict_model()
