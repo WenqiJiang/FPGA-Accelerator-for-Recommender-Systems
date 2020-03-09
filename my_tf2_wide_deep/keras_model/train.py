@@ -116,7 +116,9 @@ def _build_model_columns():
                 col = categorical_column_with_hash_bucket(feature,
                     hash_bucket_size=hash_bucket_size,
                     dtype=tf.string)
-                wide_columns.append(col)
+                # wide_columns.append(col)
+                # WENQI
+                wide_columns.append(indicator_column(col))
                 deep_columns.append(embedding_column(col,
                     dimension=embed_dim,
                     combiner='mean',
@@ -139,7 +141,9 @@ def _build_model_columns():
                     vocabulary_list=vocabulary_list,
                     dtype=None,
                     num_oov_buckets=1)  # len(vocab)+num_oov_buckets
-                wide_columns.append(col)
+                # WENQI
+                # wide_columns.append(col)
+                wide_columns.append(indicator_column(col))
                 deep_columns.append(indicator_column(col))
                 wide_dim += len(f_param)
                 deep_dim += len(f_param)
@@ -149,7 +153,9 @@ def _build_model_columns():
                 col = categorical_column_with_identity(feature,
                     num_buckets=num_buckets,
                     default_value=0)  # Values outside range will result in default_value if specified, otherwise it will fail.
-                wide_columns.append(col)
+                # WENQI
+                # wide_columns.append(col)
+                wide_columns.append(indicator_column(col))
                 deep_columns.append(indicator_column(col))
                 wide_dim += num_buckets
                 deep_dim += num_buckets
@@ -165,7 +171,9 @@ def _build_model_columns():
                  dtype=tf.float32,
                  normalizer_fn=normalizer_fn)
             if boundaries:  # whether include continuous features in wide part
+                # WENQI
                 wide_columns.append(bucketized_column(col, boundaries=boundaries))
+                # wide_columns.append(indicator_column(bucketized_column(col, boundaries=boundaries)))
                 wide_dim += (len(boundaries)+1)
             deep_columns.append(col)
             deep_dim += 1
@@ -188,7 +196,9 @@ def _build_model_columns():
                 else:
                     cf_list.append(f)  # category col put the name in crossed_column
         col = crossed_column(cf_list, hash_bucket_size)
-        wide_columns.append(col)
+        # WENQI
+        # wide_columns.append(col)
+        wide_columns.append(indicator_column(col))
         wide_dim += hash_bucket_size
         if is_deep:
             deep_columns.append(embedding_column(col, dimension=embedding_dim(hash_bucket_size)))
@@ -256,6 +266,8 @@ class Wide_and_Deep:
             if mode == 'eval':
                 table = pd.read_table("data/eval/eval1", names=['label']+feature_all, dtype=feature_type)
             x, y = table[feature_all].copy(), table['label'].copy()
+            if mode == 'evel':
+                x, y = x.iloc[0: batch_size*5], y.iloc[0: batch_size*5]
             # drop unused
             for col in x.columns:
                 if col not in feature_conf:
@@ -267,6 +279,7 @@ class Wide_and_Deep:
             for col in table.columns:
                 if col not in feature_conf:
                     table.pop(col)
+            table = table.iloc[0: batch_size*1]
             dataset = tf.data.Dataset.from_tensor_slices(dict(table))
         else:
             raise("unrecognized mode!")
@@ -275,91 +288,100 @@ class Wide_and_Deep:
 
         return dataset
 
-
-    def deep_component(self):
-        # feature_columns, e.g. hash columns (self.wide_columns / self.deep_columns)
-        # https://www.tensorflow.org/tutorials/structured_data/feature_columns
-        # tf.keras.layers.DenseFeatures:
-        # https://www.tensorflow.org/versions/r1.15/api_docs/python/tf/keras/layers/DenseFeatures
-        self.input_layer = tf.keras.layers.DenseFeatures(feature_columns=self.deep_columns)
-        # self.input_layer = tf.feature_column.input_layer(feature_columns=self.deep_columns)
-        # concat_inputs = Activation('relu')(embedding_or_one_hot_feature)
-        # bn_concat = BatchNormalization()(concat_inputs)
-        fc1 = Dense(1024, use_bias=False)(self.input_layer)
-        ac1 = ReLU()(fc1)
-        bn1 = BatchNormalization()(ac1)
-        fc2 = Dense(512, use_bias=False)(bn1)
-        ac2 = ReLU()(fc2)
-        bn2 = BatchNormalization()(ac2)
-        fc3 = Dense(256)(bn2)
-        ac3 = ReLU()(fc3)
-        # WENQI
-        deep_out = Dense(1)(ac3)
-        self.deep_component_outlayer = deep_out
-
-    def wide_component(self):
-        self.wide_columns_processed = [tf.feature_column.indicator_column(w) for w in self.wide_columns]
-        input_layer = tf.keras.layers.DenseFeatures(tf.feature_column.indicator_column(self.wide_columns_processed))
-        # input_layer = tf.feature_column.input_layer(self.x_train,
-        #                                             tf.feature_column.indicator_column(self.wide_columns))
-        self.wide_component_outlayer = Dense(1)(input_layer)
-
-    def load_model(self, filename='wide_and_deep.h5'):
-        self.model = load_model(filename)
+    def load_model(self, filename='wide_and_deep'):
+        self.create_model()
+        self.model.load_weights(filepath=filename)
 
     def create_model(self):
         if self.mode == 'wide and deep':
-            self.deep_component()
-            self.wide_component()
-            out_layer = concatenate([self.deep_component_outlayer,
-                                     self.wide_component_outlayer])
-            # inputs = [self.conti_input] + self.categ_inputs + [self.logistic_input]
-            inputs = self.x_train
+            class MyModel(tf.keras.Model):
 
-            output = Dense(1, activation='sigmoid')(out_layer)
-            # Keras.models.model: https://keras.io/models/model/
-            self.model = Model(inputs=inputs, outputs=output)
+                def __init__(self, deep_col, wide_col):
+                    super(MyModel, self).__init__()
+                    self.deep_feature_layer = tf.keras.layers.DenseFeatures(feature_columns=deep_col)
+                    self.deep_dense1 = tf.keras.layers.Dense(1024, activation='relu')
+                    self.deep_dense2 = tf.keras.layers.Dense(512, activation=tf.nn.relu)
+                    self.deep_dense3 = tf.keras.layers.Dense(256, activation=tf.nn.relu)
+                    self.deep_dense4 = tf.keras.layers.Dense(1, activation=tf.nn.relu)
+
+                    self.wide_feature_layer = tf.keras.layers.DenseFeatures(feature_columns=wide_col)
+                    self.wide_dense = tf.keras.layers.Dense(1, activation=tf.nn.relu)
+
+                    self.add_layer = tf.keras.layers.Add()
+                    self.out_layer = tf.keras.layers.Softmax()
+
+                def call(self, input_tensor):
+                    d = self.deep_feature_layer(input_tensor)
+                    d = self.deep_dense1(d)
+                    d = self.deep_dense2(d)
+                    d = self.deep_dense3(d)
+                    d = self.deep_dense4(d)
+                    w = self.wide_feature_layer(input_tensor)
+                    w = self.wide_dense(w)
+                    added = self.add_layer([w, d])
+                    out = self.out_layer(added)
+
+                    return out
+
+            deep_col = self.deep_columns[:16] + self.deep_columns[33:]
+            wide_col = self.wide_columns[:16] + self.wide_columns[36:]
+            self.model = MyModel(deep_col, wide_col)
+
             return
 
         elif self.mode =='deep':
             # sequential model for categorical columns
             # https://www.tensorflow.org/tutorials/structured_data/feature_columns
-            # class MyModel(tf.keras.Model):
-            #
-            #     def __init__(self):
-            #         super(MyModel, self).__init__()
-            #         self.dense1 = tf.keras.layers.Dense(units=16, input_shape=(700,), activation='relu')
-            #         self.dense2 = tf.keras.layers.Dense(8, activation=tf.nn.relu)
-            #         self.dense3 = tf.keras.layers.Dense(1, activation=tf.nn.softmax)
-            #
-            #     def call(self, inputs):
-            #         r1 = self.dense1(inputs)
-            #         # r1 = self.dense1(tf.keras.layers.DenseFeatures(feature_columns=inputs))
-            #         r2 = self.dense2(r1)
-            #         r3 = self.dense3(r2)
-            #         return r3
-            #
-            # self.model = MyModel()
+            class MyModel(tf.keras.Model):
+
+                def __init__(self, deep_col):
+                    super(MyModel, self).__init__()
+                    self.feature_layer = tf.keras.layers.DenseFeatures(feature_columns=deep_col)
+                    self.dense1 = tf.keras.layers.Dense(1024, activation='relu')
+                    self.dense2 = tf.keras.layers.Dense(512, activation=tf.nn.relu)
+                    self.dense3 = tf.keras.layers.Dense(256, activation=tf.nn.relu)
+                    self.dense4 = tf.keras.layers.Dense(1, activation=tf.nn.softmax)
+
+                def call(self, input_tensor):
+                    y = self.feature_layer(input_tensor)
+                    y = self.dense1(y)
+                    y = self.dense2(y)
+                    y = self.dense3(y)
+                    y = self.dense4(y)
+
+                    return y
+
+            deep_col = self.deep_columns[:16] + self.deep_columns[33:]
+            self.model = MyModel(deep_col)
 
             # deep_col = self.deep_columns
-            deep_col = self.deep_columns[:16] + self.deep_columns[33:]
-            feature_layer = tf.keras.layers.DenseFeatures(
-                feature_columns=deep_col)
-            self.model = tf.keras.Sequential([
-                feature_layer,
-                Dense(1024, activation='relu'),
-                Dense(512, activation='relu'),
-                Dense(256, activation='relu'),
-                Dense(1, activation='softmax')
-            ])
+            # deep_col = self.deep_columns[:16] + self.deep_columns[33:]
+            # feature_layer = tf.keras.layers.DenseFeatures(
+            #     feature_columns=deep_col)
+            # self.model = tf.keras.Sequential([
+            #     feature_layer,
+            #     Dense(1024, activation='relu'),
+            #     Dense(512, activation='relu'),
+            #     Dense(256, activation='relu'),
+            #     Dense(1, activation='softmax')
+            # ])
             # self.model = tf.keras.models.Sequential()
             # # feature = tf.keras.layers.DenseFeatures(feature_columns=self.deep_columns)
             # # self.model.add(tf.keras.layers.InputLayer(input_tensor=feature))
             # self.model.add(tf.keras.layers.DenseFeatures(feature_columns=self.deep_columns))
             # self.model.add(keras.layers.Dense(units=20, input_shape=(10,), activation='relu'))
             # self.model.add(keras.layers.Dense(units=1, activation='sigmoid'))
-
-
+            return
+        elif self.mode == 'wide':
+            wide_col = self.wide_columns[:16] + self.wide_columns[36:]
+            # wide_col = self.wide_columns[36:39]
+            # wide_col = self.wide_columns[39:]
+            feature_layer = tf.keras.layers.DenseFeatures(
+                feature_columns=wide_col)
+            self.model = tf.keras.Sequential([
+                feature_layer,
+                Dense(1, activation='softmax')
+            ])
             return
         else:
             print('wrong mode')
@@ -391,8 +413,14 @@ class Wide_and_Deep:
         tf.keras.backend.set_session(sess)
         tf.keras.backend.get_session().run(tf.tables_initializer(name='init_all_tables'))
 
+        # with tf.Session() as sess:
+        #     sess.run([tf.local_variables_initializer(), tf.tables_initializer()])
+        #     sess.run(dataset_iter.initializer)
+        #     data = sess.run(next_element)
+        #     tf.keras.backend.set_session(sess)
+        #     tf.keras.backend.get_session().run(tf.tables_initializer(name='init_all_tables'))
         self.model.fit(dataset, epochs=epochs, steps_per_epoch=1)
-        # self.model.fit(self.x_train_y_train, epochs=epochs, steps_per_epoch=1000)
+            # self.model.fit(self.x_train_y_train, epochs=epochs, steps_per_epoch=1000)
 
         from tensorflow.python.client import timeline
         tl = timeline.Timeline(run_metadata.step_stats)
@@ -414,15 +442,7 @@ class Wide_and_Deep:
         if not self.model:
             self.load_model()
 
-        if self.mode == 'wide and deep':
-            input_data = [self.x_test_conti] + \
-                         [self.x_test_categ[:, i] for i in range(self.x_test_categ.shape[1])] + \
-                         [self.x_test_categ_poly]
-        elif self.mode == 'deep':
-            input_data = self.get_dataset(mode="pred", batch_size=32)
-        else:
-            print('wrong mode')
-            return
+        input_data = self.get_dataset(mode="pred", batch_size=32)
 
         # print("Input data shape: {}".format(len(input_data)))
 
@@ -440,27 +460,39 @@ class Wide_and_Deep:
         from tensorflow.python.client import timeline
         tl = timeline.Timeline(run_metadata.step_stats)
         ctf = tl.generate_chrome_trace_format()
-        with open('output/inference_profiling.json', 'w') as f:
+
+        if self.mode == "wide and deep":
+            filename = 'output/{}_inference_profiling.json'.format("wide_deep")
+        elif self.mode == "wide":
+            filename = 'output/{}_inference_profiling.json'.format("wide")
+        elif self.mode == "deep":
+            filename = 'output/{}_inference_profiling.json'.format("deep")
+        with open(filename, 'w') as f:
             f.write(ctf)
 
         print("result: {}".format(result))
         print("result shape：{}".format(result.shape))
 
-    def save_model(self, filename='wide_and_deep.h5'):
-        self.model.save(filename)
+    def save_model(self, filename='wide_and_deep'):
+        # self.model.save(filename)
+        # self.model.save_weights(filepath=filename, overwrite=True, save_format='h5')
+        self.model.save_weights(filepath=filename, overwrite=True, save_format='tf')
 
 
 if __name__ == '__main__':
 
+    # mode = "wide and deep"
+    mode = "deep"
     FLAGS, unparsed = parser.parse_known_args()
-    wide_deep_net = Wide_and_Deep("deep")
+    wide_deep_net = Wide_and_Deep(mode)
 
     train = True
     if train:
         wide_deep_net.create_model()
         wide_deep_net.train_model()
         wide_deep_net.save_model()
-        wide_deep_net.evaluate_model()
+        if mode == "deep":
+            wide_deep_net.evaluate_model()
         plot_model(wide_deep_net.model, to_file='model.png', show_shapes=True, show_layer_names=False)
 
     wide_deep_net.predict_model()
