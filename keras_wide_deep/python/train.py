@@ -105,6 +105,9 @@ def _build_model_columns():
     wide_dim = 0
     deep_dim = 0
     feature_num = 0
+
+    embedding_dimension_stat = []
+
     for feature, conf in feature_conf_dic.items():
         f_type, f_tran, f_param = conf["type"], conf["transform"], conf["parameter"]
         feature_num += 1
@@ -113,6 +116,7 @@ def _build_model_columns():
             if f_tran == 'hash_bucket':
                 hash_bucket_size = f_param
                 embed_dim = embedding_dim(hash_bucket_size)
+                embedding_dimension_stat.append(embed_dim)
                 col = categorical_column_with_hash_bucket(feature,
                     hash_bucket_size=hash_bucket_size,
                     dtype=tf.string)
@@ -203,9 +207,14 @@ def _build_model_columns():
         if is_deep:
             deep_columns.append(embedding_column(col, dimension=embedding_dim(hash_bucket_size)))
             deep_dim += embedding_dim(hash_bucket_size)
+            embedding_dimension_stat.append(embedding_dim(hash_bucket_size))
 
     print("feature_num: {}\ncross_feature_num: {}\ntotal_feature_num: {}".format(
         feature_num, cross_feature_num, feature_num + cross_feature_num))
+
+    print("embedding dimension:\nnum_embeddings: {}\taverage_dimension: {}\n{}".format(
+        len(embedding_dimension_stat), np.average(embedding_dimension_stat), embedding_dimension_stat
+    ))
 
     # add columns logging info
     tf.logging.info('Build total {} wide columns'.format(len(wide_columns)))
@@ -336,7 +345,7 @@ class Wide_and_Deep:
                     self.dense1 = tf.keras.layers.Dense(1024, activation='relu')
                     self.dense2 = tf.keras.layers.Dense(512, activation=tf.nn.relu)
                     self.dense3 = tf.keras.layers.Dense(256, activation=tf.nn.relu)
-                    self.dense4 = tf.keras.layers.Dense(1024, activation=tf.nn.softmax)
+                    self.dense4 = tf.keras.layers.Dense(128, activation=tf.nn.softmax)
 
                 def call(self, input_tensor):
                     y = self.feature_layer(input_tensor)
@@ -344,9 +353,9 @@ class Wide_and_Deep:
                     y = self.dense2(y)
                     y = self.dense3(y)
                     y = self.dense4(y)
-                    y = tf.random.categorical(
-                        logits=y, num_samples=10, dtype=None, seed=None, name=None
-                    )
+                    # y = tf.random.categorical(
+                    #     logits=y, num_samples=10, dtype=None, seed=None, name=None
+                    # )
 
                     return y
 
@@ -374,7 +383,7 @@ class Wide_and_Deep:
         #     print('You have to create model first')
         #     return
 
-        dataset = self.get_dataset(mode="train", batch_size=32)
+        dataset = self.get_dataset(mode="train", batch_size=batch_size)
         # model.fit: https://www.tensorflow.org/api_docs/python/tf/keras/Model#fit
         # WENQI
         # tutorial: https://www.tensorflow.org/tutorials/structured_../data/feature_columns
@@ -424,7 +433,7 @@ class Wide_and_Deep:
         if not self.model:
             self.load_model()
 
-        input_data = self.get_dataset(mode="pred", batch_size=32)
+        input_data = self.get_dataset(mode="pred", batch_size=128)
 
         # print("Input data shape: {}".format(len(input_data)))
 

@@ -8,10 +8,10 @@ Measured Layer / Operations:
 --------------------------------------------------------------------------------
 
 Type: layer	Name: my_model/dense_features/	Time: 12851	Duration: 9619 (start: 1583778055779621, end:1583778055789240)
-Type: layer	Name: my_model/dense/	Time: 1026	Duration: 10712 (start: 1583778055779572, end:1583778055790284)
-Type: layer	Name: my_model/dense_1/	Time: 807	Duration: 11492 (start: 1583778055779592, end:1583778055791084)
-Type: layer	Name: my_model/dense_2/	Time: 217	Duration: 11145 (start: 1583778055780145, end:1583778055791290)
-Type: layer	Name: my_model/dense_3/	Time: 184	Duration: 11788 (start: 1583778055779668, end:1583778055791456)
+Type: layer	Name: my_model/dense/	        Time: 1026	Duration: 10712 (start: 1583778055779572, end:1583778055790284)
+Type: layer	Name: my_model/dense_1/	        Time: 807	Duration: 11492 (start: 1583778055779592, end:1583778055791084)
+Type: layer	Name: my_model/dense_2/     	Time: 217	Duration: 11145 (start: 1583778055780145, end:1583778055791290)
+Type: layer	Name: my_model/dense_3/	        Time: 184	Duration: 11788 (start: 1583778055779668, end:1583778055791456)
 
 --------------------------------------------------------------------------------
 

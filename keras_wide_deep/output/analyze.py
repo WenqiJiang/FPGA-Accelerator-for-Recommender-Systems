@@ -2,7 +2,7 @@ import json
 import operator
 
 # prompt the user for a file to import
-filename = "r630_deep_inference_profiling_batch_32.json"
+filename = "deep_inference_profiling_batch_128.json"
 
 
 class Measure():
