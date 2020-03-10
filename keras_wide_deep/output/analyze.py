@@ -24,10 +24,66 @@ class Measure():
         self.time_duration = None
         self.operations = dict()
 
+    def compute_duration(self):
+        self.time_start_list.sort()
+        self.time_end_list.sort()
+        self.time_start = self.time_start_list[0]
+        self.time_end = self.time_end_list[-1]
+        self.time_duration = self.time_end - self.time_start
+
+    def get_time_consumption(self):
+        """
+        return a string that illustrate the time consumption
+        """
+        time_str = "Type: {}\tName: {}\tTime: {}\tDuration: {} (start: {}, end:{})\n".format(
+            self.type, self.name, self.time_consumption, self.time_duration, self.time_start, self.time_end)
+
+        return time_str
+
+    def get_operation_time(self):
+        """
+        return a string that illustrate the time consumption
+        """
+        operation_str = ""
+        sorted_op = sorted(self.operations.items(), key=operator.itemgetter(1), reverse=True)
+        for i, o in enumerate(sorted_op):
+            operation_str += "{}\tOperation: {}\tTime:{}\n".format(i + 1, o, self.operations[o[0]])
+
+        return operation_str
+
 class MeasureList():
 
-    def __init__(self):
-        pass
+    def __init__(self, measure_list):
+        """
+        measure_list: a list of Measure Objects
+        """
+        self.measure_list = measure_list
+        self.op_list = [item.operations for item in measure_list]
+        self.operations = dict()
+        self.operation_statistics()
+
+    def operation_statistics(self):
+        """
+        add up operations consumption of all layers
+        """
+        for item in self.op_list:
+            for key in item:
+                if key not in self.operations:
+                    self.operations[key] = item[key]
+                else:
+                    self.operations[key] += item[key]
+
+    def get_operation_time(self):
+        """
+        return a string that illustrate the time consumption
+        """
+        operation_str = ""
+        sorted_op = sorted(self.operations.items(), key=operator.itemgetter(1), reverse=True)
+        for i, o in enumerate(sorted_op):
+            operation_str += "{}\tOperation: {}\tTime:{}\n".format(i + 1, o, self.operations[o[0]])
+
+        return operation_str
+
 
 if __name__ == "__main__":
 
@@ -38,19 +94,9 @@ if __name__ == "__main__":
                              ("my_model/dense_3/", "layer")]
     # time_consumption_type = [("MatMul", "op")]
 
-    for t in time_consumption_type:
-        time_consumption[t] = dict()
-        # add up the total operation time of each layer
-        time_consumption[t]["time_consumption"] = 0
-        # stat of when each layer starts and end -> then calculate the duration
-        time_consumption[t]["time_start_list"] = []
-        time_consumption[t]["time_end_list"] = []
-        time_consumption[t]["time_start"] = None
-        time_consumption[t]["time_end"] = None
-        # from start to end, may have other operators within it
-        time_consumption[t]["time_duration"] = None
-
-    operations = dict()
+    measure_list = []
+    for item in time_consumption_type:
+        measure_list.append(Measure(item[0], item[1]))
 
     # Read JSON data into the datastore variable
     with open(filename, 'r') as f:
@@ -60,71 +106,41 @@ if __name__ == "__main__":
         for event in traceEvents:
             if "cat" in event and event["cat"] == "Op" and event['name'] != "unknown":
 
-                for key in time_consumption_type:
-                    if (key[1] == "op" and key[0] == event["name"]) or \
-                        (key[1] == "layer" and event["args"]["name"][:len(key[0])] == key[0]):
-                        time_consumption[key]["time_consumption"] += event["dur"]
-                        time_consumption[key]["time_start_list"].append(event["ts"])
-                        time_consumption[key]["time_end_list"].append(event["ts"] + event["dur"])
+                for item in measure_list:
+                    if (item.type == "op" and item.name == event["name"]) or \
+                        (item.type == "layer" and event["args"]["name"][:len(item.name)] == item.name):
 
-                        if event['name'] not in operations:
-                            operations[event['name']] = event['dur']
+                        item.time_consumption += event["dur"]
+                        item.time_start_list.append(event["ts"])
+                        item.time_end_list.append(event["ts"] + event["dur"])
+
+                        if event['name'] not in item.operations:
+                            item.operations[event['name']] = event['dur']
                         else:
-                            operations[event['name']] += event['dur']
+                            item.operations[event['name']] += event['dur']
                         print(event)
 
-                    # if key[1] == "layer" and event["args"]["name"][:len(key[0])] == key[0]:
-                    #     time_consumption[key]["time_consumption"] += event["dur"]
-                    #     time_consumption[key]["time_start_list"].append(event["ts"])
-                    #     time_consumption[key]["time_end_list"].append(event["ts"] + event["dur"])
-                    #     print(event)
-
     # compute duration
-    for t in time_consumption:
-        time_consumption[t]["time_start_list"].sort()
-        time_consumption[t]["time_end_list"].sort()
-        time_consumption[t]["time_start"] = time_consumption[t]["time_start_list"][0]
-        time_consumption[t]["time_end"] = time_consumption[t]["time_end_list"][-1]
-        time_consumption[t]["time_duration"] = time_consumption[t]["time_end"] - time_consumption[t]["time_start"]
+    for item in measure_list:
+        item.compute_duration()
 
-    # print result
-    result_str = []
-    for t in time_consumption:
-        result = "Type: {}\tName: {}\tTime: {}\tDuration: {} (start: {}, end:{})".format(
-            t[1], t[0], time_consumption[t]["time_consumption"], time_consumption[t]["time_duration"],
-            time_consumption[t]["time_start"], time_consumption[t]["time_end"])
-        result_str.append(result)
-        print(result)
-
-    operation_str = []
-    for o in sorted(operations.keys()):
-        op_str = "Operation: {}\tTime:{}".format(o, operations[o])
-        operation_str.append(op_str)
-        print(op_str)
-
-    operation_str_by_time = []
-    sorted_op = sorted(operations.items(), key=operator.itemgetter(1), reverse=True)
-    for o in sorted_op:
-        op_str = "Operation: {}\tTime:{}".format(o, operations[o[0]])
-        operation_str_by_time.append(op_str)
-        print(op_str)
+    op_measure_list = MeasureList(measure_list)
 
     with open("report_" + filename[:-5], 'w+') as f:
+
         f.write("Measured Layer / Operations: \n")
         for item in time_consumption_type:
             f.write("\t" + str(item) + "\n")
 
         f.write("\n{}\n\n".format("-" * 80))
-        for result in result_str:
-            f.write(result + "\n")
+        for item in measure_list:
+            f.write(item.get_time_consumption())
+
+        for item in measure_list:
+            f.write("\n{}\n\n".format("-" * 80))
+            f.write("Layer: {}\n\n".format(item.name))
+            f.write(item.get_operation_time())
 
         f.write("\n{}\n\n".format("-" * 80))
-        for result in operation_str:
-            f.write(result + "\n")
-
-        f.write("\n{}\n\n".format("-" * 80))
-        for result in operation_str_by_time:
-            f.write(result + "\n")
-
-#Use the new datastore datastructure
-# print(datastore["office"]["parking"]["style"])
+        f.write("All layer:\n\n")
+        f.write(op_measure_list.get_operation_time())
