@@ -336,7 +336,7 @@ class Wide_and_Deep:
                     self.dense1 = tf.keras.layers.Dense(1024, activation='relu')
                     self.dense2 = tf.keras.layers.Dense(512, activation=tf.nn.relu)
                     self.dense3 = tf.keras.layers.Dense(256, activation=tf.nn.relu)
-                    self.dense4 = tf.keras.layers.Dense(1, activation=tf.nn.softmax)
+                    self.dense4 = tf.keras.layers.Dense(1024, activation=tf.nn.softmax)
 
                 def call(self, input_tensor):
                     y = self.feature_layer(input_tensor)
@@ -344,29 +344,15 @@ class Wide_and_Deep:
                     y = self.dense2(y)
                     y = self.dense3(y)
                     y = self.dense4(y)
+                    y = tf.random.categorical(
+                        logits=y, num_samples=10, dtype=None, seed=None, name=None
+                    )
 
                     return y
 
             deep_col = self.deep_columns[:16] + self.deep_columns[33:]
             self.model = MyModel(deep_col)
 
-            # deep_col = self.deep_columns
-            # deep_col = self.deep_columns[:16] + self.deep_columns[33:]
-            # feature_layer = tf.keras.layers.DenseFeatures(
-            #     feature_columns=deep_col)
-            # self.model = tf.keras.Sequential([
-            #     feature_layer,
-            #     Dense(1024, activation='relu'),
-            #     Dense(512, activation='relu'),
-            #     Dense(256, activation='relu'),
-            #     Dense(1, activation='softmax')
-            # ])
-            # self.model = tf.keras.models.Sequential()
-            # # feature = tf.keras.layers.DenseFeatures(feature_columns=self.deep_columns)
-            # # self.model.add(tf.keras.layers.InputLayer(input_tensor=feature))
-            # self.model.add(tf.keras.layers.DenseFeatures(feature_columns=self.deep_columns))
-            # self.model.add(keras.layers.Dense(units=20, input_shape=(10,), activation='relu'))
-            # self.model.add(keras.layers.Dense(units=1, activation='sigmoid'))
             return
         elif self.mode == 'wide':
             wide_col = self.wide_columns[:16] + self.wide_columns[36:]
@@ -485,7 +471,7 @@ if __name__ == '__main__':
     FLAGS, unparsed = parser.parse_known_args()
     wide_deep_net = Wide_and_Deep(mode)
 
-    train = False
+    train = True
     if train:
         wide_deep_net.create_model()
         wide_deep_net.train_model()

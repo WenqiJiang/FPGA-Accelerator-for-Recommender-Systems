@@ -1,0 +1,110 @@
+Measured Layer / Operations: 
+	('my_model/dense_features/', 'layer')
+	('my_model/dense/', 'layer')
+	('my_model/dense_1/', 'layer')
+	('my_model/dense_2/', 'layer')
+	('my_model/dense_3/', 'layer')
+
+--------------------------------------------------------------------------------
+
+Type: layer	Name: my_model/dense_features/	Time: 12851	Duration: 9619 (start: 1583778055779621, end:1583778055789240)
+Type: layer	Name: my_model/dense/	Time: 1026	Duration: 10712 (start: 1583778055779572, end:1583778055790284)
+Type: layer	Name: my_model/dense_1/	Time: 807	Duration: 11492 (start: 1583778055779592, end:1583778055791084)
+Type: layer	Name: my_model/dense_2/	Time: 217	Duration: 11145 (start: 1583778055780145, end:1583778055791290)
+Type: layer	Name: my_model/dense_3/	Time: 184	Duration: 11788 (start: 1583778055779668, end:1583778055791456)
+
+--------------------------------------------------------------------------------
+
+Operation: AddV2	Time:9
+Operation: BiasAdd	Time:85
+Operation: Bucketize	Time:8
+Operation: Cast	Time:430
+Operation: Const	Time:163
+Operation: ExpandDims	Time:16
+Operation: Fill	Time:24
+Operation: GatherNd	Time:221
+Operation: GatherV2	Time:1176
+Operation: GreaterEqual	Time:386
+Operation: Less	Time:25
+Operation: LogicalOr	Time:17
+Operation: Mul	Time:32
+Operation: NotEqual	Time:180
+Operation: OneHot	Time:120
+Operation: Pack	Time:918
+Operation: Prod	Time:188
+Operation: Range	Time:8
+Operation: ReadVariableOp	Time:75
+Operation: Reshape	Time:379
+Operation: ResourceGather	Time:587
+Operation: Select	Time:339
+Operation: SelectV2	Time:27
+Operation: Shape	Time:440
+Operation: Slice	Time:383
+Operation: SparseCross	Time:966
+Operation: SparseFillEmptyRows	Time:1063
+Operation: SparseReshape	Time:423
+Operation: SparseSegmentMean	Time:483
+Operation: SparseToDense	Time:40
+Operation: StridedSlice	Time:792
+Operation: StringToHashBucketFast	Time:125
+Operation: Sub	Time:23
+Operation: Sum	Time:19
+Operation: Tile	Time:526
+Operation: Unique	Time:765
+Operation: VarHandleOp	Time:40
+Operation: Where	Time:603
+Operation: ZerosLike	Time:366
+Operation: _MklConcatV2	Time:511
+Operation: _MklMatMul	Time:1834
+Operation: _MklRelu	Time:71
+Operation: _MklReshape	Time:62
+Operation: _MklSoftmax	Time:129
+Operation: _MklTranspose	Time:8
+
+--------------------------------------------------------------------------------
+
+Operation: ('_MklMatMul', 1834)	Time:1834
+Operation: ('GatherV2', 1176)	Time:1176
+Operation: ('SparseFillEmptyRows', 1063)	Time:1063
+Operation: ('SparseCross', 966)	Time:966
+Operation: ('Pack', 918)	Time:918
+Operation: ('StridedSlice', 792)	Time:792
+Operation: ('Unique', 765)	Time:765
+Operation: ('Where', 603)	Time:603
+Operation: ('ResourceGather', 587)	Time:587
+Operation: ('Tile', 526)	Time:526
+Operation: ('_MklConcatV2', 511)	Time:511
+Operation: ('SparseSegmentMean', 483)	Time:483
+Operation: ('Shape', 440)	Time:440
+Operation: ('Cast', 430)	Time:430
+Operation: ('SparseReshape', 423)	Time:423
+Operation: ('GreaterEqual', 386)	Time:386
+Operation: ('Slice', 383)	Time:383
+Operation: ('Reshape', 379)	Time:379
+Operation: ('ZerosLike', 366)	Time:366
+Operation: ('Select', 339)	Time:339
+Operation: ('GatherNd', 221)	Time:221
+Operation: ('Prod', 188)	Time:188
+Operation: ('NotEqual', 180)	Time:180
+Operation: ('Const', 163)	Time:163
+Operation: ('_MklSoftmax', 129)	Time:129
+Operation: ('StringToHashBucketFast', 125)	Time:125
+Operation: ('OneHot', 120)	Time:120
+Operation: ('BiasAdd', 85)	Time:85
+Operation: ('ReadVariableOp', 75)	Time:75
+Operation: ('_MklRelu', 71)	Time:71
+Operation: ('_MklReshape', 62)	Time:62
+Operation: ('VarHandleOp', 40)	Time:40
+Operation: ('SparseToDense', 40)	Time:40
+Operation: ('Mul', 32)	Time:32
+Operation: ('SelectV2', 27)	Time:27
+Operation: ('Less', 25)	Time:25
+Operation: ('Fill', 24)	Time:24
+Operation: ('Sub', 23)	Time:23
+Operation: ('Sum', 19)	Time:19
+Operation: ('LogicalOr', 17)	Time:17
+Operation: ('ExpandDims', 16)	Time:16
+Operation: ('AddV2', 9)	Time:9
+Operation: ('Bucketize', 8)	Time:8
+Operation: ('Range', 8)	Time:8
+Operation: ('_MklTranspose', 8)	Time:8
