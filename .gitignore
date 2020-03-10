@@ -2,4 +2,7 @@ tf_wide_deep/model/
 *.h5
 *ckpt*
 *.data-000*
+.DS_Store
 WenqideMacBook-Pro.local
+__pycache__
+keras_wide_deep/model/*

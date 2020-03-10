@@ -148,7 +148,7 @@ class Config(object):
             for features, conf in cross_feature_conf.items():
                 self._check_cross_feature_conf(features, feature_conf, **conf)
                 features = [f.strip() for f in features.split('&')]
-                hash_bucket_size = 1000*conf["hash_bucket_size"] or 10000  # defaults to 10k
+                hash_bucket_size = int(1000*conf["hash_bucket_size"]) or 10000  # defaults to 10k
                 is_deep = conf["is_deep"] if conf["is_deep"] is not None else 1  # defaults to 10k
                 conf_list.append((features, hash_bucket_size, is_deep))
             return conf_list

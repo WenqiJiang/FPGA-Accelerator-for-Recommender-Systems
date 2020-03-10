@@ -116,7 +116,7 @@ def _build_model_columns():
             if f_tran == 'hash_bucket':
                 hash_bucket_size = f_param
                 embed_dim = embedding_dim(hash_bucket_size)
-                embedding_dimension_stat.append(embed_dim)
+                embedding_dimension_stat.append((embed_dim, hash_bucket_size))
                 col = categorical_column_with_hash_bucket(feature,
                     hash_bucket_size=hash_bucket_size,
                     dtype=tf.string)
@@ -207,14 +207,19 @@ def _build_model_columns():
         if is_deep:
             deep_columns.append(embedding_column(col, dimension=embedding_dim(hash_bucket_size)))
             deep_dim += embedding_dim(hash_bucket_size)
-            embedding_dimension_stat.append(embedding_dim(hash_bucket_size))
+            embedding_dimension_stat.append((embedding_dim(hash_bucket_size), hash_bucket_size))
 
     print("feature_num: {}\ncross_feature_num: {}\ntotal_feature_num: {}".format(
         feature_num, cross_feature_num, feature_num + cross_feature_num))
 
-    print("embedding dimension:\nnum_embeddings: {}\taverage_dimension: {}\n{}".format(
-        len(embedding_dimension_stat), np.average(embedding_dimension_stat), embedding_dimension_stat
-    ))
+    print("embedding dimension:\nnum_embeddings: {}\taverage_dimension: {}\ntotal_param: {}".format(
+        len(embedding_dimension_stat), np.average([dim for dim, size in embedding_dimension_stat]),
+        np.sum([dim * size for dim, size in embedding_dimension_stat])))
+
+    np.save("../cartesian_analysis/embedding_dimension", np.array(sorted(embedding_dimension_stat, key = lambda x: (x[0], x[1]))),
+            allow_pickle=True, fix_imports=True)
+    for dim, size in sorted(embedding_dimension_stat, key = lambda x: (x[0], x[1])):
+        print("dim:{}\tsize:{}\t".format(dim, size))
 
     # add columns logging info
     tf.logging.info('Build total {} wide columns'.format(len(wide_columns)))
@@ -466,8 +471,8 @@ class Wide_and_Deep:
 
     def save_model(self, filename='../model/wide_and_deep'):
         # self.model.save(filename)
-        # self.model.save_weights(filepath=filename, overwrite=True, save_format='h5')
-        self.model.save_weights(filepath=filename, overwrite=True, save_format='tf')
+        self.model.save_weights(filepath=filename, overwrite=True, save_format='h5')
+        # self.model.save_weights(filepath=filename, overwrite=True, save_format='tf')
 
     def load_model(self, filename='../model/wide_and_deep'):
         self.create_model()
@@ -480,7 +485,7 @@ if __name__ == '__main__':
     FLAGS, unparsed = parser.parse_known_args()
     wide_deep_net = Wide_and_Deep(mode)
 
-    train = True
+    train = False
     if train:
         wide_deep_net.create_model()
         wide_deep_net.train_model()
