@@ -1,3 +1,5 @@
+############ This program is not successful ##############
+
 import pandas as pd
 import numpy as np
 import argparse
@@ -42,6 +44,10 @@ if __name__ == '__main__':
 
     # mode = "wide and deep"
     mode = "deep"
-    wide_deep_net = Wide_and_Deep_Intermediate_Output(mode)
+    # wide_deep_net = Wide_and_Deep_Intermediate_Output(mode)
+    wide_deep_net = Wide_and_Deep(mode)
+    wide_deep_net.load_model()
+    get_3rd_layer_output = tf.keras.backend.function([wide_deep_net.model.layers[0].input], [wide_deep_net.model.layers[3].output])
+    layer_output = get_3rd_layer_output([x])[0]
     # wide_deep_net.predict_model()
-    wide_deep_net.predict_intermediate()
+    # wide_deep_net.predict_intermediate()

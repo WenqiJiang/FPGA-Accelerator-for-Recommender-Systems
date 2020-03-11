@@ -485,7 +485,7 @@ if __name__ == '__main__':
     FLAGS, unparsed = parser.parse_known_args()
     wide_deep_net = Wide_and_Deep(mode)
 
-    train = False
+    train = True
     if train:
         wide_deep_net.create_model()
         wide_deep_net.train_model()
