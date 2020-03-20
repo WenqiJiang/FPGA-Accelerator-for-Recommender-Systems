@@ -92,7 +92,7 @@ def main(unused_argv):
     start = time.time()
 
     # FLAGS.batch_size, FLAGS.data_dir
-    predictions = model.predict(input_fn=lambda: input_fn("../data/pred_large/", FLAGS.image_data_dir, 'pred', batch_size=128),
+    predictions = model.predict(input_fn=lambda: input_fn("../data/pred_large/", FLAGS.image_data_dir, 'pred', batch_size=1024),
                                 predict_keys=None,
                                 hooks=None,
                                 checkpoint_path=FLAGS.checkpoint_path)  # defaults None to use latest_checkpoint

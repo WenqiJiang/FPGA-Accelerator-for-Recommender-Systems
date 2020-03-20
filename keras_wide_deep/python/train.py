@@ -348,15 +348,21 @@ class Wide_and_Deep:
                     super(MyModel, self).__init__()
                     self.feature_layer = tf.keras.layers.DenseFeatures(feature_columns=deep_col)
                     self.dense1 = tf.keras.layers.Dense(1024, activation='relu')
+                    self.norm1 = tf.keras.layers.BatchNormalization()
                     self.dense2 = tf.keras.layers.Dense(512, activation=tf.nn.relu)
+                    self.norm2 = tf.keras.layers.BatchNormalization()
                     self.dense3 = tf.keras.layers.Dense(256, activation=tf.nn.relu)
+                    self.norm3 = tf.keras.layers.BatchNormalization()
                     self.dense4 = tf.keras.layers.Dense(128, activation=tf.nn.softmax)
 
                 def call(self, input_tensor):
                     y = self.feature_layer(input_tensor)
                     y = self.dense1(y)
+                    y = self.norm1(y)
                     y = self.dense2(y)
+                    y = self.norm2(y)
                     y = self.dense3(y)
+                    y = self.norm3(y)
                     y = self.dense4(y)
                     # y = tf.random.categorical(
                     #     logits=y, num_samples=10, dtype=None, seed=None, name=None
@@ -438,7 +444,7 @@ class Wide_and_Deep:
         if not self.model:
             self.load_model()
 
-        batch_size = 32
+        batch_size = 64
         input_data = self.get_dataset(mode="pred", batch_size=batch_size)
 
         # print("Input data shape: {}".format(len(input_data)))

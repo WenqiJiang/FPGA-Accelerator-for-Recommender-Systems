@@ -1,6 +1,8 @@
 tf_wide_deep/model/
 tf_wide_deep/data/pred_unused/pred_160000
 tf_wide_deep/data/pred_unused/pred_320000
+tf_wide_deep/data/pred_large/*
+keras_wide_deep/python/logs/
 *.h5
 *ckpt*
 *.data-000*
