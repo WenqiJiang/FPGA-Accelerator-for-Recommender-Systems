@@ -1,4 +1,6 @@
 tf_wide_deep/model/
+tf_wide_deep/data/pred_unused/pred_160000
+tf_wide_deep/data/pred_unused/pred_320000
 *.h5
 *ckpt*
 *.data-000*

@@ -123,7 +123,7 @@ if __name__ == "__main__":
     # plt.xlabel('L (iteration)')
     # plt.xscale("log")
     plt.show()
-    plt.save("../output/Embedding Frequency Distribution.png")
+    # plt.save("../output/Embedding Frequency Distribution.png")
 
     for i in range(1, 21):
         perc_coverage = y_axis[int(i * 0.01 * total_access)]

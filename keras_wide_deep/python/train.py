@@ -438,7 +438,8 @@ class Wide_and_Deep:
         if not self.model:
             self.load_model()
 
-        input_data = self.get_dataset(mode="pred", batch_size=128)
+        batch_size = 32
+        input_data = self.get_dataset(mode="pred", batch_size=batch_size)
 
         # print("Input data shape: {}".format(len(input_data)))
 
@@ -458,11 +459,11 @@ class Wide_and_Deep:
         ctf = tl.generate_chrome_trace_format()
 
         if self.mode == "wide and deep":
-            filename = '../output/{}_inference_profiling.json'.format("wide_deep")
+            filename = '../output/{}_inference_profiling_batch_{}.json'.format("wide_deep", batch_size)
         elif self.mode == "wide":
-            filename = '../output/{}_inference_profiling.json'.format("wide")
+            filename = '../output/{}_inference_profiling_batch_{}.json'.format("wide", batch_size)
         elif self.mode == "deep":
-            filename = '../output/{}_inference_profiling.json'.format("deep")
+            filename = '../output/{}_inference_profiling_batch_{}.json'.format("deep", batch_size)
         with open(filename, 'w') as f:
             f.write(ctf)
 

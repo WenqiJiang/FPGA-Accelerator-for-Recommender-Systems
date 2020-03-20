@@ -88,19 +88,29 @@ def main(unused_argv):
 
     # predictions
     tf.logging.info('='*30+'START PREDICTION'+'='*30)
-    t0 = time.time()
+    probability = []
+    start = time.time()
 
-    predictions = model.predict(input_fn=lambda: input_fn(FLAGS.data_dir, FLAGS.image_data_dir, 'pred', FLAGS.batch_size),
+    # FLAGS.batch_size, FLAGS.data_dir
+    predictions = model.predict(input_fn=lambda: input_fn("../data/pred_large/", FLAGS.image_data_dir, 'pred', batch_size=128),
                                 predict_keys=None,
                                 hooks=None,
                                 checkpoint_path=FLAGS.checkpoint_path)  # defaults None to use latest_checkpoint
 
     for pred_dict in predictions:  # dict{probabilities, classes, class_ids}
         class_id = pred_dict['class_ids'][0]
-        probability = pred_dict['probabilities'][class_id]
-        print('\nPrediction is "{}" ({:.1f}%)'.format(class_id, 100 * probability))
+        probability.append((class_id, pred_dict['probabilities'][class_id]))
+        # print('\nPrediction is "{}" ({:.1f}%)'.format(class_id, 100 * probability))
 
-    tf.logging.info('=' * 30 + 'FINISH PREDICTION, TAKE {} mins'.format(elapse_time(t0)) + '=' * 30)
+    end = time.time()
+    tf.logging.info('=' * 30 + 'FINISH PREDICTION, TAKE {} ns'.format(end - start) + '=' * 30)
+
+    for prob in probability:
+        class_id, probab = prob
+        print('\nPrediction is "{}" ({:.1f}%)'.format(class_id, 100 * probab))
+
+    print("length:", len(probability))
+    print("\nduration:", end - start)
 
 if __name__ == '__main__':
     # Set to INFO for tracking training, default is WARN. ERROR for least messages
