@@ -47,6 +47,8 @@
 
 # TODO: support all tf.feature_column.
 
+# 16 * hash bucket 
+
 adplan_id:
   type: category
   transform: hash_bucket

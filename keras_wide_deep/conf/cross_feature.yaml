@@ -22,6 +22,8 @@
 
 # Set unused features by using symbol `#` ahead of the lines.
 
+# 31 in total (all hash)
+
 adplan_id&category:
   hash_bucket_size: 100
   is_deep: 1

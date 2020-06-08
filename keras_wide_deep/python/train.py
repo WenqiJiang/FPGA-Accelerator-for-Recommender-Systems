@@ -141,6 +141,7 @@ def _build_model_columns():
                 #     dtype=None,
                 #     default_value=-1,
                 #     num_oov_buckets=0)  # len(vocab)+num_oov_buckets
+                # [16:33] 32 -> indicator + vocab -> error
                 col = categorical_column_with_vocabulary_list(feature,
                     vocabulary_list=vocabulary_list,
                     dtype=None,
@@ -157,6 +158,7 @@ def _build_model_columns():
                 col = categorical_column_with_identity(feature,
                     num_buckets=num_buckets,
                     default_value=0)  # Values outside range will result in default_value if specified, otherwise it will fail.
+                # [33:36] -> indicator + id
                 # WENQI
                 # wide_columns.append(col)
                 wide_columns.append(indicator_column(col))
@@ -444,7 +446,8 @@ class Wide_and_Deep:
         if not self.model:
             self.load_model()
 
-        batch_size = 64
+        # NOTE! CHANGE HERE TO ADJUST INFERENCE BATCH SIZE
+        batch_size = 1024
         input_data = self.get_dataset(mode="pred", batch_size=batch_size)
 
         # print("Input data shape: {}".format(len(input_data)))
