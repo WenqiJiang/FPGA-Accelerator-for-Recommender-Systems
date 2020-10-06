@@ -73,7 +73,9 @@ def main(_):
 
     model_dir = os.path.join(model_base_dir, FLAGS.model_type)
     export_dir = os.path.join(FLAGS.export_dir, FLAGS.model_type)
+    print("building custom estimator")
     model = build_custom_estimator(model_dir, FLAGS.model_type)
+    print("exporting saved model")
     model.export_savedmodel(export_dir,
                             serving_input_receiver_fn,
                             as_text=CONF['as_text'],
