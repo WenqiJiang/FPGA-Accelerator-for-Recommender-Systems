@@ -1,0 +1,1 @@
+Run "python tensorflow_serving/export_savedmodel.py" in this level, not cd to that dir, otherwise there will be a directory error due to the using of relative dir

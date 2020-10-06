@@ -1,0 +1,433 @@
+## Input Data Schema
+
+# feature id: feature name
+# The order must be consistent with the raw data.
+# First field is the label. Case insensitive here.
+
+# 1: clk
+# 2: request_id
+# 3: account_id
+# 4: adplan_id
+# 5: scheduling_id
+# 6: position_id
+# 7: idea_id
+# 8: cost_type
+# 9: province_id
+# 10: city_id
+# 11: ip_original
+# 12: os
+# 13: device_type
+# 14: client_type
+# 15: galaxy_id
+# 16: network
+# 17: app_version
+# 18: idea_type
+# 19: tag
+# 20: industry_level1_id
+# 21: industry_level2_id
+# 22: category
+# 23: location
+# 24: isweekend
+# 25: weekdays
+# 26: year
+# 27: month
+# 28: day
+# 29: hour
+# 30: dt
+# 31: host_name
+# 32: request_tm
+# 33: log_version
+# 34: pay
+# 35: ecpm
+# 36: ecpm2
+# 37: winprc
+# 38: ctr
+# 39: rpid
+# 40: u
+# 41: market
+# 42: site
+# 43: status
+# 44: is_cache
+# 45: ctr_strategy_type
+# 46: is_pasv_flush
+# 47: isp
+# 48: combine_id
+# 49: device_model
+# 50: article_tag
+# 51: longitude
+# 52: latitude
+# 53: user_cates
+# 54: user_industrys
+# 55: ad_cates
+# 56: ad_idea_types
+# 57: age
+# 58: ugender
+# 59: ucomp
+# 60: rk_age_range
+# 61: rk_hour
+
+
+# 1: clk0
+# 2: request_id0
+# 3: account_id0
+# 4: adplan_id0
+# 5: scheduling_id0
+# 6: position_id0
+# 7: idea_id0
+# 8: cost_type0
+# 9: province_id0
+# 10: city_id0
+# 11: ip_original0
+# 12: os0
+# 13: device_type0
+# 14: client_type0
+# 15: galaxy_id0
+# 16: network0
+# 17: app_version0
+# 18: idea_type0
+# 19: tag0
+# 20: industry_level1_id0
+# 21: industry_level2_id0
+# 22: category0
+# 23: location0
+# 24: isweekend0
+# 25: weekdays0
+# 26: year0
+# 27: month0
+# 28: day0
+# 29: hour0
+# 30: dt0
+# 31: host_name0
+# 32: request_tm0
+# 33: log_version0
+# 34: pay0
+# 35: ecpm0
+# 36: ecpm20
+# 37: winprc0
+# 38: ctr0
+# 39: rpid0
+# 40: u0
+# 41: market0
+# 42: site0
+# 43: status0
+# 44: is_cache0
+# 45: ctr_strategy_type0
+# 46: is_pasv_flush0
+# 47: isp0
+# 48: combine_id0
+# 49: device_model0
+# 50: article_tag0
+# 51: longitude0
+# 52: latitude0
+# 53: user_cates0
+# 54: user_industrys0
+# 55: ad_cates0
+# 56: ad_idea_types0
+# 57: age0
+# 58: ugender0
+# 59: ucomp0
+# 60: rk_age_range0
+# 61: rk_hour0
+# 62: clk1
+# 63: request_id1
+# 64: account_id1
+# 65: adplan_id1
+# 66: scheduling_id1
+# 67: position_id1
+# 68: idea_id1
+# 69: cost_type1
+# 70: province_id1
+# 71: city_id1
+# 72: ip_original1
+# 73: os1
+# 74: device_type1
+# 75: client_type1
+# 76: galaxy_id1
+# 77: network1
+# 78: app_version1
+# 79: idea_type1
+# 80: tag1
+# 81: industry_level1_id1
+# 82: industry_level2_id1
+# 83: category1
+# 84: location1
+# 85: isweekend1
+# 86: weekdays1
+# 87: year1
+# 88: month1
+# 89: day1
+# 90: hour1
+# 91: dt1
+# 92: host_name1
+# 93: request_tm1
+# 94: log_version1
+# 95: pay1
+# 96: ecpm1
+# 97: ecpm21
+# 98: winprc1
+# 99: ctr1
+# 100: rpid1
+# 101: u1
+# 102: market1
+# 103: site1
+# 104: status1
+# 105: is_cache1
+# 106: ctr_strategy_type1
+# 107: is_pasv_flush1
+# 108: isp1
+# 109: combine_id1
+# 110: device_model1
+# 111: article_tag1
+# 112: longitude1
+# 113: latitude1
+# 114: user_cates1
+# 115: user_industrys1
+# 116: ad_cates1
+# 117: ad_idea_types1
+# 118: age1
+# 119: ugender1
+# 120: ucomp1
+# 121: rk_age_range1
+# 122: rk_hour1
+# 123: clk2
+# 124: request_id2
+# 125: account_id2
+# 126: adplan_id2
+# 127: scheduling_id2
+# 128: position_id2
+# 129: idea_id2
+# 130: cost_type2
+# 131: province_id2
+# 132: city_id2
+# 133: ip_original2
+# 134: os2
+# 135: device_type2
+# 136: client_type2
+# 137: galaxy_id2
+# 138: network2
+# 139: app_version2
+# 140: idea_type2
+# 141: tag2
+# 142: industry_level1_id2
+# 143: industry_level2_id2
+# 144: category2
+# 145: location2
+# 146: isweekend2
+# 147: weekdays2
+# 148: year2
+# 149: month2
+# 150: day2
+# 151: hour2
+# 152: dt2
+# 153: host_name2
+# 154: request_tm2
+# 155: log_version2
+# 156: pay2
+# 157: ecpm2
+# 158: ecpm22
+# 159: winprc2
+# 160: ctr2
+# 161: rpid2
+# 162: u2
+# 163: market2
+# 164: site2
+# 165: status2
+# 166: is_cache2
+# 167: ctr_strategy_type2
+# 168: is_pasv_flush2
+# 169: isp2
+# 170: combine_id2
+# 171: device_model2
+# 172: article_tag2
+# 173: longitude2
+# 174: latitude2
+# 175: user_cates2
+# 176: user_industrys2
+# 177: ad_cates2
+# 178: ad_idea_types2
+# 179: age2
+# 180: ugender2
+# 181: ucomp2
+# 182: rk_age_range2
+# 183: rk_hour2
+
+1: request_id0
+2: account_id0
+3: adplan_id0
+4: scheduling_id0
+5: position_id0
+6: idea_id0
+7: cost_type0
+8: province_id0
+9: city_id0
+10: ip_original0
+11: os0
+12: device_type0
+13: client_type0
+14: galaxy_id0
+15: network0
+16: app_version0
+17: idea_type0
+18: tag0
+19: industry_level1_id0
+20: industry_level2_id0
+21: category0
+22: location0
+23: isweekend0
+24: weekdays0
+25: year0
+26: month0
+27: day0
+28: hour0
+29: dt0
+30: host_name0
+31: request_tm0
+32: log_version0
+33: pay0
+34: ecpm0
+35: ecpm20
+36: winprc0
+37: ctr0
+38: rpid0
+39: u0
+40: market0
+41: site0
+42: status0
+43: is_cache0
+44: ctr_strategy_type0
+45: is_pasv_flush0
+46: isp0
+47: combine_id0
+48: device_model0
+49: article_tag0
+50: longitude0
+51: latitude0
+52: user_cates0
+53: user_industrys0
+54: ad_cates0
+55: ad_idea_types0
+56: age0
+57: ugender0
+58: ucomp0
+59: rk_age_range0
+60: rk_hour0
+61: request_id1
+62: account_id1
+63: adplan_id1
+64: scheduling_id1
+65: position_id1
+66: idea_id1
+67: cost_type1
+68: province_id1
+69: city_id1
+70: ip_original1
+71: os1
+72: device_type1
+73: client_type1
+74: galaxy_id1
+75: network1
+76: app_version1
+77: idea_type1
+78: tag1
+79: industry_level1_id1
+80: industry_level2_id1
+81: category1
+82: location1
+83: isweekend1
+84: weekdays1
+85: year1
+86: month1
+87: day1
+88: hour1
+89: dt1
+90: host_name1
+91: request_tm1
+92: log_version1
+93: pay1
+94: ecpm1
+95: ecpm21
+96: winprc1
+97: ctr1
+98: rpid1
+99: u1
+100: market1
+101: site1
+102: status1
+103: is_cache1
+104: ctr_strategy_type1
+105: is_pasv_flush1
+106: isp1
+107: combine_id1
+108: device_model1
+109: article_tag1
+110: longitude1
+111: latitude1
+112: user_cates1
+113: user_industrys1
+114: ad_cates1
+115: ad_idea_types1
+116: age1
+117: ugender1
+118: ucomp1
+119: rk_age_range1
+120: rk_hour1
+121: request_id2
+122: account_id2
+123: adplan_id2
+124: scheduling_id2
+125: position_id2
+126: idea_id2
+127: cost_type2
+128: province_id2
+129: city_id2
+130: ip_original2
+131: os2
+132: device_type2
+133: client_type2
+134: galaxy_id2
+135: network2
+136: app_version2
+137: idea_type2
+138: tag2
+139: industry_level1_id2
+140: industry_level2_id2
+141: category2
+142: location2
+143: isweekend2
+144: weekdays2
+145: year2
+146: month2
+147: day2
+148: hour2
+149: dt2
+150: host_name2
+151: request_tm2
+152: log_version2
+153: pay2
+154: ecpm2
+155: ecpm22
+156: winprc2
+157: ctr2
+158: rpid2
+159: u2
+160: market2
+161: site2
+162: status2
+163: is_cache2
+164: ctr_strategy_type2
+165: is_pasv_flush2
+166: isp2
+167: combine_id2
+168: device_model2
+169: article_tag2
+170: longitude2
+171: latitude2
+172: user_cates2
+173: user_industrys2
+174: ad_cates2
+175: ad_idea_types2
+176: age2
+177: ugender2
+178: ucomp2
+179: rk_age_range2
+180: rk_hour2
