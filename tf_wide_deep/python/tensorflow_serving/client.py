@@ -12,6 +12,7 @@ from __future__ import print_function
 
 from os.path import dirname, abspath, join
 import sys
+import time
 import threading
 
 import numpy as np
@@ -139,12 +140,31 @@ def do_inference(hostport, work_dir, concurrency, num_tests):
 
 PRED_FILE = join(dirname(dirname(dirname(abspath(__file__)))), 'data/pred/pred1')
 
-
+# WENQI: this function only return the first line of the data
+"""
 def _read_test_input():
     for line in open(PRED_FILE):
         return line.strip('\n').split('\t')
+"""
+def _read_test_input_list():
+    input_list = []
+    with open(PRED_FILE, 'r') as f:
+	Lines = f.readlines()
+	count = 0
+	# Strips the newline character
+	for line in Lines:
+            print(count)
+            if count >= FLAGS.num_tests:
+                break
+            input_list.append(line.strip('\n').split('\t'))
+            count += 1
+        print("here")
+        assert len(input_list) == FLAGS.num_tests
+    #input_list = input_list[:FLAGS.num_tests]
+        return input_list
 
 # Example Features for a movie recommendation application:
+
 #    feature {
 #      key: "age"
 #      value { float_list {
@@ -160,9 +180,25 @@ def _read_test_input():
 #    }
 
 
+### WENQI modified, make the feature match the batch size
+"""
+def _int_feature(value):
+    value_list = [value for i in range(FLAGS.num_tests)]
+    return tf.train.Feature(int64_list=tf.train.Int64List(value=value_list))
+
+def _float_feature(value):
+    value_list = [value for i in range(FLAGS.num_tests)]
+    return tf.train.Feature(float_list=tf.train.FloatList(value=value_list))
+
+def _bytes_feature(value):
+    value_list = [value for i in range(FLAGS.num_tests)]
+    return tf.train.Feature(bytes_list=tf.train.BytesList(value=value_list))
+"""
+def _int_feature(value):
+    return tf.train.Feature(int64_list=tf.train.Int64List(value=[value]))
+
 def _float_feature(value):
     return tf.train.Feature(float_list=tf.train.FloatList(value=[value]))
-
 
 def _bytes_feature(value):
     return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value]))
@@ -182,17 +218,46 @@ def pred_input_fn(csv_data):
         if f in feature_unused:
             continue
         else:
+            # print(csv_default[f])
             if csv_default[f] == tf.string:
                 feature_dict[f] = _bytes_feature(csv_data[idx])
+            elif csv_default[f] == tf.int32 or csv_default[f] == tf.int64:
+                feature_dict[f] = _int_feature(int(csv_data[idx]))
             else:
                 feature_dict[f] = _float_feature(float(csv_data[idx]))
     return feature_dict
 
+# WENQI: create a fn that matches batch size (FLAGS.num_tests)
+def wenqi_pred_input_fn(csv_data):
+    """Prediction input fn for a single data, used for serving client"""
+    conf = Config()
+    feature = conf.get_feature_name()
+    feature_unused = conf.get_feature_name('unused')
+    feature_conf = conf.read_feature_conf()
+    csv_default = column_to_dtype(feature, feature_conf)
+    csv_default.pop('label')
+
+    feature_dict = {}
+    for idx, f in enumerate(csv_default.keys()):
+        if f in feature_unused:
+            continue
+        else:
+            # print(csv_default[f])
+            if csv_default[f] == tf.string:
+                # for i in range(FLAGS.num_tests):
+                csv_data_list = [csv_data[idx] for i in range(FLAGS.num_tests)]
+                feature_dict[f] = _bytes_feature(csv_data_list)
+            elif csv_default[f] == tf.int32 or csv_default[f] == tf.int64:
+                feature_dict[f] = _int_feature(int(csv_data[idx]))
+            else:
+                feature_dict[f] = _float_feature(float(csv_data[idx]))
+    return feature_dict
 
 def main(_):
     host, port = FLAGS.server.split(':')
     channel = implementations.insecure_channel(host, int(port))
     stub = prediction_service_pb2.beta_create_PredictionService_stub(channel)
+
 
     request = predict_pb2.PredictRequest()
     request.model_spec.name = FLAGS.model
@@ -209,20 +274,41 @@ def main(_):
     #               'relationship': _bytes_feature(value='Own-child'.encode()),
     #               'workclass': _bytes_feature(value='Private'.encode())}
     # label = 0
-    data = _read_test_input()
-    feature_dict = pred_input_fn(data)
+    # WENQI: return input list
+    print("loading input")
+    data = _read_test_input_list()
+    # data = _read_test_input()
+    #feature_dict = wenqi_pred_input_fn(data)
+    print("converting to feature dict")
+    feature_dict_list = [pred_input_fn(data[i]) for i in range(FLAGS.num_tests)]
+    #feature_dict = pred_input_fn(data)
 
-    example = tf.train.Example(features=tf.train.Features(feature=feature_dict))
-    serialized = example.SerializeToString()
+    print("converting to tf format")
+    serialized_list = []
+    for i in range(FLAGS.num_tests):
+        example = tf.train.Example(features=tf.train.Features(feature=feature_dict_list[i]))
+        serialized = example.SerializeToString()
+    # WENQI: try to make batch works
+        serialized_list.append(serialized)
 
+    # WENQI: here, change shape=1 to make batch works
     request.inputs['inputs'].CopyFrom(
-        tf.contrib.util.make_tensor_proto(serialized, shape=[1]))
+       tf.contrib.util.make_tensor_proto(serialized_list, shape=[FLAGS.num_tests]))
+    #request.inputs['inputs'].CopyFrom(
+    #    tf.contrib.util.make_tensor_proto(serialized, shape=[1]))
 
-    result_future = stub.Predict.future(request, 5.0)
-    prediction = result_future.result().outputs['scores']
+    start = time.time()
+    loop_num = 1
+    for i in range(loop_num):
+        result_future = stub.Predict.future(request, 5.0)
+        # WENQI: shape not match
+        prediction = result_future.result().outputs['scores']
 
+    end = time.time()
     # print('True label: ' + str(label))
-    print('Prediction: ' + str(np.argmax(prediction.float_val)))
+    print('Prediction: ' + str(prediction.float_val))
+    #print('Prediction: ' + str(np.argmax(prediction.float_val)))
+    print("query num: {}\ttime: {}".format(FLAGS.num_tests, end-start))
 
 if __name__ == '__main__':
     tf.app.run()
