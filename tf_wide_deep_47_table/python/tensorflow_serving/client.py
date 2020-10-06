@@ -280,7 +280,9 @@ def main(_):
     # data = _read_test_input()
     #feature_dict = wenqi_pred_input_fn(data)
     print("converting to feature dict")
-    feature_dict_list = [pred_input_fn(data[i]) for i in range(FLAGS.num_tests)]
+    #feature_dict_list = [pred_input_fn(data[i]) for i in range(FLAGS.num_tests)]
+    tmp = pred_input_fn(data[0])
+    feature_dict_list = [tmp for i in range(FLAGS.num_tests)] 
     #feature_dict = pred_input_fn(data)
 
     print("converting to tf format")
