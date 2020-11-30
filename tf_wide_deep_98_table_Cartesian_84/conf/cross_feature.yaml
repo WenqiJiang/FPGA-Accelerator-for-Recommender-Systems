@@ -42,55 +42,66 @@
 #   hash_bucket_size: 1
 #   is_deep: 1
 
+
+# Left for cross-feature
+
+# HBM -> 12 * 50000 + 11 * 100000 + 2 * 150000 + 2 * 250000 + 16 * 500000 + 2 * 1000000
+
+# data_size_DDR =  [12, 16, 32, 32]
+# table_size_DDR = [5000000, 5000000, 10000000, 100000000]
+
+
 age0&ugender0:
-  hash_bucket_size: 0.1
+  hash_bucket_size: 50
   is_deep: 1
 
 site0&age0&ugender0:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
 
 hour0&weekdays0:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
 
 network0&os0&site0:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
 
 
 age1&ugender1:
-  hash_bucket_size: 0.1
+  hash_bucket_size: 50
   is_deep: 1
 
 site1&age1&ugender1:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
 
 hour1&weekdays1:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
 
 network1&os1&site1:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
 
 
 age2&ugender2:
-  hash_bucket_size: 0.1
+  hash_bucket_size: 50
   is_deep: 1
 
 site2&age2&ugender2:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
 
 hour2&weekdays2:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
 
 network2&os2&site2:
-  hash_bucket_size: 1
+  hash_bucket_size: 50
   is_deep: 1
+
+#### 12 * 50K finished
 
 # Medium: 1000 * 2 + 3000 * 1 + 10000 * 12 + 30000 * 1 + 100000 * 8
 # industry_level2_id&site:
@@ -189,67 +200,71 @@ network2&os2&site2:
 #   hash_bucket_size: 100
 #   is_deep: 1
 industry_level2_id0&site0:
-  hash_bucket_size: 5
+  hash_bucket_size: 100
   is_deep: 1
 
 idea_type0&os0&network0:
-  hash_bucket_size: 5
+  hash_bucket_size: 100
   is_deep: 1
 
 industry_level2_id0&age0&ugender0:
-  hash_bucket_size: 15
+  hash_bucket_size: 100
   is_deep: 1
 
 industry_level2_id0&network0&os0:
-  hash_bucket_size: 50
+  hash_bucket_size: 100
   is_deep: 1
 
 city_id0&industry_level2_id0:
-  hash_bucket_size: 50
+  hash_bucket_size: 100
   is_deep: 1
 
 idea_type0&city_id0:
-  hash_bucket_size: 50
+  hash_bucket_size: 100
   is_deep: 1
 
 idea_id0&province_id0:
-  hash_bucket_size: 50
+  hash_bucket_size: 100
   is_deep: 1
 
 idea_id0&device_type0&os0:
-  hash_bucket_size: 50
+  hash_bucket_size: 100
   is_deep: 1
 
 hour0&scheduling_id0:
-  hash_bucket_size: 50
+  hash_bucket_size: 100
   is_deep: 1
 
 hour0&industry_level2_id0:
-  hash_bucket_size: 50
+  hash_bucket_size: 100
   is_deep: 1
 
 scheduling_id0&age0:
-  hash_bucket_size: 50
+  hash_bucket_size: 100
   is_deep: 1
 
+# 11 x 100K finished
+
 category0&ucomp0:
-  hash_bucket_size: 50
+  hash_bucket_size: 150
   is_deep: 1
 
 industry_level2_id0&ucomp0:
-  hash_bucket_size: 50
+  hash_bucket_size: 150
   is_deep: 1
 
 category0&industry_level2_id0:
-  hash_bucket_size: 50
+  hash_bucket_size: 250
   is_deep: 1
 
 category0&network0&os0:
-  hash_bucket_size: 50
+  hash_bucket_size: 250
   is_deep: 1
 
+# 2 x 150K + 2 x 250 K finished
+
 industry_level2_id0&user_industrys0:
-  hash_bucket_size: 150
+  hash_bucket_size: 500
   is_deep: 1
 
 adplan_id0&category0:
@@ -286,43 +301,48 @@ network0&os0&scheduling_id0:
 
 
 industry_level2_id1&site1:
-  hash_bucket_size: 5
+  hash_bucket_size: 500
   is_deep: 1
 
 idea_type1&os1&network1:
-  hash_bucket_size: 5
+  hash_bucket_size: 500
   is_deep: 1
 
 industry_level2_id1&age1&ugender1:
-  hash_bucket_size: 15
+  hash_bucket_size: 500
   is_deep: 1
 
 industry_level2_id1&network1&os1:
-  hash_bucket_size: 50
+  hash_bucket_size: 500
   is_deep: 1
 
 city_id1&industry_level2_id1:
-  hash_bucket_size: 50
+  hash_bucket_size: 500
   is_deep: 1
 
 idea_type1&city_id1:
-  hash_bucket_size: 50
+  hash_bucket_size: 500
   is_deep: 1
 
 idea_id1&province_id1:
-  hash_bucket_size: 50
+  hash_bucket_size: 500
   is_deep: 1
 
+# 16 x 500 K finished
+
 idea_id1&device_type1&os1:
-  hash_bucket_size: 50
+  hash_bucket_size: 1000
   is_deep: 1
 
 hour1&scheduling_id1:
-  hash_bucket_size: 50
+  hash_bucket_size: 1000
   is_deep: 1
 
+# 2 x 1000 K finished 
+
+# table_size_DDR = [5000000, 5000000, 10000000, 100000000]
 hour1&industry_level2_id1:
-  hash_bucket_size: 50
+  hash_bucket_size: 5000
   is_deep: 1
 
 # scheduling_id1&age1:
@@ -382,7 +402,7 @@ hour1&industry_level2_id1:
 #   is_deep: 1
 
 
-  
+
 
 # Large: 100000 * 2 + 1000000 * 1
 
@@ -399,14 +419,14 @@ hour1&industry_level2_id1:
 #   is_deep: 1
 
 industry_level2_id0&ip_original0:
-  hash_bucket_size: 1000
+  hash_bucket_size: 5000
   is_deep: 1
 
 idea_id0&site0&category0:
-  hash_bucket_size: 1000
+  hash_bucket_size: 10000
   is_deep: 1
 
 adplan_id0&category0&ucomp0:
-  hash_bucket_size: 10000
+  hash_bucket_size: 100000
   is_deep: 1
 

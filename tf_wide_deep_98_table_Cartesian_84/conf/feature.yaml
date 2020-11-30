@@ -76,80 +76,99 @@
 #   transform: hash_bucket
 #   parameter: 500
 
+# data_size_PLRAM = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+# table_size_PLRAM = [5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000, 15000, 15000] -> 14 * 5000 + 2 * 15000 
+
+# data_size_HBM = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]
+# table_size_HBM = [50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 
+# 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 
+# 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000, 
+# 50000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 
+# 100000, 100000, 150000, 150000, 250000, 250000, 500000, 500000, 500000, 500000, 
+# 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 
+# 500000, 500000, 500000, 1000000, 1000000] 
+# -> 31 * 50000 + 11 * 100000 + 2 * 150000 + 2 * 250000 + 16 * 500000 + 2 * 1000000
+
+
+
+# data_size_DDR =  [12, 16, 32, 32]
+# table_size_DDR = [5000000, 5000000, 10000000, 100000000]
+
+
 province_id0:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 app_version0:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 ad_idea_types0:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 category0:
   type: category
   transform: hash_bucket
-  parameter: 500
+  parameter: 5000
 
 article_tag0:
   type: category
   transform: hash_bucket
-  parameter: 500
+  parameter: 5000
 
 province_id1:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 app_version1:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 ad_idea_types1:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 category1:
   type: category
   transform: hash_bucket
-  parameter: 500
+  parameter: 5000
 
 article_tag1:
   type: category
   transform: hash_bucket
-  parameter: 500
+  parameter: 5000
 
 province_id2:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 app_version2:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 ad_idea_types2:
   type: category
   transform: hash_bucket
-  parameter: 100
+  parameter: 5000
 
 category2:
   type: category
   transform: hash_bucket
-  parameter: 500
+  parameter: 5000
 
 article_tag2:
   type: category
   transform: hash_bucket
-  parameter: 500
+  parameter: 15000
 
 # Medium: 1000 * 5 + 10000 * 3 + 20000 * 1 
 # ucomp:
@@ -199,27 +218,29 @@ article_tag2:
 ucomp0:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 15000
+
+#### PLRAM end
 
 user_cates0:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 city_id0:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 user_industrys0:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 ad_cates0:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 adplan_id0:
   type: category
@@ -239,32 +260,32 @@ device_model0:
 idea_id0:
   type: category
   transform: hash_bucket
-  parameter: 100000
+  parameter: 50000
 
 ucomp1:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 user_cates1:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 city_id1:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 user_industrys1:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 ad_cates1:
   type: category
   transform: hash_bucket
-  parameter: 5000
+  parameter: 50000
 
 adplan_id1:
   type: category
@@ -284,7 +305,8 @@ device_model1:
 idea_id1:
   type: category
   transform: hash_bucket
-  parameter: 100000
+  parameter: 50000
+
 
 # Large: 500000 * 1 + 10000000 * 1
 # ip_original:
@@ -296,15 +318,19 @@ idea_id1:
 #   type: category
 #   transform: hash_bucket
 #   parameter: 10000000
+
 ip_original0:
   type: category
   transform: hash_bucket
-  parameter: 5000000
+  parameter: 50000
 
 u0:
   type: category
   transform: hash_bucket
-  parameter: 100000000
+  parameter: 50000
+
+
+#### HBM first 19
 
 ## vocab & id
 
