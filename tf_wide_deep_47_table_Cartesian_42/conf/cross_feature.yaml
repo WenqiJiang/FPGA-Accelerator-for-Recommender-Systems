@@ -22,62 +22,73 @@
 
 # Set unused features by using symbol `#` ahead of the lines.
 
-# 31 in total (all hash), the number is multiplied by 1000
+# Rest for cross-feature
 
-# Rest from feature.yml (it has all PLRAM, first 7 HBM, first 1 DDR)
-# table_size_HBM=[10000, 10000, 10000, 10000, 10000, 20000, 30000, 100000, 
-# 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 
-# 100000, 100000, 100000, 100000, 500000, 500000, 500000, 1000000]
+# HBM 10000 * 4 + 20000 + 30000 + 100000 * 14 + 500000 * 3 + 1000000
 
-# table_size_DDR=[10000000]
+# table_size_DDR=[10000000, 10000000]
 
-# table_size_HBM=[10000, 10000, 10000, 10000, 10000, 20000, 30000, 100000, 
+
+adplan_id&category:
+  hash_bucket_size: 10
+  is_deep: 1
+
+category&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+scheduling_id&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+category&location&site:
+  hash_bucket_size: 10
+  is_deep: 1
+
 age&ugender:
-  hash_bucket_size: 10
-  is_deep: 1
-
-site&age&ugender:
-  hash_bucket_size: 10
-  is_deep: 1
-
-hour&weekdays:
-  hash_bucket_size: 10
-  is_deep: 1
-
-network&os&site:
-  hash_bucket_size: 10
-  is_deep: 1
-
-industry_level2_id&site:
-  hash_bucket_size: 10
-  is_deep: 1
-
-idea_type&os&network:
   hash_bucket_size: 20
   is_deep: 1
 
-industry_level2_id&age&ugender:
+scheduling_id&age:
   hash_bucket_size: 30
   is_deep: 1
 
-industry_level2_id&network&os:
+site&age&ugender:
   hash_bucket_size: 100
   is_deep: 1
 
-# 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 
-city_id&industry_level2_id:
+industry_level2_id&age&ugender:
   hash_bucket_size: 100
   is_deep: 1
 
-idea_type&city_id:
+scheduling_id&age&ugender:
   hash_bucket_size: 100
   is_deep: 1
 
-idea_id&province_id:
+industry_level2_id&ucomp:
   hash_bucket_size: 100
   is_deep: 1
 
-idea_id&device_type&os:
+adplan_id&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+adplan_id&category&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+category&scheduling_id:
+  hash_bucket_size: 100
+  is_deep: 1
+
+category&industry_level2_id:
+  hash_bucket_size: 100
+  is_deep: 1
+
+category&network&os:
+  hash_bucket_size: 100
+  is_deep: 1
+
+hour&weekdays:
   hash_bucket_size: 100
   is_deep: 1
 
@@ -89,79 +100,56 @@ hour&industry_level2_id:
   hash_bucket_size: 100
   is_deep: 1
 
-scheduling_id&age:
+network&os&site:
   hash_bucket_size: 100
   is_deep: 1
 
-category&ucomp:
+industry_level2_id&site:
   hash_bucket_size: 100
   is_deep: 1
 
-industry_level2_id&ucomp:
-  hash_bucket_size: 100
+# 100K * 14 finish
+
+adplan_id&os&site:
+  hash_bucket_size: 500
   is_deep: 1
 
-#100000, 100000, 100000, 100000, 500000, 500000, 500000, 1000000]
-
-category&industry_level2_id:
-  hash_bucket_size: 100
+industry_level2_id&network&os:
+  hash_bucket_size: 500
   is_deep: 1
 
-category&network&os:
-  hash_bucket_size: 100
+network&os&scheduling_id:
+  hash_bucket_size: 500
   is_deep: 1
 
 industry_level2_id&user_industrys:
-  hash_bucket_size: 100
-  is_deep: 1
-
-adplan_id&category:
-  hash_bucket_size: 100
-  is_deep: 1
-
-scheduling_id&ucomp:
-  hash_bucket_size: 500
-  is_deep: 1
-
-category&location&site:
-  hash_bucket_size: 500
-  is_deep: 1
-
-scheduling_id&age&ugender:
-  hash_bucket_size: 500
-  is_deep: 1
-
-adplan_id&ucomp:
   hash_bucket_size: 1000
   is_deep: 1
 
-# table_size_DDR=[10000000]
-
-category&scheduling_id:
+industry_level2_id&ip_original:
   hash_bucket_size: 10000
   is_deep: 1
 
-# adplan_id&os&site:
-#   hash_bucket_size: 100
-#   is_deep: 1
+city_id&industry_level2_id:
+  hash_bucket_size: 10000
+  is_deep: 1
 
-# network&os&scheduling_id:
-#   hash_bucket_size: 100
-#   is_deep: 1
-
-
-# # Large: 100000 * 2 + 1000000 * 1
-
-# industry_level2_id&ip_original:
-#   hash_bucket_size: 100
+# idea_type&os&network:
+#   hash_bucket_size: 1
 #   is_deep: 1
 
 # idea_id&site&category:
 #   hash_bucket_size: 100
 #   is_deep: 1
 
-# adplan_id&category&ucomp:
-#   hash_bucket_size: 1000
+# idea_type&city_id:
+#   hash_bucket_size: 10
 #   is_deep: 1
 
+# idea_id&province_id:
+#   hash_bucket_size: 10
+#   is_deep: 1
 
+# idea_id&device_type&os:
+#   hash_bucket_size: 10
+#   is_deep: 1

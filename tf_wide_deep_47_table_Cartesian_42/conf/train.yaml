@@ -33,7 +33,7 @@
 train:
   # path related.
   model_dir: ../model
-  model_type: wide_deep
+  model_type: deep
   train_data: ../data/train
   eval_data: ../data/eval
   test_data: ../data/test

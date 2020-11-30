@@ -47,54 +47,79 @@
 
 # TODO: support all tf.feature_column.
 
-
-# 47 -> 42 table, algorithm generated
 # table_size_PLRAM=[1000, 1000, 1000, 1000, 3000, 10000, 10000, 10000]
 # data_size_PLRAM = [4, 4, 4, 4, 8, 8, 8, 8]
 
-# table_size_HBM=[10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 20000, 30000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 500000, 500000, 500000, 1000000]
+# table_size_HBM=[10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 
+# 10000, 10000, 10000, 20000, 30000, 100000, 100000, 100000, 100000, 100000, 
+# 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 
+# 500000, 500000, 500000, 1000000]
+
+# 10000 * 12 + 20000 + 30000 + 100000 * 14 + 500000 * 3 + 1000000
+
 # data_size_HBM = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 16, 16]
 
 # table_size_DDR=[10000000, 10000000]
 # data_size_DDR = [16, 16]
 
-# 16 * hash bucket 
-# 100 * 3 + 500 * 2 + 1000 * 5 + 10000 * 3 + 20000 * 1 + 500000 * 1 + 10000000 * 1
+adplan_id:
+  type: category
+  transform: hash_bucket
+  parameter: 1000
 
+scheduling_id:
+  type: category
+  transform: hash_bucket
+  parameter: 1000
 
-##### PLRAN started #####
+idea_id:
+  type: category
+  transform: hash_bucket
+  parameter: 1000
 
-# Small: 100 * 3 + 500 * 2 
 province_id:
   type: category
   transform: hash_bucket
   parameter: 1000
 
-app_version:
-  type: category
-  transform: hash_bucket
-  parameter: 1000
-
-ad_idea_types:
-  type: category
-  transform: hash_bucket
-  parameter: 1000
-
-category:
-  type: category
-  transform: hash_bucket
-  parameter: 1000
-
-article_tag:
+city_id:
   type: category
   transform: hash_bucket
   parameter: 3000
 
+ip_original:
+  type: category
+  transform: hash_bucket
+  parameter: 10000
 
+#galaxy_id:
+#  type: category
+#  transform: hash_bucket
+#  parameter: 10000000
 
+app_version:
+  type: category
+  transform: hash_bucket
+  parameter: 10000
 
-# Medium: 1000 * 5 + 10000 * 3 + 20000 * 1 
-ucomp:
+category:
+  type: category
+  transform: hash_bucket
+  parameter: 10000
+
+##### PLRAM ends
+
+u:
+  type: category
+  transform: hash_bucket
+  parameter: 10000
+
+device_model:
+  type: category
+  transform: hash_bucket
+  parameter: 10000
+
+article_tag:
   type: category
   transform: hash_bucket
   parameter: 10000
@@ -103,14 +128,6 @@ user_cates:
   type: category
   transform: hash_bucket
   parameter: 10000
-
-city_id:
-  type: category
-  transform: hash_bucket
-  parameter: 10000
-
-##### PLRAN finished #####
-##### HBM started (first 7) #####
 
 user_industrys:
   type: category
@@ -122,42 +139,18 @@ ad_cates:
   transform: hash_bucket
   parameter: 10000
 
-adplan_id:
+ad_idea_types:
   type: category
   transform: hash_bucket
   parameter: 10000
 
-scheduling_id:
+ucomp:
   type: category
   transform: hash_bucket
   parameter: 10000
 
-device_model:
-  type: category
-  transform: hash_bucket
-  parameter: 10000
+#### HBM: finishes first 8 
 
-idea_id:
-  type: category
-  transform: hash_bucket
-  parameter: 10000
-
-# Large: 500000 * 1 + 10000000 * 1
-ip_original:
-  type: category
-  transform: hash_bucket
-  parameter: 10000
-
-##### HBM ended (first 7) #####
-
-##### DDR first 1
-u:
-  type: category
-  transform: hash_bucket
-  parameter: 10000000
-
-
-## vocab & id
 os:
   type: category
   transform: vocab
@@ -280,7 +273,6 @@ age:
   parameter:
     normalization: [10, 90]
     boundaries:  [15,20,25,30,35,40,45,50,55,60,65]
-
 
 #Request_id;category;hash_bucket;500000
 #account_id;category;hash_bucket;1000

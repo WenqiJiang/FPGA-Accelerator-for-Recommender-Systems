@@ -264,9 +264,7 @@ class Config(object):
         """
         feature_conf_dic = self.read_feature_conf()
         feature_list = self.read_schema().values()
-        #feature_list.remove('clk0')
-        #feature_list.remove('clk1')
-        #feature_list.remove('clk2')
+        feature_list.remove('clk')
         if feature_type == 'all':
             return feature_list
         elif feature_type == 'used':
