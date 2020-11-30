@@ -158,376 +158,129 @@ u:
 
 
 ## vocab & id
-
-os0:
+os:
   type: category
   transform: vocab
   parameter: [0,1,2,3,4,5]
 
-device_type0:
+device_type:
   type: category
   transform: vocab
   parameter: [0,1,2]
 
 
-client_type0:
+client_type:
   type: category
   transform: vocab
   parameter: ['a', 'w']
 
-network0:
+network:
   type: category
   transform: vocab
   parameter: [0,1,2,3,4]
 
-location0:
+location:
   type: category
   transform: vocab
   parameter: [1,2,3,4,5,6,7,8,9,20,21,22,23,24,25,26,27,28,29,50,51,52,53,54,60,101,102,200,201,202,301,302,303,304,1001,1002,2001,2002,3001,3002,4001,4002,5001,5002,6001,6002,7001,7002,8001,8002,9001,10001,10002,11001,11002]
 
-isweekend0:
+isweekend:
   type: category
   transform: vocab
   parameter: [0,1]
 
-weekdays0:
+weekdays:
   type: category
   transform: vocab
   parameter: [1,2,3,4,5,6,7]
 
-day0:
+day:
   type: category
   transform: vocab
   parameter: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15',
              '16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
 
-hour0:
+hour:
   type: category
   transform: vocab
   parameter: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 
-site0:
+site:
   type: category
   transform: vocab
   parameter: [1,2,3,4,5,6,8,9,10,11]
 
-status0:
+status:
   type: category
   transform: vocab
   parameter: [0,1,2,3]
 
-is_cache0:
+is_cache:
   type: category
   transform: vocab
   parameter: [0,1]
 
-is_pasv_flush0:
+is_pasv_flush:
   type: category
   transform: vocab
   parameter: [0,1]
 
-isp0:
+isp:
   type: category
   transform: vocab
   parameter: [1,2,3,4]
 
-ugender0:
+ugender:
   type: category
   transform: vocab
   parameter: [male,female]
 
-rk_age_range0:
+rk_age_range:
   type: category
   transform: vocab
   parameter: [6-10,11-15,16-20,21-25,26-30,31-35,36-40,41-45,46-50,51-55,56-60]
 
-rk_hour0:
+rk_hour:
   type: category
   transform: vocab
   parameter: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 
-idea_type0:
+idea_type:
   type: category
   transform: identity
   parameter: 15
 
-industry_level1_id0:
+industry_level1_id:
   type: category
   transform: identity
   parameter: 18
 
-industry_level2_id0:
+industry_level2_id:
   type: category
   transform: identity
   parameter: 152
 
-longitude0:
+longitude:
   type: continuous
   transform: min_max
   parameter:
     normalization: [80,150]
     boundaries: [90,95,100,105,110,115,120,125,130]
 
-latitude0:
+latitude:
   type: continuous
   transform: min_max
   parameter:
     normalization: [10,60]
     boundaries: [20,25,30,35,40,45,50]
 
-age0:
+age:
   type: continuous
   transform: min_max
   parameter:
     normalization: [10, 90]
     boundaries:  [15,20,25,30,35,40,45,50,55,60,65]
 
-
-os1:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3,4,5]
-
-device_type1:
-  type: category
-  transform: vocab
-  parameter: [0,1,2]
-
-
-client_type1:
-  type: category
-  transform: vocab
-  parameter: ['a', 'w']
-
-network1:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3,4]
-
-location1:
-  type: category
-  transform: vocab
-  parameter: [1,2,3,4,5,6,7,8,9,20,21,22,23,24,25,26,27,28,29,50,51,52,53,54,60,101,102,200,201,202,301,302,303,304,1001,1002,2001,2002,3001,3002,4001,4002,5001,5002,6001,6002,7001,7002,8001,8002,9001,10001,10002,11001,11002]
-
-isweekend1:
-  type: category
-  transform: vocab
-  parameter: [0,1]
-
-weekdays1:
-  type: category
-  transform: vocab
-  parameter: [1,2,3,4,5,6,7]
-
-day1:
-  type: category
-  transform: vocab
-  parameter: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15',
-             '16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
-
-hour1:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
-
-site1:
-  type: category
-  transform: vocab
-  parameter: [1,2,3,4,5,6,8,9,10,11]
-
-status1:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3]
-
-is_cache1:
-  type: category
-  transform: vocab
-  parameter: [0,1]
-
-is_pasv_flush1:
-  type: category
-  transform: vocab
-  parameter: [0,1]
-
-isp1:
-  type: category
-  transform: vocab
-  parameter: [1,2,3,4]
-
-ugender1:
-  type: category
-  transform: vocab
-  parameter: [male,female]
-
-rk_age_range1:
-  type: category
-  transform: vocab
-  parameter: [6-10,11-15,16-20,21-25,26-30,31-35,36-40,41-45,46-50,51-55,56-60]
-
-rk_hour1:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
-
-idea_type1:
-  type: category
-  transform: identity
-  parameter: 15
-
-industry_level1_id1:
-  type: category
-  transform: identity
-  parameter: 18
-
-industry_level2_id1:
-  type: category
-  transform: identity
-  parameter: 152
-
-longitude1:
-  type: continuous
-  transform: min_max
-  parameter:
-    normalization: [80,150]
-    boundaries: [90,95,100,105,110,115,120,125,130]
-
-latitude1:
-  type: continuous
-  transform: min_max
-  parameter:
-    normalization: [10,60]
-    boundaries: [20,25,30,35,40,45,50]
-
-age1:
-  type: continuous
-  transform: min_max
-  parameter:
-    normalization: [10, 90]
-    boundaries:  [15,20,25,30,35,40,45,50,55,60,65]
-
-
-os2:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3,4,5]
-
-device_type2:
-  type: category
-  transform: vocab
-  parameter: [0,1,2]
-
-client_type2:
-  type: category
-  transform: vocab
-  parameter: ['a', 'w']
-
-network2:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3,4]
-
-location2:
-  type: category
-  transform: vocab
-  parameter: [1,2,3,4,5,6,7,8,9,20,21,22,23,24,25,26,27,28,29,50,51,52,53,54,60,101,102,200,201,202,301,302,303,304,1001,1002,2001,2002,3001,3002,4001,4002,5001,5002,6001,6002,7001,7002,8001,8002,9001,10001,10002,11001,11002]
-
-isweekend2:
-  type: category
-  transform: vocab
-  parameter: [0,1]
-
-weekdays2:
-  type: category
-  transform: vocab
-  parameter: [1,2,3,4,5,6,7]
-
-day2:
-  type: category
-  transform: vocab
-  parameter: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15',
-             '16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
-
-hour2:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
-
-site2:
-  type: category
-  transform: vocab
-  parameter: [1,2,3,4,5,6,8,9,10,11]
-
-status2:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3]
-
-is_cache2:
-  type: category
-  transform: vocab
-  parameter: [0,1]
-
-is_pasv_flush2:
-  type: category
-  transform: vocab
-  parameter: [0,1]
-
-isp2:
-  type: category
-  transform: vocab
-  parameter: [1,2,3,4]
-
-ugender2:
-  type: category
-  transform: vocab
-  parameter: [male,female]
-
-rk_age_range2:
-  type: category
-  transform: vocab
-  parameter: [6-10,11-15,16-20,21-25,26-30,31-35,36-40,41-45,46-50,51-55,56-60]
-
-rk_hour2:
-  type: category
-  transform: vocab
-  parameter: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
-
-idea_type2:
-  type: category
-  transform: identity
-  parameter: 15
-
-industry_level1_id2:
-  type: category
-  transform: identity
-  parameter: 18
-
-industry_level2_id2:
-  type: category
-  transform: identity
-  parameter: 152
-
-longitude2:
-  type: continuous
-  transform: min_max
-  parameter:
-    normalization: [80,150]
-    boundaries: [90,95,100,105,110,115,120,125,130]
-
-latitude2:
-  type: continuous
-  transform: min_max
-  parameter:
-    normalization: [10,60]
-    boundaries: [20,25,30,35,40,45,50]
-
-age2:
-  type: continuous
-  transform: min_max
-  parameter:
-    normalization: [10, 90]
-    boundaries:  [15,20,25,30,35,40,45,50,55,60,65]
 
 #Request_id;category;hash_bucket;500000
 #account_id;category;hash_bucket;1000
