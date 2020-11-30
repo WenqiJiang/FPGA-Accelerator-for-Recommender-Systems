@@ -325,61 +325,64 @@ hour1&industry_level2_id1:
   hash_bucket_size: 50
   is_deep: 1
 
-scheduling_id1&age1:
-  hash_bucket_size: 50
-  is_deep: 1
+# scheduling_id1&age1:
+#   hash_bucket_size: 50
+#   is_deep: 1
 
-category1&ucomp1:
-  hash_bucket_size: 50
-  is_deep: 1
+# category1&ucomp1:
+#   hash_bucket_size: 50
+#   is_deep: 1
 
-industry_level2_id1&ucomp1:
-  hash_bucket_size: 50
-  is_deep: 1
+# industry_level2_id1&ucomp1:
+#   hash_bucket_size: 50
+#   is_deep: 1
 
-category1&industry_level2_id1:
-  hash_bucket_size: 50
-  is_deep: 1
+# category1&industry_level2_id1:
+#   hash_bucket_size: 50
+#   is_deep: 1
 
-category1&network1&os1:
-  hash_bucket_size: 50
-  is_deep: 1
+# category1&network1&os1:
+#   hash_bucket_size: 50
+#   is_deep: 1
 
-industry_level2_id1&user_industrys1:
-  hash_bucket_size: 150
-  is_deep: 1
+# industry_level2_id1&user_industrys1:
+#   hash_bucket_size: 150
+#   is_deep: 1
 
-adplan_id1&category1:
-  hash_bucket_size: 500
-  is_deep: 1
+# adplan_id1&category1:
+#   hash_bucket_size: 500
+#   is_deep: 1
 
-scheduling_id1&ucomp1:
-  hash_bucket_size: 500
-  is_deep: 1
+# scheduling_id1&ucomp1:
+#   hash_bucket_size: 500
+#   is_deep: 1
 
-category1&location1&site1:
-  hash_bucket_size: 500
-  is_deep: 1
+# category1&location1&site1:
+#   hash_bucket_size: 500
+#   is_deep: 1
 
-scheduling_id1&age1&ugender1:
-  hash_bucket_size: 500
-  is_deep: 1
+# scheduling_id1&age1&ugender1:
+#   hash_bucket_size: 500
+#   is_deep: 1
 
-adplan_id1&ucomp1:
-  hash_bucket_size: 500
-  is_deep: 1
+# adplan_id1&ucomp1:
+#   hash_bucket_size: 500
+#   is_deep: 1
 
-category1&scheduling_id1:
-  hash_bucket_size: 500
-  is_deep: 1
+# category1&scheduling_id1:
+#   hash_bucket_size: 500
+#   is_deep: 1
 
-adplan_id1&os1&site1:
-  hash_bucket_size: 500
-  is_deep: 1
+# adplan_id1&os1&site1:
+#   hash_bucket_size: 500
+#   is_deep: 1
 
-network1&os1&scheduling_id1:
-  hash_bucket_size: 500
-  is_deep: 1
+# network1&os1&scheduling_id1:
+#   hash_bucket_size: 500
+#   is_deep: 1
+
+
+  
 
 # Large: 100000 * 2 + 1000000 * 1
 
