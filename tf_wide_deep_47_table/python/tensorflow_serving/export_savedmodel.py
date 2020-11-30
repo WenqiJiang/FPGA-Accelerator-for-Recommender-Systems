@@ -37,6 +37,7 @@ tf.app.flags.DEFINE_string('export_dir', CONF['model_dir'],
                            """Directory to export inference model.""")
 tf.app.flags.DEFINE_integer('model_version', CONF['model_version'], 'version number of the model.')
 FLAGS = tf.app.flags.FLAGS
+FLAGS.model_type = 'deep'
 
 
 def main(_):
