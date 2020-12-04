@@ -71,8 +71,8 @@ raw_feature_num = len(feature)
 # merged feature: 14 * 14 * 14
 cross_feature = []
 for i in range(raw_feature_num):
-    for j in range(raw_feature_num):
-        for k in range(raw_feature_num):
+    for j in range(i + 1, raw_feature_num):
+        for k in range(j + 1, raw_feature_num):
             if i != j and j != k:
                 cross_feature.append(feature[i] + '&' + feature[j] + '&' + feature[k])
 
