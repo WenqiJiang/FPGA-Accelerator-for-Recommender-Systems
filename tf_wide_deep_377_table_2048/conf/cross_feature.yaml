@@ -1,0 +1,1815 @@
+
+idea_id&province_id&city_id:
+  hash_bucket_size: 1
+  is_deep: 1
+
+
+idea_id&province_id&ip_original:
+  hash_bucket_size: 1
+  is_deep: 1
+
+
+idea_id&province_id&app_version:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&category:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&u:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&device_model:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&article_tag:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&user_cates:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&user_industrys:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&ad_cates:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&ad_idea_types:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&province_id&ucomp:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&city_id&ip_original:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&city_id&app_version:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&city_id&category:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&city_id&u:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&city_id&device_model:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&city_id&article_tag:
+  hash_bucket_size: 5
+  is_deep: 1
+
+
+idea_id&city_id&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&city_id&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&city_id&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&city_id&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&city_id&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&app_version:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&category:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&u:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&device_model:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&article_tag:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ip_original&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&category:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&u:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&device_model:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&article_tag:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&app_version&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&category&u:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&category&device_model:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&category&article_tag:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&category&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&category&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&category&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&category&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&category&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&u&device_model:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&u&article_tag:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&u&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&u&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&u&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&u&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&u&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&device_model&article_tag:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&device_model&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&device_model&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&device_model&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&device_model&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&device_model&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&article_tag&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&article_tag&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&article_tag&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&article_tag&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&article_tag&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&user_cates&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&user_cates&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&user_cates&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&user_cates&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&user_industrys&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&user_industrys&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&user_industrys&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ad_cates&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ad_cates&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+idea_id&ad_idea_types&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&ip_original:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&app_version:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&category:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&u:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&device_model:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&article_tag:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&city_id&ucomp:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&app_version:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&category:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&u:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&device_model:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&article_tag:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&user_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&user_industrys:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&ad_cates:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&ad_idea_types:
+  hash_bucket_size: 10
+  is_deep: 1
+
+
+province_id&ip_original&ucomp:
+  hash_bucket_size: 30
+  is_deep: 1
+
+
+province_id&app_version&category:
+  hash_bucket_size: 30
+  is_deep: 1
+
+
+province_id&app_version&u:
+  hash_bucket_size: 30
+  is_deep: 1
+
+
+province_id&app_version&device_model:
+  hash_bucket_size: 30
+  is_deep: 1
+
+
+province_id&app_version&article_tag:
+  hash_bucket_size: 30
+  is_deep: 1
+
+
+province_id&app_version&user_cates:
+  hash_bucket_size: 30
+  is_deep: 1
+
+
+province_id&app_version&user_industrys:
+  hash_bucket_size: 30
+  is_deep: 1
+
+
+province_id&app_version&ad_cates:
+  hash_bucket_size: 30
+  is_deep: 1
+
+
+province_id&app_version&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&app_version&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&category&u:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&category&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&category&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&category&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&category&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&category&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&category&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&category&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&u&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&u&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&u&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&u&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&u&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&u&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&u&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&device_model&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&device_model&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&device_model&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&device_model&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&device_model&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&device_model&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&article_tag&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&article_tag&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&article_tag&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&article_tag&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&article_tag&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&user_cates&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&user_cates&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&user_cates&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&user_cates&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&user_industrys&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&user_industrys&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&user_industrys&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&ad_cates&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&ad_cates&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+province_id&ad_idea_types&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&app_version:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&category:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&u:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ip_original&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&category:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&u:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&app_version&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&category&u:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&category&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&category&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&category&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&category&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&category&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&category&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&category&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&u&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&u&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&u&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&u&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&u&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&u&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&u&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&device_model&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&device_model&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&device_model&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&device_model&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&device_model&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&device_model&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&article_tag&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&article_tag&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&article_tag&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&article_tag&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&article_tag&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&user_cates&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&user_cates&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&user_cates&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&user_cates&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&user_industrys&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&user_industrys&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&user_industrys&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ad_cates&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ad_cates&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+city_id&ad_idea_types&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&category:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&u:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&app_version&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&category&u:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&category&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&category&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&category&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&category&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&category&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&category&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&category&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&u&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&u&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&u&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&u&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&u&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&u&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&u&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&device_model&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&device_model&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&device_model&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&device_model&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&device_model&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&device_model&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&article_tag&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&article_tag&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&article_tag&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&article_tag&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&article_tag&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&user_cates&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&user_cates&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&user_cates&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&user_cates&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&user_industrys&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&user_industrys&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&user_industrys&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&ad_cates&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&ad_cates&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+ip_original&ad_idea_types&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&category&u:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&category&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&category&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&category&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&category&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&category&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&category&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&category&ucomp:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&u&device_model:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&u&article_tag:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&u&user_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&u&user_industrys:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&u&ad_cates:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&u&ad_idea_types:
+  hash_bucket_size: 100
+  is_deep: 1
+
+
+app_version&u&ucomp:
+  hash_bucket_size: 200
+  is_deep: 1
+
+
+app_version&device_model&article_tag:
+  hash_bucket_size: 200
+  is_deep: 1
+
+
+app_version&device_model&user_cates:
+  hash_bucket_size: 200
+  is_deep: 1
+
+
+app_version&device_model&user_industrys:
+  hash_bucket_size: 200
+  is_deep: 1
+
+
+app_version&device_model&ad_cates:
+  hash_bucket_size: 200
+  is_deep: 1
+
+
+app_version&device_model&ad_idea_types:
+  hash_bucket_size: 200
+  is_deep: 1
+
+
+app_version&device_model&ucomp:
+  hash_bucket_size: 200
+  is_deep: 1
+
+
+app_version&article_tag&user_cates:
+  hash_bucket_size: 200
+  is_deep: 1
+
+
+app_version&article_tag&user_industrys:
+  hash_bucket_size: 300
+  is_deep: 1
+
+
+app_version&article_tag&ad_cates:
+  hash_bucket_size: 300
+  is_deep: 1
+
+
+app_version&article_tag&ad_idea_types:
+  hash_bucket_size: 300
+  is_deep: 1
+
+
+app_version&article_tag&ucomp:
+  hash_bucket_size: 300
+  is_deep: 1
+
+
+app_version&user_cates&user_industrys:
+  hash_bucket_size: 300
+  is_deep: 1
+
+
+app_version&user_cates&ad_cates:
+  hash_bucket_size: 300
+  is_deep: 1
+
+
+app_version&user_cates&ad_idea_types:
+  hash_bucket_size: 300
+  is_deep: 1
+
+
+app_version&user_cates&ucomp:
+  hash_bucket_size: 300
+  is_deep: 1
+
+
+app_version&user_industrys&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+app_version&user_industrys&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+app_version&user_industrys&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+app_version&ad_cates&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+app_version&ad_cates&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+app_version&ad_idea_types&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&u&device_model:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&u&article_tag:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&u&user_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&u&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&u&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&u&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&u&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&device_model&article_tag:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&device_model&user_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&device_model&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&device_model&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&device_model&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&device_model&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&article_tag&user_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&article_tag&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&article_tag&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&article_tag&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&article_tag&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&user_cates&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&user_cates&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&user_cates&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&user_cates&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&user_industrys&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&user_industrys&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&user_industrys&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&ad_cates&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&ad_cates&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+category&ad_idea_types&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&device_model&article_tag:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&device_model&user_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&device_model&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&device_model&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&device_model&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&device_model&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&article_tag&user_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&article_tag&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&article_tag&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&article_tag&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&article_tag&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&user_cates&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&user_cates&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&user_cates&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&user_cates&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&user_industrys&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&user_industrys&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&user_industrys&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&ad_cates&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&ad_cates&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+u&ad_idea_types&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&article_tag&user_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&article_tag&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&article_tag&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&article_tag&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&article_tag&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&user_cates&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&user_cates&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&user_cates&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&user_cates&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&user_industrys&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&user_industrys&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&user_industrys&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&ad_cates&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&ad_cates&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+device_model&ad_idea_types&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+article_tag&user_cates&user_industrys:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+article_tag&user_cates&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+article_tag&user_cates&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+article_tag&user_cates&ucomp:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+article_tag&user_industrys&ad_cates:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+article_tag&user_industrys&ad_idea_types:
+  hash_bucket_size: 1000
+  is_deep: 1
+
+
+article_tag&user_industrys&ucomp:
+  hash_bucket_size: 5000
+  is_deep: 1
+
+
+article_tag&ad_cates&ad_idea_types:
+  hash_bucket_size: 5000
+  is_deep: 1
+
+
+article_tag&ad_cates&ucomp:
+  hash_bucket_size: 5000
+  is_deep: 1
+
+
+article_tag&ad_idea_types&ucomp:
+  hash_bucket_size: 5000
+  is_deep: 1
+
+
+user_cates&user_industrys&ad_cates:
+  hash_bucket_size: 10000
+  is_deep: 1
+
+
+user_cates&user_industrys&ad_idea_types:
+  hash_bucket_size: 10000
+  is_deep: 1
+
+
+user_cates&user_industrys&ucomp:
+  hash_bucket_size: 10000
+  is_deep: 1
+
+
+user_cates&ad_cates&ad_idea_types:
+  hash_bucket_size: 10000
+  is_deep: 1
+
+  # Change from here
+
+user_cates&ad_cates&ucomp:
+  hash_bucket_size: 100000
+  is_deep: 1
+
+
+user_cates&ad_idea_types&ucomp:
+  hash_bucket_size: 100000
+  is_deep: 1
+
+
+user_industrys&ad_cates&ad_idea_types:
+  hash_bucket_size: 100000
+  is_deep: 1
+
+
+user_industrys&ad_cates&ucomp:
+  hash_bucket_size: 100000
+  is_deep: 1
+
+
+user_industrys&ad_idea_types&ucomp:
+  hash_bucket_size: 20000
+  is_deep: 1

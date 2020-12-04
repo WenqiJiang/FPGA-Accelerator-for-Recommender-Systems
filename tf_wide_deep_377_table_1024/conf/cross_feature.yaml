@@ -1788,6 +1788,7 @@ user_cates&ad_cates&ad_idea_types:
   hash_bucket_size: 10000
   is_deep: 1
 
+  # Change from here
 
 user_cates&ad_cates&ucomp:
   hash_bucket_size: 100000
@@ -1810,5 +1811,5 @@ user_industrys&ad_cates&ucomp:
 
 
 user_industrys&ad_idea_types&ucomp:
-  hash_bucket_size: 200000
+  hash_bucket_size: 20000
   is_deep: 1
